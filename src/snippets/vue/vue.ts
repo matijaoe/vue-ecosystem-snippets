@@ -72,7 +72,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     vscript: {
-      name: "script setup | ts",
+      name: "Vue script setup | ts",
       body: [
         '<script lang="ts" setup>',
         "$0",
@@ -81,7 +81,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     "vscript:js": {
-      name: "script setup | js",
+      name: "Vue script setup | js",
       body: [
         "<script setup>",
         "$0",
@@ -99,7 +99,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     vstyle: {
-      name: "style",
+      name: "Vue style",
       body: [
         '<style lang="${1|css,postcss,scss|}"${2| scoped, |}>',
         "\t$0",
@@ -108,7 +108,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     "vstyle:css": {
-      name: "scoped style | css",
+      name: "Vue scoped style | css",
       body: [
         "<style scoped>",
         "\t$0",
@@ -117,7 +117,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     "vstyle:postcss": {
-      name: "scoped style | postcss",
+      name: "Vue scoped style | postcss",
       body: [
         '<style lang="postcss" scoped>',
         "\t$0",
@@ -135,7 +135,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     "vstyle:module": {
-      name: "style with CSS modules",
+      name: "Vue style with CSS modules",
       body: [
         "<style module$1>",
         "\t$0",
@@ -144,7 +144,7 @@ export const vueSfc: XSnippetDefinition = {
       ],
     },
     "vstyle:src": {
-      name: "style with src",
+      name: "Vue scoped style with src",
       body: [
         `<style scoped src="$1">`,
         "\t$0",

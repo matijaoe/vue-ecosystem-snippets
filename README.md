@@ -144,7 +144,7 @@ $0
 
 <tr>
 <td><code>vscript</code></td>
-<td>script setup | ts</td>
+<td>Vue script setup | ts</td>
 <td>
 
 ```html
@@ -159,7 +159,7 @@ $0
 
 <tr>
 <td><code>vscript:js</code></td>
-<td>script setup | js</td>
+<td>Vue script setup | js</td>
 <td>
 
 ```html
@@ -189,7 +189,7 @@ $0
 
 <tr>
 <td><code>vstyle</code></td>
-<td>style</td>
+<td>Vue style</td>
 <td>
 
 ```html
@@ -204,7 +204,7 @@ $0
 
 <tr>
 <td><code>vstyle:css</code></td>
-<td>scoped style | css</td>
+<td>Vue scoped style | css</td>
 <td>
 
 ```html
@@ -219,7 +219,7 @@ $0
 
 <tr>
 <td><code>vstyle:postcss</code></td>
-<td>scoped style | postcss</td>
+<td>Vue scoped style | postcss</td>
 <td>
 
 ```html
@@ -249,7 +249,7 @@ $0
 
 <tr>
 <td><code>vstyle:module</code></td>
-<td>style with CSS modules</td>
+<td>Vue style with CSS modules</td>
 <td>
 
 ```html
@@ -264,7 +264,7 @@ $0
 
 <tr>
 <td><code>vstyle:src</code></td>
-<td>style with src</td>
+<td>Vue scoped style with src</td>
 <td>
 
 ```html
