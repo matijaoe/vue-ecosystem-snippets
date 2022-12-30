@@ -45,7 +45,7 @@ Look for it in user settings, or edit the settings.json directly:
 ## Snippets
 <!-- START:docs-gen -->
 ### Vue SFC
-.vue` files
+`.vue` files
 <table width="100%">
 
 <tr>

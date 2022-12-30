@@ -3,7 +3,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 export const vueSfc: XSnippetDefinition = {
   meta: {
     title: "Vue SFC",
-    description: ".vue` files",
+    description: "`.vue` files",
     lang: "html",
   },
   snippets: {
