@@ -1,26 +1,30 @@
 # Vue Ecosystem Snippets
 
-![Vue](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & Vue Router.
+
+<br>
+
+![Vue](https://img.shields.io/badge/vue-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 ## Features
 - Only the latest Vue syntax
-- Nuxt 3, Pinia, VueUse, Vite support
 - TypeScript-first
+- Nuxt 3, Pinia, VueUse & Vue Router support
 - Strategically placed tabstops
 - Prefixes created with exact-match in mind 
-- (Mostly) GitHub Copilot compliant
+- GitHub Copilot compliant
 - Auto-generated documentation
 
 ## Setup
-The following is not mandatory, but could provide a nicer experience. Test them out and see what works best for you.
+Not mandatory, but highly recommended.
 
 Look for it in user settings, or edit the settings.json directly:
 ```jsonc
 "editor.formatOnSave": true,
 
-// Tab complete snippets when their prefix match. Works best when 'quickSuggestions' aren't enabled.
+// Tab complete snippets when their prefix match.
 "editor.tabCompletion": "onlySnippets"
 ```
 
@@ -203,5 +207,4 @@ const ${1:name} = ref($2)
 
 # generate .code-snippets and documentation
 npm run generate
-
 ```
