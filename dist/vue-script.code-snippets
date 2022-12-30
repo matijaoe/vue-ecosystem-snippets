@@ -1,6 +1,0 @@
-{
-  "ref 🟢": {
-    "prefix": "vref",
-    "body": "const ${1:name} = ref($2)"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "v-for 🟢": {
-    "prefix": "vfor",
-    "body": "v-for=\"${2:item} in ${1:items}\" :key=\"$2$3\""
-  }
-}
