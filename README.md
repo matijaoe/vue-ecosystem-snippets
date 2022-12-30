@@ -65,7 +65,7 @@ $0
 </script>
 
 <template>
-	$1
+  $1
 </template>
 
 ```
@@ -84,11 +84,11 @@ $0
 </script>
 
 <template>
-	$1
+  $1
 </template>
 
 <style scoped>
-	
+  
 </style>
 
 ```
@@ -107,11 +107,11 @@ $0
 </script>
 
 <template>
-	$1
+  $1
 </template>
 
 <style style="postcss" scoped>
-	
+  
 </style>
 
 ```
@@ -130,11 +130,11 @@ $0
 </script>
 
 <template>
-	$1
+  $1
 </template>
 
 <style style="scss" scoped>
-	
+  
 </style>
 
 ```
@@ -179,7 +179,7 @@ $0
 
 ```html
 <template>
-	$0
+  $0
 </template>
 
 ```
@@ -194,7 +194,7 @@ $0
 
 ```html
 <style lang="${1|css,...|}"${2|scoped,...|}>
-	$0
+  $0
 </style>
 
 ```
@@ -209,7 +209,7 @@ $0
 
 ```html
 <style scoped>
-	$0
+  $0
 </style>
 
 ```
@@ -224,7 +224,7 @@ $0
 
 ```html
 <style lang="postcss" scoped>
-	$0
+  $0
 </style>
 
 ```
@@ -239,7 +239,7 @@ $0
 
 ```html
 <style lang="scss" scoped>
-	$0
+  $0
 </style>
 
 ```
@@ -254,7 +254,7 @@ $0
 
 ```html
 <style module$1>
-	$0
+  $0
 </style>
 
 ```
@@ -269,7 +269,7 @@ $0
 
 ```html
 <style scoped src="$1">
-	$0
+  $0
 </style>
 
 ```
@@ -320,7 +320,7 @@ $0
 
 ```html
 <slot name="${1:default}">
-	$0
+  $0
 </slot>
 ```
 
@@ -334,7 +334,7 @@ $0
 
 ```html
 <template #${1:default}>
-	$0
+  $0
 </template>
 ```
 
@@ -360,7 +360,7 @@ $0
 
 ```html
 <KeepAlive$1>
-	$0
+  $0
 </KeepAlive>
 ```
 
@@ -734,7 +734,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 
 ```html
 <form @submit${1:.prevent}="${2:onSubmit}">
-	$0
+  $0
 </form>
 ```
 
@@ -748,7 +748,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 
 ```html
 <${1|template,...|} v-for="${3:item} in ${2:items}" :key="$3$4">
-	$0
+  $0
 </$1>
 ```
 
@@ -762,7 +762,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 
 ```html
 <${1|template,...|} v-for="(${3:item}, ${4:i}) in ${2:items}" :key="${5:$4}">
-	$0
+  $0
 </$1>
 ```
 
@@ -776,7 +776,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 
 ```html
 <${1|template,...|} v-if="$2">
-	$0
+  $0
 </$1>
 ```
 

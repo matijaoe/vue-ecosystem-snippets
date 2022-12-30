@@ -1,6 +1,10 @@
 import { replaceInFile } from "../deps.ts";
 import { VscSnippetDefinition, VscSnippetVariant } from "../models/app.ts";
-import { parseMultiline, replaceSymbol } from "../utils/general.ts";
+import {
+  parseMultiline,
+  replaceSymbol,
+  replaceTabs,
+} from "../utils/general.ts";
 import {
   $col,
   $colCode,
@@ -30,7 +34,7 @@ const snippetRow = ({ prefix, name, body }: SnippetRow, lang?: string) => {
   const cols = joinByNewLine([
     $colCode(prefix),
     $col(name),
-    $colCodeBlock(truncateOptions(parseMultiline(body)), lang),
+    $colCodeBlock(truncateOptions(replaceTabs(parseMultiline(body))), lang),
   ]);
 
   return $row(cols);
