@@ -17,13 +17,13 @@ export const vue: XSnippetVariant[] = [
     snippetDefinitions: [template],
   },
   {
-    label: "Template",
-    fileName: "vue-script",
-    snippetDefinitions: [script],
-  },
-  {
     label: "Style",
     fileName: "vue-style",
     snippetDefinitions: [style],
+  },
+  {
+    label: "Template",
+    fileName: "vue-script",
+    snippetDefinitions: [script],
   },
 ];
