@@ -1,65 +1,210 @@
-# modern-vue-snippets README
+# Vue Ecosystem Snippets
 
-This is the README for your extension "modern-vue-snippets". After writing up a brief description, we recommend including the following sections.
+> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & Vue Router.
+
+<br>
+
+![Vue](https://img.shields.io/badge/vue-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 ## Features
+- Only the latest Vue syntax
+- TypeScript-first
+- Nuxt 3, Pinia, VueUse & Vue Router support
+- Strategically placed tabstops
+- Prefixes created with exact-match in mind 
+- GitHub Copilot compliant
+- Auto-generated documentation
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Setup
+Not mandatory, but highly recommended.
 
-For example if there is an image subfolder under your extension project workspace:
+Look for it in user settings, or edit the settings.json directly:
+```jsonc
+"editor.formatOnSave": true,
 
-\!\[feature X\]\(images/feature-x.png\)
+// Tab complete snippets when their prefix match.
+"editor.tabCompletion": "onlySnippets"
+```
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Snippet syntax
 
-## Requirements
+### Tabstops
+- `$1`, `$2`, `$3` specify cursor locations, in order in which tabstops will be visited
+- `$0` denotes the final cursor position
+- Multiple occurrences of the same tabstop are linked and updated in sync
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Placeholders
+- Tabstops with default values → `${1:name}` 
 
-## Extension Settings
+### Choices
+- Tabstops with multiple values → `${1|one,two,three|}`. 
+- Truncated in documentation, for easier viewing → `${1|one,...|}`. 
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Snippets
+<!-- START:docs-gen -->
+### Vue SFC
+.vue` files
+<table width="100%">
 
-For example:
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
 
-This extension contributes the following settings:
+<tr>
+<td><code>vbase</code></td>
+<td>script setup with ts & template</td>
+<td>
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+```html
+<script lang="ts" setup>
+$2
+</script>
 
-## Known Issues
+<template>
+	$1
+</template>
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+```
 
-## Release Notes
+</td>
+</tr>
 
-Users appreciate release notes as you update your extension.
+<tr>
+<td><code>vbase-script</code></td>
+<td>script setup with ts</td>
+<td>
 
-### 1.0.0
+```html
+<script lang="ts" setup>
+$0
+</script>
 
-Initial release of ...
+```
 
-### 1.0.1
+</td>
+</tr>
 
-Fixed issue #.
+<tr>
+<td><code>vbase-template</code></td>
+<td>vue template</td>
+<td>
 
-### 1.1.0
+```html
+<template>
+	$0
+</template>
 
-Added features X, Y, and Z.
+```
 
----
+</td>
+</tr>
 
-## Working with Markdown
+<tr>
+<td><code>vbase-style</code></td>
+<td>scoped style | postcss</td>
+<td>
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+```html
+<style lang="postcss" scoped>
+	$0
+</style>
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+```
 
-## For more information
+</td>
+</tr>
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+<tr>
+<td><code>vbase-style:css</code></td>
+<td>scoped style | css</td>
+<td>
 
-**Enjoy!**
+```html
+<style scoped>
+	$0
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbase-style:scss</code></td>
+<td>scoped style | scss</td>
+<td>
+
+```html
+<style lang="scss" scoped>
+	$0
+</style>
+
+```
+
+</td>
+</tr>
+</table>
+
+
+### Template
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vfor</code></td>
+<td>v-for</td>
+<td>
+
+```html
+v-for="${2:item} in ${1:items}" :key="$2$3"
+```
+
+</td>
+</tr>
+</table>
+
+
+### Script
+Script setup and composables
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vref</code></td>
+<td>ref</td>
+<td>
+
+```javascript
+const ${1:name} = ref($2)
+```
+
+</td>
+</tr>
+</table>
+
+<!-- END:docs-gen -->
+
+## Running locally
+
+```bash
+# ensure Deno is installed
+# https://deno.land/manual@v1.29.1/getting_started/installation
+
+# generate .code-snippets and documentation
+npm run generate
+```
