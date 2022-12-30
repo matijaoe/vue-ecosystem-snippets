@@ -1,7 +1,7 @@
 {
   "name": "vue-nuxt-snippets",
   "displayName": "Vue Ecosystem Snippets",
-  "description": "Latest Vue Ecosystem snippets",
+  "description": "Latest Vue Ecosystem snippets - including Nuxt 3, VueUse, Pinia & Vue Router",
   "version": "0.0.1",
   "license": "MIT",
   "icon": "assets/icon.png",
@@ -10,6 +10,8 @@
     "email": "matija.osrecki@gmail.com"
   },
   "publisher": "matijao",
+  "repository": "https://github.com/mat2ja/vue-ecosystem-snippets",
+  "bugs": "https://github.com/mat2ja/vue-ecosystem-snippets/issues",
   "engines": {
     "vscode": "^1.x.x"
   },
@@ -17,16 +19,19 @@
     "Snippets"
   ],
   "keywords": [
-    "vue",
-    "nuxt",
-    "vue 3",
-    "nuxt 3",
-    "pinia",
-    "volar",
-    "vueuse",
-    "composition api",
-    "typescript",
-    "snippets"
+    "Vue",
+    "Nuxt",
+    "Vue 3",
+    "Nuxt 3",
+    "Pinia",
+    "Volar",
+    "VueUse",
+    "Composition API",
+    "TypeScript",
+    "Vue Snippets",
+    "Nuxt Snippets",
+    "snippets",
+    "snippet"
   ],
   "scripts": {
     "publish": "vsce package && vsce publish",
