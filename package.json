@@ -1,0 +1,39 @@
+{
+  "name": "vue-nuxt-snippets",
+  "displayName": "Vue Ecosystem Snippets",
+  "description": "Latest Vue Ecosystem snippets",
+  "version": "0.0.1",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "author": {
+    "name": "Matija Osrečki",
+    "email": "matija.osrecki@gmail.com"
+  },
+  "publisher": "matijao",
+  "engines": {
+    "vscode": "^1.x.x"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "vue",
+    "nuxt",
+    "vue 3",
+    "nuxt 3",
+    "pinia",
+    "volar",
+    "vueuse",
+    "composition api",
+    "typescript",
+    "snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
