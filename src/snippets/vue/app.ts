@@ -2,13 +2,14 @@ import { XSnippetVariant } from "../../models/app.ts";
 
 import { script } from "./script.ts";
 import { template } from "./template.ts";
-import { vue as vueBase } from "./vue.ts";
+import { vueSfc } from "./vue.ts";
+import { style } from "./style.ts";
 
 export const vue: XSnippetVariant[] = [
   {
     label: "Vue",
     fileName: "vue",
-    snippetDefinitions: [vueBase],
+    snippetDefinitions: [vueSfc],
   },
   {
     label: "Template",
@@ -19,5 +20,10 @@ export const vue: XSnippetVariant[] = [
     label: "Template",
     fileName: "vue-script",
     snippetDefinitions: [script],
+  },
+  {
+    label: "Style",
+    fileName: "vue-style",
+    snippetDefinitions: [style],
   },
 ];

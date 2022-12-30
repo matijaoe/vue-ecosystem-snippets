@@ -45,6 +45,22 @@
         "path": "./dist/vue-template.code-snippets"
       },
       {
+        "language": "css",
+        "path": "./dist/vue-style.code-snippets"
+      },
+      {
+        "language": "postcss",
+        "path": "./dist/vue-style.code-snippets"
+      },
+      {
+        "language": "scss",
+        "path": "./dist/vue-style.code-snippets"
+      },
+      {
+        "language": "sass",
+        "path": "./dist/vue-style.code-snippets"
+      },
+      {
         "language": "javascript",
         "path": "./dist/vue-script.code-snippets"
       },
