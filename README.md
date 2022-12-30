@@ -45,7 +45,7 @@ Look for it in user settings, or edit the settings.json directly:
 ## Snippets
 <!-- START:docs-gen -->
 ### Vue SFC
-.vue` files
+`.vue` files
 <table width="100%">
 
 <tr>
@@ -56,12 +56,12 @@ Look for it in user settings, or edit the settings.json directly:
 
 <tr>
 <td><code>vbase</code></td>
-<td>script setup with ts & template</td>
+<td>Vue SFC</td>
 <td>
 
 ```html
 <script lang="ts" setup>
-$2
+$0
 </script>
 
 <template>
@@ -74,8 +74,77 @@ $2
 </tr>
 
 <tr>
-<td><code>vbase-script</code></td>
-<td>script setup with ts</td>
+<td><code>vbase:full</code></td>
+<td>Vue SFC with style</td>
+<td>
+
+```html
+<script lang="ts" setup>
+$0
+</script>
+
+<template>
+	$1
+</template>
+
+<style scoped>
+	
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbase:full:postcss</code></td>
+<td>Vue SFC with style | postcss</td>
+<td>
+
+```html
+<script lang="ts" setup>
+$0
+</script>
+
+<template>
+	$1
+</template>
+
+<style style="postcss" scoped>
+	
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbase:full:scss</code></td>
+<td>Vue SFC with style | scss</td>
+<td>
+
+```html
+<script lang="ts" setup>
+$0
+</script>
+
+<template>
+	$1
+</template>
+
+<style style="scss" scoped>
+	
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vscript</code></td>
+<td>script setup | ts</td>
 <td>
 
 ```html
@@ -89,8 +158,23 @@ $0
 </tr>
 
 <tr>
-<td><code>vbase-template</code></td>
-<td>vue template</td>
+<td><code>vscript:js</code></td>
+<td>script setup | js</td>
+<td>
+
+```html
+<script setup>
+$0
+</script>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vtemplate</code></td>
+<td>Vue template</td>
 <td>
 
 ```html
@@ -104,12 +188,12 @@ $0
 </tr>
 
 <tr>
-<td><code>vbase-style</code></td>
-<td>scoped style | postcss</td>
+<td><code>vstyle</code></td>
+<td>style</td>
 <td>
 
 ```html
-<style lang="postcss" scoped>
+<style lang="${1|css,...|}"${2|scoped,...|}>
 	$0
 </style>
 
@@ -119,7 +203,7 @@ $0
 </tr>
 
 <tr>
-<td><code>vbase-style:css</code></td>
+<td><code>vstyle:css</code></td>
 <td>scoped style | css</td>
 <td>
 
@@ -134,12 +218,57 @@ $0
 </tr>
 
 <tr>
-<td><code>vbase-style:scss</code></td>
+<td><code>vstyle:postcss</code></td>
+<td>scoped style | postcss</td>
+<td>
+
+```html
+<style lang="postcss" scoped>
+	$0
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle:scss</code></td>
 <td>scoped style | scss</td>
 <td>
 
 ```html
 <style lang="scss" scoped>
+	$0
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle:module</code></td>
+<td>style with CSS modules</td>
+<td>
+
+```html
+<style module$1>
+	$0
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle:src</code></td>
+<td>style with src</td>
+<td>
+
+```html
+<style scoped src="$1">
 	$0
 </style>
 
@@ -191,6 +320,66 @@ Script setup and composables
 
 ```javascript
 const ${1:name} = ref($2)
+```
+
+</td>
+</tr>
+</table>
+
+
+### Style
+Vue style
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vbind</code></td>
+<td>v-bind</td>
+<td>
+
+```javascript
+v-bind($0)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>deep</code></td>
+<td>:deep()</td>
+<td>
+
+```javascript
+:deep($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>slot</code></td>
+<td>:slotted()</td>
+<td>
+
+```javascript
+:slotted($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>global</code></td>
+<td>:global()</td>
+<td>
+
+```javascript
+:global($1)
 ```
 
 </td>
