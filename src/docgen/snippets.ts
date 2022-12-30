@@ -74,7 +74,7 @@ export const generateDocs = (variants: VscSnippetVariant[]) => {
   return joinByDoubleNewLine(variants.map(generateVariantSection));
 };
 
-const docsGenId = "docs-gen";
+const docsGenId = "docgen";
 const docsGen = {
   start: htmlComment(`START:${docsGenId}`),
   end: htmlComment(`END:${docsGenId}`),

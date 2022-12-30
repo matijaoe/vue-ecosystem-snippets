@@ -48,7 +48,7 @@ Look for it in user settings, or edit the settings.json directly:
 - Truncated in documentation, for easier viewing → `${1|one,...|}`. 
 
 ## Snippets
-<!-- START:docs-gen -->
+<!-- START:docgen -->
 ### Vue SFC
 `.vue` files
 <table width="100%">
@@ -873,7 +873,7 @@ const ${1:name} = ref($2)
 </tr>
 </table>
 
-<!-- END:docs-gen -->
+<!-- END:docgen -->
 
 ## Running locally
 
