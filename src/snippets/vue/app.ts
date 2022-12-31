@@ -4,6 +4,8 @@ import { script } from "./script.ts";
 import { template } from "./template.ts";
 import { vueSfc } from "./vue.ts";
 import { style } from "./style.ts";
+import { codeSnippets } from "./code-snippets.ts";
+import { reactivityTransform } from "./reactivity-transform.ts";
 
 export const vue: XSnippetVariant[] = [
   {
@@ -24,6 +26,6 @@ export const vue: XSnippetVariant[] = [
   {
     label: "Script",
     fileName: "vue-script",
-    snippetDefinitions: [script],
+    snippetDefinitions: [script, reactivityTransform, codeSnippets],
   },
 ];

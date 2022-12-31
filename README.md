@@ -791,7 +791,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 
 
 ### Style
-Vue style
+
 <table width="100%">
 
 <tr>
@@ -873,36 +873,12 @@ const ${1:name} = ref($2)
 </tr>
 
 <tr>
-<td><code>vref$</code> / <code>vrt</code></td>
-<td>Vue $ref</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref($2)
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vref:ts</code> / <code>vrts</code></td>
 <td>Vue ref (typed)</td>
 <td>
 
 ```javascript
 const ${1:name} = ref<$2>($3)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vref$:ts</code></td>
-<td>Vue $ref (typed)</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref<$2>($3)
 ```
 
 </td>
@@ -921,36 +897,12 @@ const ${1:name} = computed(() => $2)
 </tr>
 
 <tr>
-<td><code>vcomputed$</code> / <code>vcrt</code></td>
-<td>Vue $computed</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed(() => $2)
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vcomputed:ts</code> / <code>vcts</code></td>
 <td>Vue computed (typed)</td>
 <td>
 
 ```javascript
 const ${1:name} = computed<$2>(() => $3)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed$:ts</code></td>
-<td>Vue $computed (typed)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed<$2>(() => $3)
 ```
 
 </td>
@@ -1033,6 +985,18 @@ const ${1:name} = toRef(${2:object}, '${3}')
 
 ```javascript
 const $1 = toRefs(${2:object})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vshallowRef</code></td>
+<td>Vue $shallowRef</td>
+<td>
+
+```javascript
+const ${1:name} = \shallowRef($2)
 ```
 
 </td>
@@ -1169,7 +1133,7 @@ ${1:const props = }defineProps<${2:Props}>()
 </tr>
 
 <tr>
-<td><code>vprops-withDefaults</code></td>
+<td><code>vprops:withDefaults</code></td>
 <td>Vue defineProps with defaults</td>
 <td>
 
@@ -1409,12 +1373,60 @@ const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})
 </tr>
 
 <tr>
-<td><code>vinject-key</code></td>
+<td><code>vinjectkey</code></td>
 <td>Vue injection key</td>
 <td>
 
 ```javascript
 const ${1:key} = Symbol() as InjectionKey<${2:string}>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vslots</code></td>
+<td>Vue useSlots</td>
+<td>
+
+```javascript
+const slots = useSlots()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vattrs</code></td>
+<td>Vue useAttrs</td>
+<td>
+
+```javascript
+const attrs = useAttrs()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vrouter</code></td>
+<td>Vue router</td>
+<td>
+
+```javascript
+const ${1:router} = useRouter()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vroute</code></td>
+<td>Vue route</td>
+<td>
+
+```javascript
+const ${1:route} = useRoute()
 ```
 
 </td>
@@ -1427,6 +1439,167 @@ const ${1:key} = Symbol() as InjectionKey<${2:string}>
 
 ```javascript
 import { $1 } from 'vue'
+```
+
+</td>
+</tr>
+</table>
+
+### Reactivity Transform
+[Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) is currently an experimental feature. It is disabled by default and requires [explicit opt-in](https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in).
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vref$</code> / <code>vrt</code></td>
+<td>Vue $ref</td>
+<td>
+
+```javascript
+const ${1:name} = \$ref($2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vref$:ts</code></td>
+<td>Vue $ref (typed)</td>
+<td>
+
+```javascript
+const ${1:name} = \$ref<$2>($3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed$</code> / <code>vcrt</code></td>
+<td>Vue $computed</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed(() => $2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed$:ts</code></td>
+<td>Vue $computed (typed)</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed<$2>(() => $3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vtoRef$</code></td>
+<td>Vue $toRef</td>
+<td>
+
+```javascript
+const ${1:name} = $toRef(${2:object}, '${3}')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vshallowRef$</code></td>
+<td>Vue $shallowRef</td>
+<td>
+
+```javascript
+const ${1:name} = \$shallowRef($2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>v$</code></td>
+<td>Vue $() </td>
+<td>
+
+```javascript
+$($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>v$</code></td>
+<td>Vue $()</td>
+<td>
+
+```javascript
+$($1)
+```
+
+</td>
+</tr>
+</table>
+
+### Code snippets
+Useful vue snippets and helpers
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vcomposable</code> / <code>vdc</code></td>
+<td>Vue define composable</td>
+<td>
+
+```javascript
+export const ${1:useComposable} = () => {
+  $0
+  
+  return {
+    
+  }
+}
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse</code> / <code>vu</code></td>
+<td>Use composable</td>
+<td>
+
+```javascript
+const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:alt</code> / <code>vua</code></td>
+<td>Use composable without destructuring</td>
+<td>
+
+```javascript
+const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
 ```
 
 </td>
@@ -1456,18 +1629,6 @@ const ${4:value} = computed({
 </tr>
 
 <tr>
-<td><code>vslots</code></td>
-<td>Vue useSlots</td>
-<td>
-
-```javascript
-const slots = useSlots()
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>v:has-slot</code></td>
 <td>Vue check for slots</td>
 <td>
@@ -1475,85 +1636,6 @@ const slots = useSlots()
 ```javascript
 const slots = useSlots()
 const hasSlot = (name: string) => !!slots[name]
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vattrs</code></td>
-<td>Vue useAttrs</td>
-<td>
-
-```javascript
-const attrs = useAttrs()
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomposable</code> / <code>vdc</code></td>
-<td>Vue define composable</td>
-<td>
-
-```javascript
-export const ${1:useComposable} = () => {
-  $0
-  
-  return {
-    
-  }
-}
-
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vuse</code></td>
-<td>Use composable</td>
-<td>
-
-```javascript
-const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vuse-alt</code></td>
-<td>Use composable without destructuring</td>
-<td>
-
-```javascript
-const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vrouter</code></td>
-<td>Vue router</td>
-<td>
-
-```javascript
-const router = useRouter()
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vroute</code></td>
-<td>Vue route</td>
-<td>
-
-```javascript
-const route = useRoute()
 ```
 
 </td>

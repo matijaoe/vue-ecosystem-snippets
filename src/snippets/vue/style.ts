@@ -1,7 +1,6 @@
 export const style = {
   meta: {
     title: "Style",
-    description: "Vue style",
     lang: "css",
   },
   snippets: {

@@ -1,5 +1,10 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
+// TODO
+/**
+ * - shallow refs
+ * - custom ref
+ */
 export const script: XSnippetDefinition = {
   meta: {
     title: "Script",
@@ -12,39 +17,24 @@ export const script: XSnippetDefinition = {
       body: "const ${1:name} = ref($2)",
       alt: ["vr"],
     },
-    vref$: {
-      name: "Vue $ref",
-      body: "const ${1:name} = \\$ref($2)",
-      alt: ["vrt"],
-    },
+
     "vref:ts": {
       name: "Vue ref (typed)",
       body: "const ${1:name} = ref<$2>($3)",
       alt: ["vrts"],
     },
-    "vref$:ts": {
-      name: "Vue $ref (typed)",
-      body: "const ${1:name} = \\$ref<$2>($3)",
-    },
+
     vcomputed: {
       name: "Vue computed",
       body: "const ${1:name} = computed(() => $2)",
       alt: ["vc"],
-    },
-    vcomputed$: {
-      name: "Vue $computed",
-      body: "const ${1:name} = \\$computed(() => $2)",
-      alt: ["vcrt"],
     },
     "vcomputed:ts": {
       name: "Vue computed (typed)",
       body: "const ${1:name} = computed<$2>(() => $3)",
       alt: ["vcts"],
     },
-    "vcomputed$:ts": {
-      name: "Vue $computed (typed)",
-      body: "const ${1:name} = \\$computed<$2>(() => $3)",
-    },
+
     "vcomputed-gs": {
       name: "Vue computed (get/set)",
       body: [
@@ -83,6 +73,10 @@ export const script: XSnippetDefinition = {
     vtoRefs: {
       name: "Vue toRefs",
       body: "const $1 = toRefs(${2:object})",
+    },
+    vshallowRef: {
+      name: "Vue $shallowRef",
+      body: "const ${1:name} = \\shallowRef($2)",
     },
     vunref: {
       name: "Vue unref",
@@ -145,7 +139,7 @@ export const script: XSnippetDefinition = {
       name: "Vue defineProps",
       body: "${1:const props = }defineProps<${2:Props}>()",
     },
-    "vprops-withDefaults": {
+    "vprops:withDefaults": {
       name: "Vue defineProps with defaults",
       body: [
         "${1:const props = }withDefaults(defineProps<${2:Props}>(), {",
@@ -265,76 +259,29 @@ export const script: XSnippetDefinition = {
       name: "Vue inject (typed)",
       body: "const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
     },
-    "vinject-key": {
+    "vinjectkey": {
       name: "Vue injection key",
       body: "const ${1:key} = Symbol() as InjectionKey<${2:string}>",
-    },
-    vimport: {
-      name: "Import from vue",
-      body: "import { $1 } from 'vue'",
-    },
-    vmodel: {
-      name: "Implement v-model",
-      body: [
-        "const props = defineProps<{",
-        "\t${1:modelValue}: ${2:string}",
-        "}>()",
-        "",
-        "const emit = defineEmits<{",
-        "\t(e: 'update:$1', ${3:value}?: $2): void",
-        "}>()",
-        "",
-        "const ${4:value} = computed({",
-        "\tget: () => props.$1,",
-        "\tset: (val: $2) => emit('update:$1', val),",
-        "})",
-      ],
     },
     vslots: {
       name: "Vue useSlots",
       body: "const slots = useSlots()",
     },
-    // TODO: maybe seperate section for useful snippets
-    "v:has-slot": {
-      name: "Vue check for slots",
-      body: [
-        "const slots = useSlots()",
-        "const hasSlot = (name: string) => !!slots[name]",
-      ],
-    },
     vattrs: {
       name: "Vue useAttrs",
       body: "const attrs = useAttrs()",
     },
-    vcomposable: {
-      name: "Vue define composable",
-      body: [
-        "export const ${1:useComposable} = () => {",
-        "\t$0",
-        "\t",
-        "\treturn {",
-        "\t\t",
-        "\t}",
-        "}",
-        "",
-      ],
-      alt: ["vdc"],
-    },
-    vuse: {
-      name: "Use composable",
-      body: "const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)",
-    },
-    "vuse-alt": {
-      name: "Use composable without destructuring",
-      body: "const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)",
-    },
     vrouter: {
       name: "Vue router",
-      body: "const router = useRouter()",
+      body: "const ${1:router} = useRouter()",
     },
     vroute: {
       name: "Vue route",
-      body: "const route = useRoute()",
+      body: "const ${1:route} = useRoute()",
+    },
+    vimport: {
+      name: "Import from vue",
+      body: "import { $1 } from 'vue'",
     },
   },
 };

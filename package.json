@@ -80,22 +80,6 @@
       {
         "language": "typescriptreact",
         "path": "./dist/vue-script.code-snippets"
-      },
-      {
-        "language": "javascript",
-        "path": "./dist/pinia.code-snippets"
-      },
-      {
-        "language": "typescript",
-        "path": "./dist/pinia.code-snippets"
-      },
-      {
-        "language": "javascriptreact",
-        "path": "./dist/pinia.code-snippets"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./dist/pinia.code-snippets"
       }
     ]
   }
