@@ -1,6 +1,13 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
-// TODO: add transition elements, transition classes and events (seperate snippets?), router link
+// TODO
+/**
+ * - transition elements
+ * - transition classes and events
+ * - router link
+ * - teleport
+ * - class bindings
+ */
 export const template: XSnippetDefinition = {
   meta: {
     title: "Template",
