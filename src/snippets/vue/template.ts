@@ -5,7 +5,6 @@ import { XSnippetDefinition } from "../../models/app.ts";
  * - transition elements
  * - transition classes and events
  * - router link
- * - teleport
  * - class bindings
  */
 export const template: XSnippetDefinition = {
@@ -47,6 +46,10 @@ export const template: XSnippetDefinition = {
       "body": [
         "<KeepAlive$1>\n\t$0\n</KeepAlive>",
       ],
+    },
+    vteleport: {
+      name: "Vue teleport",
+      body: '<Teleport to="$1"$2>\n\t$0\n</Teleport>',
     },
     vtext: {
       name: "v-text",
