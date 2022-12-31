@@ -8,8 +8,333 @@ export const script: XSnippetDefinition = {
   },
   snippets: {
     vref: {
-      name: "ref",
+      name: "Vue ref",
       body: "const ${1:name} = ref($2)",
+      alt: ["vr"],
+    },
+    vref$: {
+      name: "Vue $ref",
+      body: "const ${1:name} = \\$ref($2)",
+      alt: ["vrt"],
+    },
+    "vref:ts": {
+      name: "Vue ref (typed)",
+      body: "const ${1:name} = ref<$2>($3)",
+      alt: ["vrts"],
+    },
+    "vref$:ts": {
+      name: "Vue $ref (typed)",
+      body: "const ${1:name} = \\$ref<$2>($3)",
+    },
+    vcomputed: {
+      name: "Vue computed",
+      body: "const ${1:name} = computed(() => $2)",
+      alt: ["vc"],
+    },
+    vcomputed$: {
+      name: "Vue $computed",
+      body: "const ${1:name} = \\$computed(() => $2)",
+      alt: ["vcrt"],
+    },
+    "vcomputed:ts": {
+      name: "Vue computed (typed)",
+      body: "const ${1:name} = computed<$2>(() => $3)",
+      alt: ["vcts"],
+    },
+    "vcomputed$:ts": {
+      name: "Vue $computed (typed)",
+      body: "const ${1:name} = \\$computed<$2>(() => $3)",
+    },
+    "vcomputed-gs": {
+      name: "Vue computed (get/set)",
+      body: [
+        "const ${1:name} = computed({",
+        "\tget: () => ${2},",
+        "\tset: (${3:value}: ${4:string}) => {",
+        "\t\t${5}",
+        "\t},",
+        "})",
+      ],
+    },
+    "vcomputed-gs$": {
+      name: "Vue $computed (get/set)",
+      body: [
+        "const ${1:name} = \\$computed({",
+        "\tget: () => ${2},",
+        "\tset: (${3:value}: ${4:type}) => {",
+        "\t\t${5}",
+        "\t},",
+        "})",
+      ],
+    },
+    vreactive: {
+      name: "Vue reactive",
+      body: "const ${1:name} = reactive({$2})",
+      alt: ["vrea"],
+    },
+    "vreactive:ts": {
+      name: "Vue reactive (typed)",
+      body: "const ${1:name}: ${2:type} = reactive({$3})",
+    },
+    vtoRef: {
+      name: "Vue toRef",
+      body: "const ${1:name} = toRef(${2:object}, '${3}')",
+    },
+    vtoRefs: {
+      name: "Vue toRefs",
+      body: "const $1 = toRefs(${2:object})",
+    },
+    vunref: {
+      name: "Vue unref",
+      body: "const ${1:unwrapped} = unref(${2:ref})",
+    },
+    vreadonly: {
+      name: "Vue readonly",
+      body: "const ${1:copy} = readonly(${2:object})",
+    },
+    "vref:elem": {
+      name: "Vue element ref",
+      body:
+        "const ${1:elem} = ref<${2|HTMLInputElement,HTMLInputElement,HTMLDivElement,HTMLFormElement|} | null>(null)",
+    },
+    vwatchEffect: {
+      name: "Vue watchEffect",
+      body: [
+        "watchEffect(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    vwatch: {
+      name: "Vue watch source",
+      body: [
+        "watch(${1:source}, (${2:val}) => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "vwatch:inline": {
+      name: "Vue watch inline",
+      body: "watch(${1:source}, ${2:fn})",
+    },
+    "vwatch:getter": {
+      name: "Vue watch getter",
+      body: [
+        "watch(() => ${1:source}, (${2:val}) => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "vwatch:array": {
+      name: "Vue watch array",
+      body: [
+        "watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*)/${1:/capitalize}/}]) => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "vwatch:log": {
+      name: "Vue watch source | log",
+      body: [
+        "watch(${1:source}, (${2:val}) => {",
+        "\tconsole.log('$1:', $2)",
+        "})",
+      ],
+    },
+    vprops: {
+      name: "Vue defineProps",
+      body: "${1:const props = }defineProps<${2:Props}>()",
+    },
+    "vprops-withDefaults": {
+      name: "Vue defineProps with defaults",
+      body: [
+        "${1:const props = }withDefaults(defineProps<${2:Props}>(), {",
+        "\t$0",
+        "})",
+      ],
+    },
+    vemits: {
+      name: "Vue defineEmits",
+      body: "${1:const emit = }defineEmits(['$2'])",
+    },
+    "vemits:ts": {
+      name: "Vue defineEmits (typed)",
+      body: [
+        "${1:const emit = }defineEmits<{",
+        "\t(e: '${2:click}', ${3:payload}: ${4:string}): void,$5",
+        "}>()",
+      ],
+    },
+    vemit: {
+      name: "Vue emit event",
+      body: "emit('$1', $2)",
+    },
+    vexpose: {
+      name: "Vue defineExpose",
+      body: [
+        "defineExpose({",
+        "\t$1",
+        "})",
+      ],
+    },
+    "v:onMounted": {
+      name: "Vue onMounted",
+      body: [
+        "onMounted(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onBeforeMount": {
+      name: "Vue onBeforeMount",
+      body: [
+        "onBeforeMounted(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onUnmounted": {
+      name: "Vue onUnmounted",
+      body: [
+        "onUnmounted(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onBeforeUnmount": {
+      name: "Vue onBeforeUnmount",
+      body: [
+        "onBeforeUnmount(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onUpdated": {
+      name: "Vue onUpdated",
+      body: [
+        "onUpdated(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onBeforeUpdate": {
+      name: "Vue onBeforeUpdate",
+      body: [
+        "onBeforeUpdate(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onErrorCaptured": {
+      name: "Vue onErrorCaptured",
+      body: [
+        "onErrorCaptured(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onActivated": {
+      name: "Vue onActivated",
+      body: [
+        "onActivated(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    "v:onDeactivated": {
+      name: "Vue onDeactivated",
+      body: [
+        "onDeactivated(() => {",
+        "\t$0",
+        "})",
+      ],
+    },
+    vprovide: {
+      name: "Vue provide",
+      body: "provide(${1:name}, ${2:value})",
+    },
+    vinject: {
+      name: "Vue inject",
+      body: "const $1 = inject(${2:key}, ${3:defaultValue})",
+    },
+    "vprovide:ts": {
+      name: "Vue provide (typed)",
+      body: "provide<${1:string}}>(${2:name}, ${3:value})",
+    },
+    "vinject:ts": {
+      name: "Vue inject (typed)",
+      body: "const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
+    },
+    "vinject-key": {
+      name: "Vue injection key",
+      body: "const ${1:key} = Symbol() as InjectionKey<${2:string}>",
+    },
+    vimport: {
+      name: "Import from vue",
+      body: "import { $1 } from 'vue'",
+    },
+    vmodel: {
+      name: "Implement v-model",
+      body: [
+        "const props = defineProps<{",
+        "\t${1:modelValue}: ${2:string}",
+        "}>()",
+        "",
+        "const emit = defineEmits<{",
+        "\t(e: 'update:$1', ${3:value}?: $2): void",
+        "}>()",
+        "",
+        "const ${4:value} = computed({",
+        "\tget: () => props.$1,",
+        "\tset: (val: $2) => emit('update:$1', val),",
+        "})",
+      ],
+    },
+    vslots: {
+      name: "Vue useSlots",
+      body: "const slots = useSlots()",
+    },
+    // TODO: maybe seperate section for useful snippets
+    "v:has-slot": {
+      name: "Vue check for slots",
+      body: [
+        "const slots = useSlots()",
+        "const hasSlot = (name: string) => !!slots[name]",
+      ],
+    },
+    vattrs: {
+      name: "Vue useAttrs",
+      body: "const attrs = useAttrs()",
+    },
+    vcomposable: {
+      name: "Vue define composable",
+      body: [
+        "export const ${1:useComposable} = () => {",
+        "\t$0",
+        "\t",
+        "\treturn {",
+        "\t\t",
+        "\t}",
+        "}",
+        "",
+      ],
+      alt: ["vdc"],
+    },
+    vuse: {
+      name: "Use composable",
+      body: "const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)",
+    },
+    "vuse-alt": {
+      name: "Use composable without destructuring",
+      body: "const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)",
+    },
+    vrouter: {
+      name: "Vue router",
+      body: "const router = useRouter()",
+    },
+    vroute: {
+      name: "Vue route",
+      body: "const route = useRoute()",
     },
   },
 };

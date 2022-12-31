@@ -22,7 +22,7 @@ export const vue: XSnippetVariant[] = [
     snippetDefinitions: [style],
   },
   {
-    label: "Template",
+    label: "Script",
     fileName: "vue-script",
     snippetDefinitions: [script],
   },
