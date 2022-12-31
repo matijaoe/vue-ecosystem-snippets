@@ -17,7 +17,7 @@ import {
 } from "./table-html.ts";
 
 type SnippetRow = {
-  prefix: string;
+  prefix: string[];
   name: string;
   body: string | string[];
 };
@@ -51,12 +51,14 @@ const generateSnippetSection = ({ meta, snippets }: VscSnippetDefinition) => {
   const title = `### ${meta.title}`;
   const description = meta.description ?? "";
   const table = generateSnippetTable(
-    Object.entries(snippets).map(([name, { body, prefix, description }]) => ({
-      name: replaceSymbol(name),
-      body,
-      prefix: parseMultiline(prefix),
-      description,
-    })),
+    Object.entries(snippets).map(([name, { body, prefix, description }]) => {
+      return {
+        name: replaceSymbol(name),
+        body,
+        prefix: Array.isArray(prefix) ? prefix : [prefix],
+        description,
+      };
+    }),
     meta.lang,
   );
 

@@ -24,9 +24,13 @@ export const $row = (s: string) => {
 export const $col = (s: string) => {
   return `<td>${s}</td>`;
 };
-export const $colCode = (s: string) => {
+export const $colCode = (s: string | string[]) => {
+  if (Array.isArray(s)) {
+    return joinInline(["<td>", s.map(code).join(" / "), "</td>"]);
+  }
   return joinInline(["<td>", code(s), "</td>"]);
 };
+
 export const $colCodeBlock = (s: string, lang?: string) => {
   return joinByDoubleNewLine(["<td>", codeBlock(s, lang), "</td>"]);
 };

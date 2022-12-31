@@ -861,8 +861,7 @@ Script setup and composables
 </tr>
 
 <tr>
-<td><code>vref
-vr</code></td>
+<td><code>vref</code> / <code>vr</code></td>
 <td>Vue ref</td>
 <td>
 
@@ -874,8 +873,7 @@ const ${1:name} = ref($2)
 </tr>
 
 <tr>
-<td><code>vref$
-vrt</code></td>
+<td><code>vref$</code> / <code>vrt</code></td>
 <td>Vue $ref</td>
 <td>
 
@@ -887,8 +885,7 @@ const ${1:name} = \$ref($2)
 </tr>
 
 <tr>
-<td><code>vref:ts
-vrts</code></td>
+<td><code>vref:ts</code> / <code>vrts</code></td>
 <td>Vue ref (typed)</td>
 <td>
 
@@ -912,8 +909,7 @@ const ${1:name} = \$ref<$2>($3)
 </tr>
 
 <tr>
-<td><code>vcomputed
-vc</code></td>
+<td><code>vcomputed</code> / <code>vc</code></td>
 <td>Vue computed</td>
 <td>
 
@@ -925,8 +921,7 @@ const ${1:name} = computed(() => $2)
 </tr>
 
 <tr>
-<td><code>vcomputed$
-vcrt</code></td>
+<td><code>vcomputed$</code> / <code>vcrt</code></td>
 <td>Vue $computed</td>
 <td>
 
@@ -938,8 +933,7 @@ const ${1:name} = \$computed(() => $2)
 </tr>
 
 <tr>
-<td><code>vcomputed:ts
-vcts</code></td>
+<td><code>vcomputed:ts</code> / <code>vcts</code></td>
 <td>Vue computed (typed)</td>
 <td>
 
@@ -969,10 +963,10 @@ const ${1:name} = \$computed<$2>(() => $3)
 
 ```javascript
 const ${1:name} = computed({
-	get: () => ${2},
-	set: (${3:value}: ${4:string}) => {
-		${5}
-	},
+  get: () => ${2},
+  set: (${3:value}: ${4:string}) => {
+    ${5}
+  },
 })
 ```
 
@@ -986,10 +980,10 @@ const ${1:name} = computed({
 
 ```javascript
 const ${1:name} = \$computed({
-	get: () => ${2},
-	set: (${3:value}: ${4:type}) => {
-		${5}
-	},
+  get: () => ${2},
+  set: (${3:value}: ${4:type}) => {
+    ${5}
+  },
 })
 ```
 
@@ -997,8 +991,7 @@ const ${1:name} = \$computed({
 </tr>
 
 <tr>
-<td><code>vreactive
-vrea</code></td>
+<td><code>vreactive</code> / <code>vrea</code></td>
 <td>Vue reactive</td>
 <td>
 
@@ -1088,7 +1081,7 @@ const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
 
 ```javascript
 watchEffect(() => {
-	$0
+  $0
 })
 ```
 
@@ -1102,7 +1095,7 @@ watchEffect(() => {
 
 ```javascript
 watch(${1:source}, (${2:val}) => {
-	$0
+  $0
 })
 ```
 
@@ -1128,7 +1121,7 @@ watch(${1:source}, ${2:fn})
 
 ```javascript
 watch(() => ${1:source}, (${2:val}) => {
-	$0
+  $0
 })
 ```
 
@@ -1142,7 +1135,7 @@ watch(() => ${1:source}, (${2:val}) => {
 
 ```javascript
 watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*)/${1:/capitalize}/}]) => {
-	$0
+  $0
 })
 ```
 
@@ -1156,7 +1149,7 @@ watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*
 
 ```javascript
 watch(${1:source}, (${2:val}) => {
-	console.log('$1:', $2)
+  console.log('$1:', $2)
 })
 ```
 
@@ -1182,7 +1175,7 @@ ${1:const props = }defineProps<${2:Props}>()
 
 ```javascript
 ${1:const props = }withDefaults(defineProps<${2:Props}>(), {
-	$0
+  $0
 })
 ```
 
@@ -1208,7 +1201,7 @@ ${1:const emit = }defineEmits(['$2'])
 
 ```javascript
 ${1:const emit = }defineEmits<{
-	(e: '${2:click}', ${3:payload}: ${4:string}): void,$5
+  (e: '${2:click}', ${3:payload}: ${4:string}): void,$5
 }>()
 ```
 
@@ -1234,7 +1227,7 @@ emit('$1', $2)
 
 ```javascript
 defineExpose({
-	$1
+  $1
 })
 ```
 
@@ -1248,7 +1241,7 @@ defineExpose({
 
 ```javascript
 onMounted(() => {
-	$0
+  $0
 })
 ```
 
@@ -1262,7 +1255,7 @@ onMounted(() => {
 
 ```javascript
 onBeforeMounted(() => {
-	$0
+  $0
 })
 ```
 
@@ -1276,7 +1269,7 @@ onBeforeMounted(() => {
 
 ```javascript
 onUnmounted(() => {
-	$0
+  $0
 })
 ```
 
@@ -1290,7 +1283,7 @@ onUnmounted(() => {
 
 ```javascript
 onBeforeUnmount(() => {
-	$0
+  $0
 })
 ```
 
@@ -1304,7 +1297,7 @@ onBeforeUnmount(() => {
 
 ```javascript
 onUpdated(() => {
-	$0
+  $0
 })
 ```
 
@@ -1318,7 +1311,7 @@ onUpdated(() => {
 
 ```javascript
 onBeforeUpdate(() => {
-	$0
+  $0
 })
 ```
 
@@ -1332,7 +1325,7 @@ onBeforeUpdate(() => {
 
 ```javascript
 onErrorCaptured(() => {
-	$0
+  $0
 })
 ```
 
@@ -1346,7 +1339,7 @@ onErrorCaptured(() => {
 
 ```javascript
 onActivated(() => {
-	$0
+  $0
 })
 ```
 
@@ -1360,7 +1353,7 @@ onActivated(() => {
 
 ```javascript
 onDeactivated(() => {
-	$0
+  $0
 })
 ```
 
@@ -1446,16 +1439,16 @@ import { $1 } from 'vue'
 
 ```javascript
 const props = defineProps<{
-	${1:modelValue}: ${2:string}
+  ${1:modelValue}: ${2:string}
 }>()
 
 const emit = defineEmits<{
-	(e: 'update:$1', ${3:value}?: $2): void
+  (e: 'update:$1', ${3:value}?: $2): void
 }>()
 
 const ${4:value} = computed({
-	get: () => props.$1,
-	set: (val: $2) => emit('update:$1', val),
+  get: () => props.$1,
+  set: (val: $2) => emit('update:$1', val),
 })
 ```
 
@@ -1500,18 +1493,17 @@ const attrs = useAttrs()
 </tr>
 
 <tr>
-<td><code>vcomposable
-vdc</code></td>
+<td><code>vcomposable</code> / <code>vdc</code></td>
 <td>Vue define composable</td>
 <td>
 
 ```javascript
 export const ${1:useComposable} = () => {
-	$0
-	
-	return {
-		
-	}
+  $0
+  
+  return {
+    
+  }
 }
 
 ```
@@ -1588,15 +1580,15 @@ const route = useRoute()
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 export const ${1:useStore} = defineStore('${2:unique-id}', () => {
-	$0
-	
-	return {
-	 
-	}
+  $0
+  
+  return {
+   
+  }
 })
 
 if (import.meta.hot)
-	import.meta.hot.accept(acceptHMRUpdate($1, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate($1, import.meta.hot))
 
 ```
 
@@ -1612,22 +1604,22 @@ if (import.meta.hot)
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 export const ${1:useStore} = defineStore('${2:unique-id}', {
-	state: () => ({
-	  name: 'Evan',
-	  count: 1,
-	}),
-	getters: {
-	  doubleCount: (state) => state.count * 2,
-	},
-	actions: {
-	  increment() {
-	    this.count++
-	  },
-	},
+  state: () => ({
+    name: 'Evan',
+    count: 1,
+  }),
+  getters: {
+    doubleCount: (state) => state.count * 2,
+  },
+  actions: {
+    increment() {
+      this.count++
+    },
+  },
 })
 
 if (import.meta.hot)
-	import.meta.hot.accept(acceptHMRUpdate($1, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate($1, import.meta.hot))
 
 ```
 
