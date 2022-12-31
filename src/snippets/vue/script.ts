@@ -17,7 +17,6 @@ export const script: XSnippetDefinition = {
       body: "const ${1:name} = ref($2)",
       alt: ["vr"],
     },
-
     "vref:ts": {
       name: "Vue ref (typed)",
       body: "const ${1:name} = ref<$2>($3)",
@@ -46,17 +45,6 @@ export const script: XSnippetDefinition = {
         "})",
       ],
     },
-    "vcomputed-gs$": {
-      name: "Vue $computed (get/set)",
-      body: [
-        "const ${1:name} = \\$computed({",
-        "\tget: () => ${2},",
-        "\tset: (${3:value}: ${4:type}) => {",
-        "\t\t${5}",
-        "\t},",
-        "})",
-      ],
-    },
     vreactive: {
       name: "Vue reactive",
       body: "const ${1:name} = reactive({$2})",
@@ -75,8 +63,8 @@ export const script: XSnippetDefinition = {
       body: "const $1 = toRefs(${2:object})",
     },
     vshallowRef: {
-      name: "Vue $shallowRef",
-      body: "const ${1:name} = \\shallowRef($2)",
+      name: "Vue shallowRef",
+      body: "const ${1:name} = shallowRef($2)",
     },
     vunref: {
       name: "Vue unref",

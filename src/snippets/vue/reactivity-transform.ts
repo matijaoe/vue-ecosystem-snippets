@@ -26,6 +26,17 @@ export const reactivityTransform: XSnippetDefinition = {
       name: "Vue $computed (typed)",
       body: "const ${1:name} = \\$computed<$2>(() => $3)",
     },
+    "vcomputed-gs$": {
+      name: "Vue $computed (get/set)",
+      body: [
+        "const ${1:name} = \\$computed({",
+        "\tget: () => ${2},",
+        "\tset: (${3:value}: ${4:type}) => {",
+        "\t\t${5}",
+        "\t},",
+        "})",
+      ],
+    },
     vtoRef$: {
       name: "Vue $toRef",
       body: "const ${1:name} = $toRef(${2:object}, '${3}')",

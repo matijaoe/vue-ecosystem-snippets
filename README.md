@@ -926,23 +926,6 @@ const ${1:name} = computed({
 </tr>
 
 <tr>
-<td><code>vcomputed-gs$</code></td>
-<td>Vue $computed (get/set)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed({
-  get: () => ${2},
-  set: (${3:value}: ${4:type}) => {
-    ${5}
-  },
-})
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vreactive</code> / <code>vrea</code></td>
 <td>Vue reactive</td>
 <td>
@@ -992,11 +975,11 @@ const $1 = toRefs(${2:object})
 
 <tr>
 <td><code>vshallowRef</code></td>
-<td>Vue $shallowRef</td>
+<td>Vue shallowRef</td>
 <td>
 
 ```javascript
-const ${1:name} = \shallowRef($2)
+const ${1:name} = shallowRef($2)
 ```
 
 </td>
@@ -1498,6 +1481,23 @@ const ${1:name} = \$computed(() => $2)
 
 ```javascript
 const ${1:name} = \$computed<$2>(() => $3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed-gs$</code></td>
+<td>Vue $computed (get/set)</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed({
+  get: () => ${2},
+  set: (${3:value}: ${4:type}) => {
+    ${5}
+  },
+})
 ```
 
 </td>
