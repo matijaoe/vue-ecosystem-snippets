@@ -25,7 +25,7 @@ export const codeSnippets: XSnippetDefinition = {
       body: "const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)",
       alt: ["vu"],
     },
-    "vuse:alt": {
+    "vuse-nd": {
       name: "Use composable without destructuring",
       body: "const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)",
       alt: ["vua"],

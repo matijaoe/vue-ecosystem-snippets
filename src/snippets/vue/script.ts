@@ -2,8 +2,8 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 // TODO
 /**
- * - shallow refs
  * - custom ref
+ * - defineAsyncComponent with dynamic import
  */
 export const script: XSnippetDefinition = {
   meta: {
@@ -22,7 +22,6 @@ export const script: XSnippetDefinition = {
       body: "const ${1:name} = ref<$2>($3)",
       alt: ["vrts"],
     },
-
     vcomputed: {
       name: "Vue computed",
       body: "const ${1:name} = computed(() => $2)",
@@ -33,7 +32,6 @@ export const script: XSnippetDefinition = {
       body: "const ${1:name} = computed<$2>(() => $3)",
       alt: ["vcts"],
     },
-
     "vcomputed-gs": {
       name: "Vue computed (get/set)",
       body: [

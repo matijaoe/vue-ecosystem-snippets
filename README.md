@@ -373,6 +373,20 @@ $0
 </tr>
 
 <tr>
+<td><code>vteleport</code></td>
+<td>Vue teleport</td>
+<td>
+
+```html
+<Teleport to="$1"$2>
+  $0
+</Teleport>
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vtext</code></td>
 <td>v-text</td>
 <td>
@@ -1594,7 +1608,7 @@ const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
 </tr>
 
 <tr>
-<td><code>vuse:alt</code> / <code>vua</code></td>
+<td><code>vuse-nd</code> / <code>vua</code></td>
 <td>Use composable without destructuring</td>
 <td>
 
@@ -1715,6 +1729,63 @@ if (import.meta.hot)
 
 ```javascript
 const ${2:$1Store} = use${1/(.*)/${1:/capitalize}/}Store()
+```
+
+</td>
+</tr>
+</table>
+
+
+### VueUse
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vuse:vmodel</code></td>
+<td>Define custom v-model using useVModel</td>
+<td>
+
+```javascript
+const props = defineProps<{
+  ${1:modelValue}: ${2:string}
+}>()
+
+const emit = defineEmits<{
+  (e: 'update:$1', ${3:value}?: $2): void
+}>()
+
+const ${4:value} = useVModel(props, '$1', emit)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:hover</code></td>
+<td>VueUse Element hover</td>
+<td>
+
+```javascript
+const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
+const ${3:isHovered} = useElementHover($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:fetch</code></td>
+<td>VueUse useFetch</td>
+<td>
+
+```javascript
+const { data$2 } = useFetch('$1')
 ```
 
 </td>
