@@ -4,8 +4,12 @@ import { addSymbol } from "./general.ts";
 
 export const convertToVscSnippet = (snippets: XSnippetDict) => {
   return Object.entries(snippets)
-    .reduce((acc, [prefix, { name, body }]) => {
-      acc[addSymbol(name)] = { prefix, body };
+    .reduce((acc, [prefix, { name, body, alt }]) => {
+      const prefixes = [prefix];
+      if (alt?.length) {
+        prefixes.push(...alt);
+      }
+      acc[addSymbol(name)] = { prefix: prefixes, body };
       return acc;
     }, {} as VscSnippetDict);
 };
