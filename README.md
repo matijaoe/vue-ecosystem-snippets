@@ -1043,7 +1043,7 @@ const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
 ```javascript
 watchEffect(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1057,7 +1057,7 @@ watchEffect(() => {
 ```javascript
 watch(${1:source}, (${2:val}) => {
   $0
-})
+}
 ```
 
 </td>
@@ -1090,8 +1090,8 @@ watch(() => ${1:source}, (${2:val}) => {
 </tr>
 
 <tr>
-<td><code>vwatch:array</code></td>
-<td>Vue watch array</td>
+<td><code>vwatch:multiple</code></td>
+<td>Vue watch multiple</td>
 <td>
 
 ```javascript
@@ -1137,7 +1137,7 @@ ${1:const props = }defineProps<${2:Props}>()
 ```javascript
 ${1:const props = }withDefaults(defineProps<${2:Props}>(), {
   $0
-})
+}
 ```
 
 </td>
@@ -1203,7 +1203,7 @@ defineExpose({
 ```javascript
 onMounted(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1217,7 +1217,7 @@ onMounted(() => {
 ```javascript
 onBeforeMounted(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1231,7 +1231,7 @@ onBeforeMounted(() => {
 ```javascript
 onUnmounted(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1245,7 +1245,7 @@ onUnmounted(() => {
 ```javascript
 onBeforeUnmount(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1259,7 +1259,7 @@ onBeforeUnmount(() => {
 ```javascript
 onUpdated(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1273,7 +1273,7 @@ onUpdated(() => {
 ```javascript
 onBeforeUpdate(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1287,7 +1287,7 @@ onBeforeUpdate(() => {
 ```javascript
 onErrorCaptured(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1301,7 +1301,7 @@ onErrorCaptured(() => {
 ```javascript
 onActivated(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1315,7 +1315,7 @@ onActivated(() => {
 ```javascript
 onDeactivated(() => {
   $0
-})
+}
 ```
 
 </td>
@@ -1747,8 +1747,148 @@ const ${2:$1Store} = use${1/(.*)/${1:/capitalize}/}Store()
 </tr>
 
 <tr>
+<td><code>vwatchArray</code></td>
+<td>VueUse watchArray</td>
+<td>
+
+```javascript
+watchArray(${1:list}, (new${1/(.*)/${1:/capitalize}/}, old${1/(.*)/${1:/capitalize}/}, ${4:added}, ${5:removed}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchAtMost</code></td>
+<td>VueUse watchAtMost</td>
+<td>
+
+```javascript
+watchAtMost(${1:source}, (${2:val}) => {
+  $0
+}, { max: ${3:3} })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchDebounced</code></td>
+<td>VueUse watchDebounced</td>
+<td>
+
+```javascript
+watchDebounced(${1:source}, (${2:val}) => {
+  $0
+}, { debounce: ${3:500}, maxWait: ${4:1000} })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchIgnorable</code></td>
+<td>VueUse watchIgnorable</td>
+<td>
+
+```javascript
+const { stop:$3, ignoreUpdates:$4 } =  = watchIgnorable(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchOnce</code></td>
+<td>VueUse watchOnce</td>
+<td>
+
+```javascript
+watchOnce(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchPausable</code></td>
+<td>VueUse watchPausable</td>
+<td>
+
+```javascript
+const { stop$3, pause$4, resume$5 } = watchPausable(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchThrottled</code></td>
+<td>VueUse watchThrottled</td>
+<td>
+
+```javascript
+watchThrottled(${1:source}, (${2:val}) => {
+  $0
+}, { throttle: ${3:500} })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchTriggerable</code></td>
+<td>VueUse watchTriggerable</td>
+<td>
+
+```javascript
+const { trigger$3, ignoreUpdates$4 } = watchTriggerable(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchWithFilter</code></td>
+<td>VueUse watchWithFilter</td>
+<td>
+
+```javascript
+watchWithFilter(${1:source}, (${2:val}) => {
+  $0
+}, { eventFilter: $3 })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwhenever</code></td>
+<td>VueUse whenever</td>
+<td>
+
+```javascript
+whenever(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vuse:vmodel</code></td>
-<td>Define custom v-model using useVModel</td>
+<td>Implement v-model using useVModel</td>
 <td>
 
 ```javascript
@@ -1768,7 +1908,7 @@ const ${4:value} = useVModel(props, '$1', emit)
 
 <tr>
 <td><code>vuse:hover</code></td>
-<td>VueUse Element hover</td>
+<td>VueUse useElementHover</td>
 <td>
 
 ```javascript
@@ -1786,6 +1926,30 @@ const ${3:isHovered} = useElementHover($1)
 
 ```javascript
 const { data$2 } = useFetch('$1')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vget</code></td>
+<td>VueUse get</td>
+<td>
+
+```javascript
+get(${1:ref})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vset</code></td>
+<td>VueUse set</td>
+<td>
+
+```javascript
+set(${1:ref}, ${2:value})
 ```
 
 </td>

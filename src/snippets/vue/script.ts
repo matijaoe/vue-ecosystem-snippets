@@ -79,19 +79,11 @@ export const script: XSnippetDefinition = {
     },
     vwatchEffect: {
       name: "Vue watchEffect",
-      body: [
-        "watchEffect(() => {",
-        "\t$0",
-        "})",
-      ],
+      body: "watchEffect(() => {\n\t$0\n}",
     },
     vwatch: {
       name: "Vue watch source",
-      body: [
-        "watch(${1:source}, (${2:val}) => {",
-        "\t$0",
-        "})",
-      ],
+      body: "watch(${1:source}, (${2:val}) => {\n\t$0\n}",
     },
     "vwatch:inline": {
       name: "Vue watch inline",
@@ -99,19 +91,12 @@ export const script: XSnippetDefinition = {
     },
     "vwatch:getter": {
       name: "Vue watch getter",
-      body: [
-        "watch(() => ${1:source}, (${2:val}) => {",
-        "\t$0",
-        "})",
-      ],
+      body: "watch(() => ${1:source}, (${2:val}) => {\n\t$0\n})",
     },
-    "vwatch:array": {
-      name: "Vue watch array",
-      body: [
-        "watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*)/${1:/capitalize}/}]) => {",
-        "\t$0",
-        "})",
-      ],
+    "vwatch:multiple": {
+      name: "Vue watch multiple",
+      body:
+        "watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*)/${1:/capitalize}/}]) => {\n\t$0\n})",
     },
     "vwatch:log": {
       name: "Vue watch source | log",
@@ -128,9 +113,7 @@ export const script: XSnippetDefinition = {
     "vprops:withDefaults": {
       name: "Vue defineProps with defaults",
       body: [
-        "${1:const props = }withDefaults(defineProps<${2:Props}>(), {",
-        "\t$0",
-        "})",
+        "${1:const props = }withDefaults(defineProps<${2:Props}>(), {\n\t$0\n}",
       ],
     },
     vemits: {
@@ -152,81 +135,61 @@ export const script: XSnippetDefinition = {
     vexpose: {
       name: "Vue defineExpose",
       body: [
-        "defineExpose({",
-        "\t$1",
-        "})",
+        "defineExpose({\n\t$1\n})",
       ],
     },
     "v:onMounted": {
       name: "Vue onMounted",
       body: [
-        "onMounted(() => {",
-        "\t$0",
-        "})",
+        "onMounted(() => {\n\t$0\n}",
       ],
     },
     "v:onBeforeMount": {
       name: "Vue onBeforeMount",
       body: [
-        "onBeforeMounted(() => {",
-        "\t$0",
-        "})",
+        "onBeforeMounted(() => {\n\t$0\n}",
       ],
     },
     "v:onUnmounted": {
       name: "Vue onUnmounted",
       body: [
-        "onUnmounted(() => {",
-        "\t$0",
-        "})",
+        "onUnmounted(() => {\n\t$0\n}",
       ],
     },
     "v:onBeforeUnmount": {
       name: "Vue onBeforeUnmount",
       body: [
-        "onBeforeUnmount(() => {",
-        "\t$0",
-        "})",
+        "onBeforeUnmount(() => {\n\t$0\n}",
       ],
     },
     "v:onUpdated": {
       name: "Vue onUpdated",
       body: [
-        "onUpdated(() => {",
-        "\t$0",
-        "})",
+        "onUpdated(() => {\n\t$0\n}",
       ],
     },
     "v:onBeforeUpdate": {
       name: "Vue onBeforeUpdate",
       body: [
-        "onBeforeUpdate(() => {",
-        "\t$0",
-        "})",
+        "onBeforeUpdate(() => {\n\t$0\n}",
       ],
     },
     "v:onErrorCaptured": {
       name: "Vue onErrorCaptured",
       body: [
-        "onErrorCaptured(() => {",
-        "\t$0",
-        "})",
+        "onErrorCaptured(() => {\n\t$0\n}",
       ],
     },
     "v:onActivated": {
       name: "Vue onActivated",
       body: [
-        "onActivated(() => {",
-        "\t$0",
-        "})",
+        "onActivated(() => {\n\t$0\n}",
       ],
     },
     "v:onDeactivated": {
       name: "Vue onDeactivated",
       body: [
-        "onDeactivated(() => {",
-        "\t$0",
-        "})",
+        "onDeactivated(() => {\n\t$0\n}",
       ],
     },
     vprovide: {
