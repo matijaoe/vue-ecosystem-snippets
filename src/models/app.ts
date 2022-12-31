@@ -5,7 +5,7 @@ export type VscSnippet = {
 };
 export type VscSnippetDict = Record<string, VscSnippet>;
 
-export type XSnippet = Omit<VscSnippet, "prefix"> & { name: string };
+export type XSnippet = Omit<VscSnippet, "prefix"> & { name: string, alt?: string[] };
 export type XSnippetDict = Record<string, XSnippet>;
 
 export type SnippetMeta = {

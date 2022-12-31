@@ -1,5 +1,5 @@
 import { parse } from "./deps.ts";
-import { generateDocs, populateDocsBlock } from "./docs-gen/snippets.ts";
+import { generateDocs, populateDocsBlock } from "./docgen/snippets.ts";
 import { variants } from "./snippets/app.ts";
 import {
   convertToVscSnippet,
