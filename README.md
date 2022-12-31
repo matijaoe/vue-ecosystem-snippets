@@ -1965,5 +1965,5 @@ set(${1:ref}, ${2:value})
 # https://deno.land/manual@v1.29.1/getting_started/installation
 
 # generate .code-snippets and documentation
-npm run generate
+deno task generate
 ```
