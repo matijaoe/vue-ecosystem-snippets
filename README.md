@@ -1601,19 +1601,19 @@ export const ${1:useComposable} = () => {
 <td>
 
 ```javascript
-const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
+const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>vuse-nd</code> / <code>vua</code></td>
-<td>Use composable without destructuring</td>
+<td><code>vused</code> / <code>vud</code></td>
+<td>Use composable wtih destructuring</td>
 <td>
 
 ```javascript
-const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
+const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
 ```
 
 </td>
@@ -1729,6 +1729,506 @@ if (import.meta.hot)
 
 ```javascript
 const ${2:$1Store} = use${1/(.*)/${1:/capitalize}/}Store()
+```
+
+</td>
+</tr>
+</table>
+
+
+### Nuxt Script
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>nfetch</code></td>
+<td>Nuxt useFetch</td>
+<td>
+
+```javascript
+const { data: ${1:data} } = await useFetch('$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nfetch:cb</code></td>
+<td>Nuxt useFetch with callback</td>
+<td>
+
+```javascript
+const { data: ${1:data}  } = await useFetch(() => '$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nfetch-lazy</code></td>
+<td>Nuxt useLazyFetch</td>
+<td>
+
+```javascript
+const { pending, data: ${1:data} } = useLazyFetch('$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nfetch-lazy:cb</code></td>
+<td>Nuxt useLazyFetch callback</td>
+<td>
+
+```javascript
+const { pending, data: ${1:data} } = useLazyFetch(() => '$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nasyncdata</code></td>
+<td>Nuxt useAsyncData</td>
+<td>
+
+```javascript
+const { data: ${1:data} } = await useAsyncData('${2:key}', () => $fetch('$3'))
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nasyncdata-lazy</code></td>
+<td>Nuxt useLazyAsyncData</td>
+<td>
+
+```javascript
+const { pending, data: ${1:data} } = useLazyAsyncData('${2:key}', () => $fetch('$3'))
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>napp</code></td>
+<td>Nuxt useNuxtApp</td>
+<td>
+
+```javascript
+const app = useNuxtApp()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nappConfig</code></td>
+<td>Nuxt useAppConfig</td>
+<td>
+
+```javascript
+const appConfig = useAppConfig()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nruntimeConfig</code></td>
+<td>Nuxt useRuntimeConfig</td>
+<td>
+
+```javascript
+const config = useRuntimeConfig()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ncookie</code></td>
+<td>Nuxt useCookie</td>
+<td>
+
+```javascript
+const ${1:cookie} = useCookie('${2:$1}'$3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ncookie:opts</code></td>
+<td>Nuxt useCookie with options</td>
+<td>
+
+```javascript
+const ${1:cookie} = useCookie('${2:$1}', { $3 })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ndata</code></td>
+<td>Nuxt useNuxtData</td>
+<td>
+
+```javascript
+const { data: ${2:$1} } = useNuxtData('${1:key}')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nerror</code></td>
+<td>Nuxt useError</td>
+<td>
+
+```javascript
+const ${1:error} = useError()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nstate</code></td>
+<td>Nuxt useState</td>
+<td>
+
+```javascript
+const ${1:state} = useState('${2:$1}'$3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nstate:init</code></td>
+<td>Nuxt useState (init)</td>
+<td>
+
+```javascript
+const ${1:state} = useState('${2:$1}', () => $3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nhead</code></td>
+<td>Nuxt useHead</td>
+<td>
+
+```javascript
+useHead({
+  $1
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nhead:title</code></td>
+<td>Nuxt useHead title</td>
+<td>
+
+```javascript
+useHead({
+  title: $1,$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>npageMeta</code></td>
+<td>Nuxt definePageMeta</td>
+<td>
+
+```javascript
+definePageMeta({
+  $1
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>npageMeta:title</code></td>
+<td>Nuxt definePageMeta title</td>
+<td>
+
+```javascript
+definePageMeta({
+  title: '$1',$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>npageMeta:layout</code></td>
+<td>Nuxt definePageMeta layout</td>
+<td>
+
+```javascript
+definePageMeta({
+  layout: '$1',$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>npageMeta:middleware</code></td>
+<td>Nuxt definePageMeta middleware</td>
+<td>
+
+```javascript
+definePageMeta({
+  middleware: ['$1'$2],$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto</code></td>
+<td>Nuxt navigateTo</td>
+<td>
+
+```javascript
+navigateTo('$1'$2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto:obj</code></td>
+<td>Nuxt navigateTo object</td>
+<td>
+
+```javascript
+navigateTo({ $1 }$2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto:replace</code></td>
+<td>Nuxt navigateTo replace</td>
+<td>
+
+```javascript
+navigateTo('$1', { replace: true })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto:external</code></td>
+<td>Nuxt navigateTo external</td>
+<td>
+
+```javascript
+navigateTo('$1', { external: true })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto:redirect</code></td>
+<td>Nuxt navigateTo redirect</td>
+<td>
+
+```javascript
+navigateTo('$1', { redirectCode: ${2|301,...|} })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto:name</code></td>
+<td>Nuxt navigateTo name</td>
+<td>
+
+```javascript
+navigateTo({
+  name: '$1',$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nto:path</code></td>
+<td>Nuxt navigateTo path</td>
+<td>
+
+```javascript
+navigateTo({
+  path: '$1',$0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nplugin</code></td>
+<td>Nuxt plugin</td>
+<td>
+
+```javascript
+export default defineNuxtPlugin((nuxtApp) => {
+  $1
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nplugin:vue</code></td>
+<td>Nuxt plugin use vue package</td>
+<td>
+
+```javascript
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use($1)
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nmiddleware:route</code></td>
+<td>Nuxt route middleware</td>
+<td>
+
+```javascript
+export default defineNuxtRouteMiddleware((to, from) => {
+  $1
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nmiddleware:server</code></td>
+<td>Nuxt server middleware</td>
+<td>
+
+```javascript
+export default defineEventHandler((event) => {
+  $1
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>napi</code></td>
+<td>Nuxt api route</td>
+<td>
+
+```javascript
+export default defineEventHandler(${1:async }(event) => {
+  $2
+  
+  return {
+    $3
+  }
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nplugin:server</code></td>
+<td>Nuxt server plugin</td>
+<td>
+
+```javascript
+export default defineNitroPlugin((nitroApp) => {
+  $1
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nreadBody</code></td>
+<td>Nuxt readBody</td>
+<td>
+
+```javascript
+const ${1:body} = await readBody(event)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ngetQuery</code></td>
+<td>Nuxt getQuery</td>
+<td>
+
+```javascript
+const { $1 } = getQuery(event)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>ngetCookie</code></td>
+<td>Nuxt getCookie</td>
+<td>
+
+```javascript
+getCookie(event, '${1:cookie}')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nsetCookie</code></td>
+<td>Nuxt setCookie</td>
+<td>
+
+```javascript
+setCookie(event, '${1:cookie}', ${2:value})
 ```
 
 </td>
@@ -1965,5 +2465,5 @@ set(${1:ref}, ${2:value})
 # https://deno.land/manual@v1.29.1/getting_started/installation
 
 # generate .code-snippets and documentation
-npm run generate
+deno task generate
 ```

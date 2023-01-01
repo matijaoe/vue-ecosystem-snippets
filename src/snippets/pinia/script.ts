@@ -1,6 +1,6 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
-export const pinia: XSnippetDefinition = {
+export const script: XSnippetDefinition = {
   meta: {
     title: "Pinia",
   },

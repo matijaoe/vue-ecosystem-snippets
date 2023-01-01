@@ -1,9 +1,9 @@
 import { script } from "./script.ts";
 
-export const pinia = [
+export const nuxt = [
   {
-    label: "Pinia",
-    fileName: "pinia",
+    label: "Nuxt",
+    fileName: "nuxt",
     snippetDefinitions: [script],
   },
 ];

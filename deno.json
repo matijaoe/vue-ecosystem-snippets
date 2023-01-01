@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "publish": "vsce package && vsce publish",
+    "watch": "deno run -A --watch src/app.ts --snippets --docs",
+    "generate": "deno run -A src/app.ts --snippets --docs",
+    "generate:snippets": "deno run -A src/app.ts --snippets"
+  }
+}

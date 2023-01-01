@@ -22,13 +22,13 @@ export const codeSnippets: XSnippetDefinition = {
     },
     vuse: {
       name: "Use composable",
-      body: "const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)",
+      body: "const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)",
       alt: ["vu"],
     },
-    "vuse-nd": {
-      name: "Use composable without destructuring",
-      body: "const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)",
-      alt: ["vua"],
+    vused: {
+      name: "Use composable wtih destructuring",
+      body: "const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)",
+      alt: ["vud"],
     },
     vmodel: {
       name: "Implement v-model",
