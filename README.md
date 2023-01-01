@@ -1,13 +1,6 @@
 # Vue Ecosystem Snippets
 
-> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & VueRouter.
-
-<br>
-
-    🚧 Work in progress 🚧
-
-<br>
-
+> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & Vue Router.
 
 ![Vue](https://img.shields.io/badge/vue-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
