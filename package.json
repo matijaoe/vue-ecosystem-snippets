@@ -2,7 +2,7 @@
   "name": "vue-nuxt-snippets",
   "displayName": "Vue Ecosystem Snippets",
   "description": "Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & VueRouter.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "icon": "assets/icon.png",
   "author": {
@@ -109,19 +109,23 @@
       },
       {
         "language": "javascript",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
       },
       {
         "language": "typescript",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
       },
       {
         "language": "javascriptreact",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
       },
       {
         "language": "typescriptreact",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./dist/nuxt-template.code-snippets"
       }
     ]
   }

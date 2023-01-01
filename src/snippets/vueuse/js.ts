@@ -85,15 +85,15 @@ export const vueUseJs: XSnippetDefinition = {
     },
     "vuse:fetch": {
       "name": "VueUse useFetch",
-      "body": "const { data$2 } = useFetch('$1')",
+      "body": "const { data: ${1:data} } = useFetch('$3')",
     },
     "vget": {
       "name": "VueUse get",
-      "body": "get(${1:ref})",
+      "body": "get($1)",
     },
     "vset": {
       "name": "VueUse set",
-      "body": "set(${1:ref}, ${2:value})",
+      "body": "set($1, $2)",
     },
   },
 };
