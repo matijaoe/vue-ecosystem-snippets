@@ -106,6 +106,22 @@
       {
         "language": "typescriptreact",
         "path": "./dist/vueuse.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./dist/nuxt.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./dist/nuxt.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./dist/nuxt.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./dist/nuxt.code-snippets"
       }
     ]
   }
