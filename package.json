@@ -109,19 +109,23 @@
       },
       {
         "language": "javascript",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
       },
       {
         "language": "typescript",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
       },
       {
         "language": "javascriptreact",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
       },
       {
         "language": "typescriptreact",
-        "path": "./dist/nuxt.code-snippets"
+        "path": "./dist/nuxt-script.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./dist/nuxt-template.code-snippets"
       }
     ]
   }

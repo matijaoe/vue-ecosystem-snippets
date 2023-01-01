@@ -364,7 +364,7 @@ $0
 <td>
 
 ```html
-<KeepAlive$1>
+<KeepAlive $1>
   $0
 </KeepAlive>
 ```
@@ -378,7 +378,7 @@ $0
 <td>
 
 ```html
-<Teleport to="$1"$2>
+<Teleport to="$1">
   $0
 </Teleport>
 ```
@@ -969,7 +969,7 @@ const ${1:name}: ${2:type} = reactive({$3})
 <td>
 
 ```javascript
-const ${1:name} = toRef(${2:object}, '${3}')
+const ${1:name} = toRef(${2:object}, '$3')
 ```
 
 </td>
@@ -981,7 +981,7 @@ const ${1:name} = toRef(${2:object}, '${3}')
 <td>
 
 ```javascript
-const $1 = toRefs(${2:object})
+const ${1:name} = toRefs(${2:object})
 ```
 
 </td>
@@ -1005,7 +1005,7 @@ const ${1:name} = shallowRef($2)
 <td>
 
 ```javascript
-const ${1:unwrapped} = unref(${2:ref})
+const ${1:unwrapped} = unref($2)
 ```
 
 </td>
@@ -1043,7 +1043,7 @@ const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
 ```javascript
 watchEffect(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1057,7 +1057,7 @@ watchEffect(() => {
 ```javascript
 watch(${1:source}, (${2:val}) => {
   $0
-}
+})
 ```
 
 </td>
@@ -1137,7 +1137,7 @@ ${1:const props = }defineProps<${2:Props}>()
 ```javascript
 ${1:const props = }withDefaults(defineProps<${2:Props}>(), {
   $0
-}
+})
 ```
 
 </td>
@@ -1203,7 +1203,7 @@ defineExpose({
 ```javascript
 onMounted(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1217,7 +1217,7 @@ onMounted(() => {
 ```javascript
 onBeforeMounted(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1231,7 +1231,7 @@ onBeforeMounted(() => {
 ```javascript
 onUnmounted(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1245,7 +1245,7 @@ onUnmounted(() => {
 ```javascript
 onBeforeUnmount(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1259,7 +1259,7 @@ onBeforeUnmount(() => {
 ```javascript
 onUpdated(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1273,7 +1273,7 @@ onUpdated(() => {
 ```javascript
 onBeforeUpdate(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1287,7 +1287,7 @@ onBeforeUpdate(() => {
 ```javascript
 onErrorCaptured(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1301,7 +1301,7 @@ onErrorCaptured(() => {
 ```javascript
 onActivated(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1315,7 +1315,7 @@ onActivated(() => {
 ```javascript
 onDeactivated(() => {
   $0
-}
+})
 ```
 
 </td>
@@ -1609,7 +1609,7 @@ const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
 
 <tr>
 <td><code>vused</code> / <code>vud</code></td>
-<td>Use composable wtih destructuring</td>
+<td>Use composable with destructuring</td>
 <td>
 
 ```javascript
@@ -2236,6 +2236,204 @@ setCookie(event, '${1:cookie}', ${2:value})
 </table>
 
 
+### Nuxt template
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>nlink</code></td>
+<td>NuxtLink</td>
+<td>
+
+```javascript
+<NuxtLink to="$1">$3</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlink:_blank</code></td>
+<td>NuxtLink with target _blank</td>
+<td>
+
+```javascript
+<NuxtLink to="$1" target="_blank">$3</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlink:param</code></td>
+<td>NuxtLink with param</td>
+<td>
+
+```javascript
+<NuxtLink :to="`$1${${2:id}}$3`">$5</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlink:obj</code></td>
+<td>NuxtLink with object</td>
+<td>
+
+```javascript
+<NuxtLink :to="{ $1 }">$3</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlink:name</code></td>
+<td>NuxtLink with name</td>
+<td>
+
+```javascript
+<NuxtLink :to="{ name: '$1'$2 }">$4</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlink:path</code></td>
+<td>NuxtLink with path</td>
+<td>
+
+```javascript
+<NuxtLink :to="{ path: '$1'$2 }">$4</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nloading</code></td>
+<td>NuxtLoadingIndicator</td>
+<td>
+
+```javascript
+<NuxtLoadingIndicator $1/>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlayout</code></td>
+<td>NuxtLayout</td>
+<td>
+
+```javascript
+<NuxtLayout $1>$2</NuxtLayout>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlayout:name</code></td>
+<td>NuxtLayout with name</td>
+<td>
+
+```javascript
+<NuxtLayout ${2|name,...|}="$3">$4</NuxtLayout>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>npage</code></td>
+<td>NuxtPage</td>
+<td>
+
+```javascript
+<NuxtPage $1/>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>npage:static</code></td>
+<td>NuxtPage with static key</td>
+<td>
+
+```javascript
+<NuxtPage page-key="static" $1/>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nclient</code></td>
+<td>ClientOnly</td>
+<td>
+
+```javascript
+<ClientOnly $1>$2</ClientOnly>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nclient:fallbacks</code></td>
+<td>ClientOnly with fallback props</td>
+<td>
+
+```javascript
+<ClientOnly fallback-tag="${1:span}" fallback="${2:Loading...}">$3</ClientOnly>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nclient:fallback-template</code></td>
+<td>ClientOnly with fallback template</td>
+<td>
+
+```javascript
+<ClientOnly>
+  <template #fallback>
+    $0
+  </template>
+</ClientOnly>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nteleport</code></td>
+<td>Nuxt Teleport</td>
+<td>
+
+```javascript
+<Teleport to="$1">
+  $0
+</Teleport>
+```
+
+</td>
+</tr>
+</table>
+
+
 ### VueUse
 
 <table width="100%">
@@ -2437,7 +2635,7 @@ const { data$2 } = useFetch('$1')
 <td>
 
 ```javascript
-get(${1:ref})
+get($1)
 ```
 
 </td>
@@ -2449,7 +2647,7 @@ get(${1:ref})
 <td>
 
 ```javascript
-set(${1:ref}, ${2:value})
+set($1, $2)
 ```
 
 </td>
