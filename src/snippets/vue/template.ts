@@ -44,12 +44,12 @@ export const template: XSnippetDefinition = {
     vkeepAlive: {
       name: "Vue KeepAlive",
       "body": [
-        "<KeepAlive$1>\n\t$0\n</KeepAlive>",
+        "<KeepAlive $1>\n\t$0\n</KeepAlive>",
       ],
     },
     vteleport: {
       name: "Vue teleport",
-      body: '<Teleport to="$1"$2>\n\t$0\n</Teleport>',
+      body: '<Teleport to="$1">\n\t$0\n</Teleport>',
     },
     vtext: {
       name: "v-text",
