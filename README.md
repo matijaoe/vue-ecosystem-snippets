@@ -2623,7 +2623,7 @@ const ${3:isHovered} = useElementHover($1)
 <td>
 
 ```javascript
-const { data$2 } = useFetch('$1')
+const { data: ${1:data} } = useFetch('$3')
 ```
 
 </td>
