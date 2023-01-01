@@ -89,11 +89,11 @@ export const vueUseJs: XSnippetDefinition = {
     },
     "vget": {
       "name": "VueUse get",
-      "body": "get(${1:ref})",
+      "body": "get($1)",
     },
     "vset": {
       "name": "VueUse set",
-      "body": "set(${1:ref}, ${2:value})",
+      "body": "set($1, $2)",
     },
   },
 };
