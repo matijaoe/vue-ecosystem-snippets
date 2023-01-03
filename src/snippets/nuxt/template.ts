@@ -3,6 +3,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 export const template: XSnippetDefinition = {
   meta: {
     title: "Nuxt template",
+    lang: "html",
   },
   snippets: {
     nlink: {
@@ -68,7 +69,7 @@ export const template: XSnippetDefinition = {
         "</ClientOnly>",
       ],
     },
-    nteleport: {
+    nTeleport: {
       name: "Nuxt Teleport",
       body: '<Teleport to="$1">\n\t$0\n</Teleport>',
     },

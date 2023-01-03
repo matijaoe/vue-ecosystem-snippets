@@ -20,7 +20,7 @@ export const reactivityTransform: XSnippetDefinition = {
     vcomputed$: {
       name: "Vue $computed",
       body: "const ${1:name} = \\$computed(() => $2)",
-      alt: ["vcrt"],
+      alt: ["vct"],
     },
     "vcomputed$:ts": {
       name: "Vue $computed (typed)",
@@ -46,12 +46,12 @@ export const reactivityTransform: XSnippetDefinition = {
       body: "const ${1:name} = \\$shallowRef($2)",
     },
     "v$": {
-      name: "Vue $() ",
+      name: "Vue $() destructuring",
       body: "$($1)",
     },
     "v$$": {
-      name: "Vue $$()",
-      body: "$$($1)",
+      name: "Vue $$$() escape hint",
+      body: "\$$$($1)",
     },
   },
 };
