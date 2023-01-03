@@ -2,7 +2,6 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 // TODO
 /**
- * - transition elements
  * - transition classes and events
  * - router link
  * - class bindings
@@ -41,13 +40,13 @@ export const template: XSnippetDefinition = {
       name: "Vue component",
       body: '<component :is="$1">$0</component>',
     },
-    vkeepAlive: {
+    vKeepAlive: {
       name: "Vue KeepAlive",
       "body": [
         "<KeepAlive $1>\n\t$0\n</KeepAlive>",
       ],
     },
-    vteleport: {
+    vTeleport: {
       name: "Vue teleport",
       body: '<Teleport to="$1">\n\t$0\n</Teleport>',
     },
@@ -203,6 +202,33 @@ export const template: XSnippetDefinition = {
         "\t$0",
         "</$1>",
       ],
+    },
+    vTransition: {
+      name: "Vue Transition",
+      body: "<Transition $1>\n\t$0\n</Transition>",
+    },
+    "vTransition:name": {
+      name: "Vue Transition with name",
+      body: '<Transition name="$1" $2>\n\t$0\n</Transition>',
+      alt: ["nTransition"],
+    },
+    "vTransition:type": {
+      name: "Vue Transition with type",
+      body:
+        '<Transition type="${1|transition,animation|}" $2>\n\t$0\n</Transition>',
+    },
+    "vTransition:appear": {
+      name: "Vue Transition with appear",
+      body: "<Transition appear $1>\n\t$0\n</Transition>",
+    },
+    vTransitionGroup: {
+      name: "Vue TransitionGroup",
+      body:
+        '<TransitionGroup name="$1" as="${2|ul,div,section|}" $3>\n\t$0\n</TransitionGroup>',
+    },
+    vSuspense: {
+      name: "Vue Suspense",
+      body: "<Suspense>\n\t$0\n</Suspense>",
     },
   },
 };

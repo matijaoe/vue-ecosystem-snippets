@@ -8,6 +8,7 @@
 
 ## Features
 - Only the latest Vue syntax (including [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html))
+- Over **190** snippets 
 - TypeScript-first
 - Nuxt 3, Pinia, VueUse & Vue Router support
 - Strategically placed tabstops
@@ -352,7 +353,7 @@ $0
 </tr>
 
 <tr>
-<td><code>vkeepAlive</code></td>
+<td><code>vKeepAlive</code></td>
 <td>Vue KeepAlive</td>
 <td>
 
@@ -366,7 +367,7 @@ $0
 </tr>
 
 <tr>
-<td><code>vteleport</code></td>
+<td><code>vTeleport</code></td>
 <td>Vue teleport</td>
 <td>
 
@@ -790,6 +791,90 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <${1|template,...|} v-if="$2">
   $0
 </$1>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition</code></td>
+<td>Vue Transition</td>
+<td>
+
+```html
+<Transition $1>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition:name</code> / <code>nTransition</code></td>
+<td>Vue Transition with name</td>
+<td>
+
+```html
+<Transition name="$1" $2>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition:type</code></td>
+<td>Vue Transition with type</td>
+<td>
+
+```html
+<Transition type="${1|transition,...|}" $2>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition:appear</code></td>
+<td>Vue Transition with appear</td>
+<td>
+
+```html
+<Transition appear $1>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransitionGroup</code></td>
+<td>Vue TransitionGroup</td>
+<td>
+
+```html
+<TransitionGroup name="$1" as="${2|ul,...|}" $3>
+  $0
+</TransitionGroup>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vSuspense</code></td>
+<td>Vue Suspense</td>
+<td>
+
+```html
+<Suspense>
+  $0
+</Suspense>
 ```
 
 </td>
@@ -1470,7 +1555,7 @@ const ${1:name} = \$ref<$2>($3)
 </tr>
 
 <tr>
-<td><code>vcomputed$</code> / <code>vcrt</code></td>
+<td><code>vcomputed$</code> / <code>vct</code></td>
 <td>Vue $computed</td>
 <td>
 
@@ -1536,7 +1621,7 @@ const ${1:name} = \$shallowRef($2)
 
 <tr>
 <td><code>v$</code></td>
-<td>Vue $() </td>
+<td>Vue $() destructuring</td>
 <td>
 
 ```javascript
@@ -1548,11 +1633,11 @@ $($1)
 
 <tr>
 <td><code>v$</code></td>
-<td>Vue $()</td>
+<td>Vue $$() escape hint</td>
 <td>
 
 ```javascript
-$($1)
+$$($1)
 ```
 
 </td>
