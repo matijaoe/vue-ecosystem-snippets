@@ -261,32 +261,5 @@ export const template: XSnippetDefinition = {
         "</$1>",
       ],
     },
-    vTransition: {
-      name: "Vue Transition",
-      body: "<Transition $1>\n\t$0\n</Transition>",
-    },
-    "vTransition:name": {
-      name: "Vue Transition with name",
-      body: '<Transition name="$1" $2>\n\t$0\n</Transition>',
-      alt: ["nTransition"],
-    },
-    "vTransition:type": {
-      name: "Vue Transition with type",
-      body:
-        '<Transition type="${1|transition,animation|}" $2>\n\t$0\n</Transition>',
-    },
-    "vTransition:appear": {
-      name: "Vue Transition with appear",
-      body: "<Transition appear $1>\n\t$0\n</Transition>",
-    },
-    vTransitionGroup: {
-      name: "Vue TransitionGroup",
-      body:
-        '<TransitionGroup name="$1" as="${2|ul,div,section|}" $3>\n\t$0\n</TransitionGroup>',
-    },
-    vSuspense: {
-      name: "Vue Suspense",
-      body: "<Suspense>\n\t$0\n</Suspense>",
-    },
   },
 };
