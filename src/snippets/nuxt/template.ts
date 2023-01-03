@@ -69,7 +69,7 @@ export const template: XSnippetDefinition = {
         "</ClientOnly>",
       ],
     },
-    nteleport: {
+    nTeleport: {
       name: "Nuxt Teleport",
       body: '<Teleport to="$1">\n\t$0\n</Teleport>',
     },

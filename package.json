@@ -126,6 +126,10 @@
       {
         "language": "html",
         "path": "./dist/nuxt-template.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./dist/vue-router-template.code-snippets"
       }
     ]
   }

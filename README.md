@@ -8,12 +8,12 @@
 
 ## Features
 - Only the latest Vue syntax (including [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html))
-- Over **190** snippets 
+- Over **200** snippets 
 - TypeScript-first
 - Nuxt 3, Pinia, VueUse & Vue Router support
 - Strategically placed tabstops
 - Prefixes created with exact-match in mind 
-- GitHub Copilot compliant
+- (Mostly) GitHub Copilot compliant
 - Auto-generated documentation
 
 ## Setup
@@ -313,6 +313,18 @@ $0
 </tr>
 
 <tr>
+<td><code>component</code></td>
+<td>component</td>
+<td>
+
+```html
+<component>$0</component>
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>nslot</code></td>
 <td>named slot</td>
 <td>
@@ -381,6 +393,107 @@ $0
 </tr>
 
 <tr>
+<td><code>vTransition</code></td>
+<td>Vue Transition</td>
+<td>
+
+```html
+<Transition $1>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition:name</code> / <code>nTransition</code></td>
+<td>Vue Transition with name</td>
+<td>
+
+```html
+<Transition name="$1" $2>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition:type</code></td>
+<td>Vue Transition with type</td>
+<td>
+
+```html
+<Transition type="${1|transition,...|}" $2>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransition:appear</code></td>
+<td>Vue Transition with appear</td>
+<td>
+
+```html
+<Transition appear $1>
+  $0
+</Transition>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vTransitionGroup</code></td>
+<td>Vue TransitionGroup</td>
+<td>
+
+```html
+<TransitionGroup name="$1" as="${2|ul,...|}" $3>
+  $0
+</TransitionGroup>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vSuspense</code></td>
+<td>Vue Suspense</td>
+<td>
+
+```html
+<Suspense>
+  $0
+</Suspense>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vSuspense:fallback</code></td>
+<td>Vue Suspense with fallback</td>
+<td>
+
+```html
+<Suspense>
+  $0
+  <template #fallback>
+    $1
+  </template>
+</Suspense>
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vtext</code></td>
 <td>v-text</td>
 <td>
@@ -417,7 +530,7 @@ v-show="$1"
 </tr>
 
 <tr>
-<td><code>vif</code></td>
+<td><code>vif</code> / <code>if</code></td>
 <td>v-if</td>
 <td>
 
@@ -429,7 +542,7 @@ v-if="$1"
 </tr>
 
 <tr>
-<td><code>velse</code></td>
+<td><code>velse</code> / <code>else</code></td>
 <td>v-else</td>
 <td>
 
@@ -441,7 +554,7 @@ v-else
 </tr>
 
 <tr>
-<td><code>velif</code></td>
+<td><code>velif</code> / <code>elif</code></td>
 <td>v-else-if</td>
 <td>
 
@@ -645,24 +758,12 @@ ref="$1"
 </tr>
 
 <tr>
-<td><code>vto</code></td>
-<td>router link :to prop</td>
-<td>
-
-```html
-${1|to,...|}="$2"
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vname</code></td>
 <td>name property</td>
 <td>
 
 ```html
-name="$1"
+${1|name,...|}="$1"
 ```
 
 </td>
@@ -693,8 +794,68 @@ ${1|is,...|}="$2"
 </tr>
 
 <tr>
-<td><code>von-emit</code></td>
-<td>emit event</td>
+<td><code>vclass</code> / <code>vc</code></td>
+<td>Vue classes</td>
+<td>
+
+```html
+:class="[$1]"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vclass:cond</code> / <code>vcc</code></td>
+<td>Vue conditional classes</td>
+<td>
+
+```html
+:class="{ $1: $2 }"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle</code></td>
+<td>Vue inline style</td>
+<td>
+
+```html
+:style="{ $1: $2 }"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle:list</code></td>
+<td>Vue inline style list</td>
+<td>
+
+```html
+:style="[$1]"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vti</code></td>
+<td>Vue text interpolation</td>
+<td>
+
+```html
+{{ $1 }}
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vemit</code></td>
+<td>Vue emit event</td>
 <td>
 
 ```html
@@ -723,18 +884,6 @@ v-if="\$slots.${1:default}"
 
 ```html
 v-if="\$slots.${1:label} || ${2:$1}"
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vti</code></td>
-<td>Vue text interpolation</td>
-<td>
-
-```html
-{{ $1 }}
 ```
 
 </td>
@@ -791,90 +940,6 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <${1|template,...|} v-if="$2">
   $0
 </$1>
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vTransition</code></td>
-<td>Vue Transition</td>
-<td>
-
-```html
-<Transition $1>
-  $0
-</Transition>
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vTransition:name</code> / <code>nTransition</code></td>
-<td>Vue Transition with name</td>
-<td>
-
-```html
-<Transition name="$1" $2>
-  $0
-</Transition>
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vTransition:type</code></td>
-<td>Vue Transition with type</td>
-<td>
-
-```html
-<Transition type="${1|transition,...|}" $2>
-  $0
-</Transition>
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vTransition:appear</code></td>
-<td>Vue Transition with appear</td>
-<td>
-
-```html
-<Transition appear $1>
-  $0
-</Transition>
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vTransitionGroup</code></td>
-<td>Vue TransitionGroup</td>
-<td>
-
-```html
-<TransitionGroup name="$1" as="${2|ul,...|}" $3>
-  $0
-</TransitionGroup>
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vSuspense</code></td>
-<td>Vue Suspense</td>
-<td>
-
-```html
-<Suspense>
-  $0
-</Suspense>
 ```
 
 </td>
@@ -1735,6 +1800,140 @@ const hasSlot = (name: string) => !!slots[name]
 </table>
 
 
+### Vue Router template
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vto</code></td>
+<td>Vue Router to</td>
+<td>
+
+```html
+${1|to,...|}="$2"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vto:param</code></td>
+<td>Vue Router :to with param</td>
+<td>
+
+```html
+:to="`$1${${2:id}}$3`"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vto:obj</code></td>
+<td>Vue Router :to object</td>
+<td>
+
+```html
+:to="{ $1 }"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vto:name</code></td>
+<td>Vue Router :to name</td>
+<td>
+
+```html
+:to="{ name: '$1',$2 }"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vto:path</code></td>
+<td>Vue Router :to path</td>
+<td>
+
+```html
+:to="{ path: '$1',$2 }"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vview</code></td>
+<td>RouterView</td>
+<td>
+
+```html
+<RouterView>
+  $0
+</RouterView>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vlink</code></td>
+<td>RouterLink</td>
+<td>
+
+```html
+<RouterLink to="$1">$3</RouterLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vlink:obj</code></td>
+<td>RouterLink with object</td>
+<td>
+
+```html
+<RouterLink :to="{ $1 }">$3</RouterLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vlink:name</code></td>
+<td>RouterLink with name</td>
+<td>
+
+```html
+<RouterLink :to="{ name: '$1'$2 }">$4</RouterLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vlink:path</code></td>
+<td>RouterLink with path</td>
+<td>
+
+```html
+<RouterLink :to="{ path: '$1'$2 }">$4</RouterLink>
+```
+
+</td>
+</tr>
+</table>
+
+
 ### Pinia
 
 <table width="100%">
@@ -2329,7 +2528,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLink</td>
 <td>
 
-```javascript
+```html
 <NuxtLink to="$1">$3</NuxtLink>
 ```
 
@@ -2341,7 +2540,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLink with target _blank</td>
 <td>
 
-```javascript
+```html
 <NuxtLink to="$1" target="_blank">$3</NuxtLink>
 ```
 
@@ -2353,7 +2552,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLink with param</td>
 <td>
 
-```javascript
+```html
 <NuxtLink :to="`$1${${2:id}}$3`">$5</NuxtLink>
 ```
 
@@ -2365,7 +2564,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLink with object</td>
 <td>
 
-```javascript
+```html
 <NuxtLink :to="{ $1 }">$3</NuxtLink>
 ```
 
@@ -2377,7 +2576,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLink with name</td>
 <td>
 
-```javascript
+```html
 <NuxtLink :to="{ name: '$1'$2 }">$4</NuxtLink>
 ```
 
@@ -2389,7 +2588,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLink with path</td>
 <td>
 
-```javascript
+```html
 <NuxtLink :to="{ path: '$1'$2 }">$4</NuxtLink>
 ```
 
@@ -2401,7 +2600,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLoadingIndicator</td>
 <td>
 
-```javascript
+```html
 <NuxtLoadingIndicator $1/>
 ```
 
@@ -2413,7 +2612,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLayout</td>
 <td>
 
-```javascript
+```html
 <NuxtLayout $1>$2</NuxtLayout>
 ```
 
@@ -2425,7 +2624,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtLayout with name</td>
 <td>
 
-```javascript
+```html
 <NuxtLayout ${2|name,...|}="$3">$4</NuxtLayout>
 ```
 
@@ -2437,7 +2636,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtPage</td>
 <td>
 
-```javascript
+```html
 <NuxtPage $1/>
 ```
 
@@ -2449,7 +2648,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>NuxtPage with static key</td>
 <td>
 
-```javascript
+```html
 <NuxtPage page-key="static" $1/>
 ```
 
@@ -2461,7 +2660,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>ClientOnly</td>
 <td>
 
-```javascript
+```html
 <ClientOnly $1>$2</ClientOnly>
 ```
 
@@ -2473,7 +2672,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>ClientOnly with fallback props</td>
 <td>
 
-```javascript
+```html
 <ClientOnly fallback-tag="${1:span}" fallback="${2:Loading...}">$3</ClientOnly>
 ```
 
@@ -2485,7 +2684,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>ClientOnly with fallback template</td>
 <td>
 
-```javascript
+```html
 <ClientOnly>
   <template #fallback>
     $0
@@ -2497,11 +2696,11 @@ setCookie(event, '${1:cookie}', ${2:value})
 </tr>
 
 <tr>
-<td><code>nteleport</code></td>
+<td><code>nTeleport</code></td>
 <td>Nuxt Teleport</td>
 <td>
 
-```javascript
+```html
 <Teleport to="$1">
   $0
 </Teleport>
