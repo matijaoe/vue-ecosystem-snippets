@@ -2038,7 +2038,7 @@ const ${2:$1Store} = use${1/(.*)/${1:/capitalize}/}Store()
 <td>
 
 ```javascript
-const { data: ${1:data} } = await useFetch('$2')
+const { data: ${1:data} } = await useFetch('$2'$3)
 ```
 
 </td>
@@ -2050,31 +2050,46 @@ const { data: ${1:data} } = await useFetch('$2')
 <td>
 
 ```javascript
-const { data: ${1:data}  } = await useFetch(() => '$2')
+const { data: ${1:data} } = await useFetch(() => '$2'$3)
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>nfetch-lazy</code></td>
+<td><code>nfetch:lazy</code></td>
 <td>Nuxt useLazyFetch</td>
 <td>
 
 ```javascript
-const { pending, data: ${1:data} } = useLazyFetch('$2')
+const { pending, data: ${1:data} } = useLazyFetch('$2'$3)
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>nfetch-lazy:cb</code></td>
+<td><code>nfetch:lazy:cb</code></td>
 <td>Nuxt useLazyFetch callback</td>
 <td>
 
 ```javascript
-const { pending, data: ${1:data} } = useLazyFetch(() => '$2')
+const { pending, data: ${1:data} } = useLazyFetch(() => '$2'$3)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nfetch:post</code></td>
+<td>Nuxt useFetch POST</td>
+<td>
+
+```javascript
+const { data: ${1:data} } = await useFetch('$2', {
+  method: 'POST',
+  body: ${3:body},$4
+})
 ```
 
 </td>
@@ -2086,19 +2101,19 @@ const { pending, data: ${1:data} } = useLazyFetch(() => '$2')
 <td>
 
 ```javascript
-const { data: ${1:data} } = await useAsyncData('${2:key}', () => $fetch('$3'))
+const { data: ${1:data} } = await useAsyncData('${2:key}', () => $fetch('$3')$4)
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>nasyncdata-lazy</code></td>
+<td><code>nasyncdata:lazy</code></td>
 <td>Nuxt useLazyAsyncData</td>
 <td>
 
 ```javascript
-const { pending, data: ${1:data} } = useLazyAsyncData('${2:key}', () => $fetch('$3'))
+const { pending, data: ${1:data} } = useLazyAsyncData('${2:key}', () => $fetch('$3')$4)
 ```
 
 </td>

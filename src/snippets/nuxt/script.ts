@@ -7,29 +7,38 @@ export const script: XSnippetDefinition = {
   snippets: {
     nfetch: {
       name: "Nuxt useFetch",
-      body: "const { data: ${1:data} } = await useFetch('$2')",
+      body: "const { data: ${1:data} } = await useFetch('$2'$3)",
     },
     "nfetch:cb": {
       name: "Nuxt useFetch with callback",
-      body: "const { data: ${1:data}  } = await useFetch(() => '$2')",
+      body: "const { data: ${1:data} } = await useFetch(() => '$2'$3)",
     },
-    "nfetch-lazy": {
+    "nfetch:lazy": {
       name: "Nuxt useLazyFetch",
-      body: "const { pending, data: ${1:data} } = useLazyFetch('$2')",
+      body: "const { pending, data: ${1:data} } = useLazyFetch('$2'$3)",
     },
-    "nfetch-lazy:cb": {
+    "nfetch:lazy:cb": {
       name: "Nuxt useLazyFetch callback",
-      body: "const { pending, data: ${1:data} } = useLazyFetch(() => '$2')",
+      body: "const { pending, data: ${1:data} } = useLazyFetch(() => '$2'$3)",
+    },
+    "nfetch:post": {
+      name: "Nuxt useFetch POST",
+      body: [
+        "const { data: ${1:data} } = await useFetch('$2', {",
+        "\tmethod: 'POST',",
+        "\tbody: ${3:body},$4",
+        "})",
+      ],
     },
     nasyncdata: {
       name: "Nuxt useAsyncData",
       body:
-        "const { data: ${1:data} } = await useAsyncData('${2:key}', () => $$fetch('$3'))",
+        "const { data: ${1:data} } = await useAsyncData('${2:key}', () => $$fetch('$3')$4)",
     },
-    "nasyncdata-lazy": {
+    "nasyncdata:lazy": {
       name: "Nuxt useLazyAsyncData",
       body:
-        "const { pending, data: ${1:data} } = useLazyAsyncData('${2:key}', () => $$fetch('$3'))",
+        "const { pending, data: ${1:data} } = useLazyAsyncData('${2:key}', () => $$fetch('$3')$4)",
     },
     napp: {
       name: "Nuxt useNuxtApp",
@@ -59,7 +68,7 @@ export const script: XSnippetDefinition = {
       name: "Nuxt useError",
       body: "const ${1:error} = useError()",
     },
-    "nstate": {
+    nstate: {
       name: "Nuxt useState",
       body: "const ${1:state} = useState('${2:$1}'$3)",
     },
