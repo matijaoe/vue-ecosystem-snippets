@@ -2965,6 +2965,42 @@ set($1, $2)
 
 </td>
 </tr>
+
+<tr>
+<td><code>vdef</code></td>
+<td>VueUse isDefined</td>
+<td>
+
+```javascript
+isDefined($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:toggle</code></td>
+<td>VueUse useToggle</td>
+<td>
+
+```javascript
+const [${1:value}, ${2:toggle}] = useToggle()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:toggle:fn</code></td>
+<td>VueUse useToggle function</td>
+<td>
+
+```javascript
+const toggle$2 = useToggle($1)
+```
+
+</td>
+</tr>
 </table>
 
 <!-- END:docgen -->

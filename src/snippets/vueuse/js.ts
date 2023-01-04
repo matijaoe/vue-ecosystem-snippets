@@ -96,5 +96,17 @@ export const vueUseJs: XSnippetDefinition = {
       name: "VueUse set",
       body: "set($1, $2)",
     },
+    vdef: {
+      name: "VueUse isDefined",
+      body: "isDefined($1)",
+    },
+    "vuse:toggle": {
+      name: "VueUse useToggle",
+      body: "const [${1:value}, ${2:toggle}] = useToggle()",
+    },
+    "vuse:toggle:fn": {
+      name: "VueUse useToggle function",
+      body: "const toggle$2 = useToggle($1)",
+    },
   },
 };
