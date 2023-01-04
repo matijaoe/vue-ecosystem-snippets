@@ -638,7 +638,7 @@ v-model="$1"
 </tr>
 
 <tr>
-<td><code>vmodel-number</code></td>
+<td><code>vmodel:number</code></td>
 <td>v-model.number</td>
 <td>
 
@@ -650,7 +650,7 @@ v-model.number="$1"
 </tr>
 
 <tr>
-<td><code>vmodel-trim</code></td>
+<td><code>vmodel:trim</code></td>
 <td>v-model.trim</td>
 <td>
 
@@ -662,12 +662,12 @@ v-model.trim="$1"
 </tr>
 
 <tr>
-<td><code>vmodel-custom</code></td>
+<td><code>vmodel:custom</code></td>
 <td>custom v-model</td>
 <td>
 
 ```html
-v-model:${1:custom}="${2:value}"
+v-model:${1:custom}="$2"
 ```
 
 </td>
@@ -1725,7 +1725,7 @@ Useful vue snippets and helpers
 <td>
 
 ```javascript
-export const ${1:useComposable} = () => {
+export const use${1/(.*)/${1:/capitalize}/} = () => {
   $0
   
   return {
@@ -1890,7 +1890,19 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink to="$1">$3</RouterLink>
+<RouterLink to="$1">$2</RouterLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vlink:param</code></td>
+<td>RouterLink with param</td>
+<td>
+
+```html
+<RouterLink :to="`$1${${2:id}}$3`">$4</RouterLink>
 ```
 
 </td>
@@ -1902,7 +1914,7 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink :to="{ $1 }">$3</RouterLink>
+<RouterLink :to="{ $1 }">$2</RouterLink>
 ```
 
 </td>
@@ -1914,7 +1926,7 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink :to="{ name: '$1'$2 }">$4</RouterLink>
+<RouterLink :to="{ name: '$1'$2 }">$3</RouterLink>
 ```
 
 </td>
@@ -1926,7 +1938,7 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink :to="{ path: '$1'$2 }">$4</RouterLink>
+<RouterLink :to="{ path: '$1'$2 }">$3</RouterLink>
 ```
 
 </td>
@@ -1952,7 +1964,7 @@ ${1|to,...|}="$2"
 ```javascript
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-export const ${1:useStore} = defineStore('${2:unique-id}', () => {
+export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
   $0
   
   return {
@@ -1961,7 +1973,7 @@ export const ${1:useStore} = defineStore('${2:unique-id}', () => {
 })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate($1, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(use${1/(.*)/${1:/capitalize}/}, import.meta.hot))
 
 ```
 
@@ -1976,23 +1988,20 @@ if (import.meta.hot)
 ```javascript
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-export const ${1:useStore} = defineStore('${2:unique-id}', {
+export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', {
   state: () => ({
-    name: 'Evan',
-    count: 1,
+    
   }),
   getters: {
-    doubleCount: (state) => state.count * 2,
+    
   },
   actions: {
-    increment() {
-      this.count++
-    },
+    
   },
 })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate($1, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(use$1, import.meta.hot))
 
 ```
 
@@ -2000,7 +2009,7 @@ if (import.meta.hot)
 </tr>
 
 <tr>
-<td><code>vuseStore</code></td>
+<td><code>vuseStore</code> / <code>vus</code></td>
 <td>Use store</td>
 <td>
 
@@ -2536,12 +2545,24 @@ setCookie(event, '${1:cookie}', ${2:value})
 </tr>
 
 <tr>
-<td><code>nlink:_blank</code></td>
+<td><code>nlink:blank</code></td>
 <td>NuxtLink with target _blank</td>
 <td>
 
 ```html
-<NuxtLink to="$1" target="_blank">$3</NuxtLink>
+<NuxtLink to="$1" target="_blank" $3>$4</NuxtLink>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>nlink:external</code></td>
+<td>NuxtLink with target external</td>
+<td>
+
+```html
+<NuxtLink to="$1" external target="${2|_blank,...|}" $3>$4</NuxtLink>
 ```
 
 </td>
@@ -2553,7 +2574,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink :to="`$1${${2:id}}$3`">$5</NuxtLink>
+<NuxtLink :to="`$1${${2:id}}$3`" $4>$5</NuxtLink>
 ```
 
 </td>
@@ -2565,7 +2586,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink :to="{ $1 }">$3</NuxtLink>
+<NuxtLink :to="{ $1 }" $2>$3</NuxtLink>
 ```
 
 </td>
@@ -2577,7 +2598,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink :to="{ name: '$1'$2 }">$4</NuxtLink>
+<NuxtLink :to="{ name: '$1'$2 }" $3>$4</NuxtLink>
 ```
 
 </td>
@@ -2589,7 +2610,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink :to="{ path: '$1'$2 }">$4</NuxtLink>
+<NuxtLink :to="{ path: '$1'$2 }" $3>$4</NuxtLink>
 ```
 
 </td>
@@ -2680,7 +2701,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 </tr>
 
 <tr>
-<td><code>nclient:fallback-template</code></td>
+<td><code>nclient:fallback</code></td>
 <td>ClientOnly with fallback template</td>
 <td>
 
@@ -2895,12 +2916,12 @@ const ${3:isHovered} = useElementHover($1)
 </tr>
 
 <tr>
-<td><code>vuse:fetch</code></td>
+<td><code>vuse:fetch</code> / <code>vuf</code></td>
 <td>VueUse useFetch</td>
 <td>
 
 ```javascript
-const { data: ${1:data} } = useFetch('$3')
+const { data: ${1:data} } = useFetch('$2'$3)
 ```
 
 </td>
