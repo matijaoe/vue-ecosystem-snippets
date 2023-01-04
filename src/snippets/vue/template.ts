@@ -3,7 +3,6 @@ import { XSnippetDefinition } from "../../models/app.ts";
 // TODO
 /**
  * - transition classes and events
- * - router link
  */
 export const template: XSnippetDefinition = {
   meta: {
@@ -142,17 +141,17 @@ export const template: XSnippetDefinition = {
       name: "v-model",
       body: 'v-model="$1"',
     },
-    "vmodel-number": {
+    "vmodel:number": {
       name: "v-model.number",
       body: 'v-model.number="$1"',
     },
-    "vmodel-trim": {
+    "vmodel:trim": {
       name: "v-model.trim",
       body: 'v-model.trim="$1"',
     },
-    "vmodel-custom": {
+    "vmodel:custom": {
       name: "custom v-model",
-      body: 'v-model:${1:custom}="${2:value}"',
+      body: 'v-model:${1:custom}="$2"',
     },
     vslot: {
       name: "scoped slot",

@@ -9,7 +9,7 @@ export const codeSnippets: XSnippetDefinition = {
     vcomposable: {
       name: "Vue define composable",
       body: [
-        "export const ${1:useComposable} = () => {",
+        "export const use${1/(.*)/${1:/capitalize}/} = () => {",
         "\t$0",
         "\t",
         "\treturn {",

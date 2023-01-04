@@ -32,19 +32,23 @@ export const template: XSnippetDefinition = {
     },
     vlink: {
       name: "RouterLink",
-      body: '<RouterLink to="$1">$3</RouterLink>',
+      body: '<RouterLink to="$1">$2</RouterLink>',
+    },
+    "vlink:param": {
+      name: "RouterLink with param",
+      body: '<RouterLink :to="`$1${${2:id}}$3`">$4</RouterLink>',
     },
     "vlink:obj": {
       name: "RouterLink with object",
-      body: '<RouterLink :to="{ $1 }">$3</RouterLink>',
+      body: '<RouterLink :to="{ $1 }">$2</RouterLink>',
     },
     "vlink:name": {
       name: "RouterLink with name",
-      body: `<RouterLink :to="{ name: '$1'$2 }">$4</RouterLink>`,
+      body: `<RouterLink :to="{ name: '$1'$2 }">$3</RouterLink>`,
     },
     "vlink:path": {
       name: "RouterLink with path",
-      body: `<RouterLink :to="{ path: '$1'$2 }">$4</RouterLink>`,
+      body: `<RouterLink :to="{ path: '$1'$2 }">$3</RouterLink>`,
     },
   },
 };
