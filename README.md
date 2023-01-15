@@ -188,11 +188,11 @@ $0
 
 <tr>
 <td><code>vstyle</code></td>
-<td>Vue style</td>
+<td>Vue scoped style</td>
 <td>
 
 ```html
-<style lang="${1|css,...|}"${2|scoped,...|}>
+<style scoped>
   $0
 </style>
 
@@ -202,12 +202,12 @@ $0
 </tr>
 
 <tr>
-<td><code>vstyle:css</code></td>
-<td>Vue scoped style | css</td>
+<td><code>vstyle:lang</code></td>
+<td>Vue style</td>
 <td>
 
 ```html
-<style scoped>
+<style lang="${1|css,...|}"${2|scoped,...|}>
   $0
 </style>
 
@@ -238,6 +238,21 @@ $0
 
 ```html
 <style lang="scss" scoped>
+  $0
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle:less</code></td>
+<td>scoped style | less</td>
+<td>
+
+```html
+<style lang="less" scoped>
   $0
 </style>
 
