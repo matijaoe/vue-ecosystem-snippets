@@ -203,7 +203,7 @@ $0
 
 <tr>
 <td><code>vstyle:lang</code></td>
-<td>Vue style</td>
+<td>Vue style with language option</td>
 <td>
 
 ```html
@@ -1081,7 +1081,7 @@ const ${1:name} = computed<$2>(() => $3)
 </tr>
 
 <tr>
-<td><code>vcomputed-gs</code></td>
+<td><code>vcomputed-gs</code> / <code>vcgts</code></td>
 <td>Vue computed (get/set)</td>
 <td>
 
