@@ -1759,7 +1759,7 @@ export const use${1/(.*)/${1:/capitalize}/} = () => {
 <td>
 
 ```javascript
-const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
+const ${2:$1} = use${1/(.*)/${1:/capitalize}/}($3)
 ```
 
 </td>
@@ -1771,7 +1771,7 @@ const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
 <td>
 
 ```javascript
-const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
+const { $2 } = use${1/(.*)/${1:/capitalize}/}($3)
 ```
 
 </td>
