@@ -183,7 +183,7 @@ export const template: XSnippetDefinition = {
     },
     vname: {
       name: "name property",
-      body: '${1|name,:name|}="$1"',
+      body: '${1|name,:name|}="$2"',
     },
     vis: {
       name: "is property",
