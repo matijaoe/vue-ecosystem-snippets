@@ -8,6 +8,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
  * - date format
  * - timeago
  * - VueUse components
+ * - different computed (computedWithControl...)
  */
 export const vueUseJs: XSnippetDefinition = {
   meta: {

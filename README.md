@@ -188,11 +188,11 @@ $0
 
 <tr>
 <td><code>vstyle</code></td>
-<td>Vue style</td>
+<td>Vue scoped style</td>
 <td>
 
 ```html
-<style lang="${1|css,...|}"${2|scoped,...|}>
+<style scoped>
   $0
 </style>
 
@@ -202,12 +202,12 @@ $0
 </tr>
 
 <tr>
-<td><code>vstyle:css</code></td>
-<td>Vue scoped style | css</td>
+<td><code>vstyle:lang</code></td>
+<td>Vue style with language option</td>
 <td>
 
 ```html
-<style scoped>
+<style lang="${1|css,...|}"${2|scoped,...|}>
   $0
 </style>
 
@@ -238,6 +238,21 @@ $0
 
 ```html
 <style lang="scss" scoped>
+  $0
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vstyle:less</code></td>
+<td>scoped style | less</td>
+<td>
+
+```html
+<style lang="less" scoped>
   $0
 </style>
 
@@ -763,7 +778,7 @@ ref="$1"
 <td>
 
 ```html
-${1|name,...|}="$1"
+${1|name,...|}="$2"
 ```
 
 </td>
@@ -1066,7 +1081,7 @@ const ${1:name} = computed<$2>(() => $3)
 </tr>
 
 <tr>
-<td><code>vcomputed-gs</code></td>
+<td><code>vcomputed-gs</code> / <code>vcgts</code></td>
 <td>Vue computed (get/set)</td>
 <td>
 
@@ -1744,7 +1759,7 @@ export const use${1/(.*)/${1:/capitalize}/} = () => {
 <td>
 
 ```javascript
-const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
+const ${2:$1} = use${1/(.*)/${1:/capitalize}/}($3)
 ```
 
 </td>
@@ -1756,7 +1771,7 @@ const ${3:$1} = use${1/(.*)/${1:/capitalize}/}($2)
 <td>
 
 ```javascript
-const { $3 } = use${1/(.*)/${1:/capitalize}/}($2)
+const { $2 } = use${1/(.*)/${1:/capitalize}/}($3)
 ```
 
 </td>

@@ -42,6 +42,7 @@ export const script: XSnippetDefinition = {
         "\t},",
         "})",
       ],
+      alt: ["vcgts"],
     },
     vreactive: {
       name: "Vue reactive",
