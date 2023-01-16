@@ -71,6 +71,23 @@ export const vueSfc: XSnippetDefinition = {
         "",
       ],
     },
+    "vbase:full:less": {
+      name: "Vue SFC with style | less",
+      body: [
+        '<script lang="ts" setup>',
+        "$0",
+        "</script>",
+        "",
+        "<template>",
+        "\t$1",
+        "</template>",
+        "",
+        '<style style="less" scoped>',
+        "\t",
+        "</style>",
+        "",
+      ],
+    },
     vscript: {
       name: "Vue script setup | ts",
       body: [

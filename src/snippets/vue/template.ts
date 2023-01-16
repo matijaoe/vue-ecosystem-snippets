@@ -1,9 +1,5 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
-// TODO
-/**
- * - transition classes and events
- */
 export const template: XSnippetDefinition = {
   meta: {
     title: "Template",

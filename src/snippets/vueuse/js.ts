@@ -1,15 +1,5 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
-// TODO
-/**
- * - until
- * - callback options for every watcher
- * - array methods
- * - date format
- * - timeago
- * - VueUse components
- * - different computed (computedWithControl...)
- */
 export const vueUseJs: XSnippetDefinition = {
   meta: {
     title: "VueUse",
