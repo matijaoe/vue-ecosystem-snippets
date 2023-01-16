@@ -142,6 +142,29 @@ $0
 </tr>
 
 <tr>
+<td><code>vbase:full:less</code></td>
+<td>Vue SFC with style | less</td>
+<td>
+
+```html
+<script lang="ts" setup>
+$0
+</script>
+
+<template>
+  $1
+</template>
+
+<style style="less" scoped>
+  
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vscript</code></td>
 <td>Vue script setup | ts</td>
 <td>

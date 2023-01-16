@@ -1,10 +1,5 @@
 import { XSnippetDefinition } from "../../models/app.ts";
 
-// TODO
-/**
- * - custom ref
- * - defineAsyncComponent with dynamic import
- */
 export const script: XSnippetDefinition = {
   meta: {
     title: "Script",
