@@ -143,7 +143,7 @@ export const script: XSnippetDefinition = {
     "v:onBeforeMount": {
       name: "Vue onBeforeMount",
       body: [
-        "onBeforeMounted(() => {\n\t$0\n})",
+        "onBeforeMount(() => {\n\t$0\n})",
       ],
     },
     "v:onUnmounted": {

@@ -1396,7 +1396,7 @@ onMounted(() => {
 <td>
 
 ```javascript
-onBeforeMounted(() => {
+onBeforeMount(() => {
   $0
 })
 ```
