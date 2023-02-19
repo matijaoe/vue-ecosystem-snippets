@@ -96,6 +96,10 @@
         "path": "./dist/vue-router-script.code-snippets"
       },
       {
+        "language": "javascript",
+        "path": "./dist/pinia.code-snippets"
+      },
+      {
         "language": "typescript",
         "path": "./dist/pinia.code-snippets"
       },
@@ -122,6 +126,22 @@
       {
         "language": "typescriptreact",
         "path": "./dist/vueuse.code-snippets"
+      },
+      {
+        "language": "javascript",
+        "path": "./dist/vue-macros.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./dist/vue-macros.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./dist/vue-macros.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./dist/vue-macros.code-snippets"
       },
       {
         "language": "javascript",

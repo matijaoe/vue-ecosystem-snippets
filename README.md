@@ -1,6 +1,6 @@
 # Vue Ecosystem Snippets
 
-> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & Vue Router.
+> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse, Vue Router & Vue Macros.
 
 ![Vue](https://img.shields.io/badge/vue-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
@@ -10,10 +10,10 @@
 - Only the latest Vue syntax (including [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html))
 - Over **200** snippets 
 - TypeScript-first
-- Nuxt 3, Pinia, VueUse & Vue Router support
+- Nuxt 3, Pinia, VueUse, Vue Router & Vue Macros support
 - Strategically placed tabstops
 - Prefixes created with exact-match in mind 
-- (Mostly) GitHub Copilot compliant
+- GitHub Copilot compliant
 - Auto-generated documentation
 
 ## Setup
@@ -3017,6 +3017,104 @@ const [${1:value}, ${2:toggle}] = useToggle()
 
 ```javascript
 const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)
+```
+
+</td>
+</tr>
+</table>
+
+
+### Vue Macros
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vdefineModel</code> / <code>vmacro:model</code></td>
+<td>Define model</td>
+<td>
+
+```javascript
+const { modelValue$2 } = defineModel<{
+  modelValue: ${1:string}
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefinePropsRefs</code> / <code>vmacro:props</code></td>
+<td>Define props refs</td>
+<td>
+
+```javascript
+const { $2 } = definePropsRefs<{
+  $1
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineOptions</code> / <code>vmacro:options</code></td>
+<td>Define options</td>
+<td>
+
+```javascript
+defineOptions({
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineSlots</code> / <code>vmacro:slots</code></td>
+<td>Define slots</td>
+<td>
+
+```javascript
+defineSlots<{
+  $0
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineRender</code> / <code>vmacro:render</code></td>
+<td>Define render</td>
+<td>
+
+```javascript
+defineRender(
+  $0
+)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineRender:fn</code> / <code>vmacro:render:fn</code></td>
+<td>Define render function</td>
+<td>
+
+```javascript
+defineRender(() => {
+  return (
+    $0
+  )
+})
 ```
 
 </td>
