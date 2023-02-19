@@ -97,7 +97,7 @@ export const vueUseJs: XSnippetDefinition = {
     },
     "vuse:toggle:fn": {
       name: "VueUse useToggle function",
-      body: "const toggle$2 = useToggle($1)",
+      body: "const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)",
     },
   },
 };
