@@ -26,6 +26,6 @@ export const vue: XSnippetVariant[] = [
   {
     label: "Script",
     fileName: "vue-script",
-    snippetDefinitions: [script, reactivityTransform, codeSnippets],
+    snippetDefinitions: [script, codeSnippets, reactivityTransform],
   },
 ];

@@ -21,7 +21,9 @@
     "https://esm.sh/v100/markdown-table@3.0.3/index.d.ts": "d6fdaeb6f1e4e29d7827e30d743dfef5cb6c8bca4bc546001a3b3e751a2de06c"
   },
   "npm": {
-    "specifiers": { "replace-in-file": "replace-in-file@6.3.5" },
+    "specifiers": {
+      "replace-in-file": "replace-in-file@6.3.5"
+    },
     "packages": {
       "ansi-regex@5.0.1": {
         "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
@@ -29,7 +31,9 @@
       },
       "ansi-styles@4.3.0": {
         "integrity": "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==",
-        "dependencies": { "color-convert": "color-convert@2.0.1" }
+        "dependencies": {
+          "color-convert": "color-convert@2.0.1"
+        }
       },
       "balanced-match@1.0.2": {
         "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==",
@@ -59,7 +63,9 @@
       },
       "color-convert@2.0.1": {
         "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
-        "dependencies": { "color-name": "color-name@1.1.4" }
+        "dependencies": {
+          "color-name": "color-name@1.1.4"
+        }
       },
       "color-name@1.1.4": {
         "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==",
@@ -102,7 +108,10 @@
       },
       "inflight@1.0.6": {
         "integrity": "sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==",
-        "dependencies": { "once": "once@1.4.0", "wrappy": "wrappy@1.0.2" }
+        "dependencies": {
+          "once": "once@1.4.0",
+          "wrappy": "wrappy@1.0.2"
+        }
       },
       "inherits@2.0.4": {
         "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
@@ -114,11 +123,15 @@
       },
       "minimatch@3.1.2": {
         "integrity": "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==",
-        "dependencies": { "brace-expansion": "brace-expansion@1.1.11" }
+        "dependencies": {
+          "brace-expansion": "brace-expansion@1.1.11"
+        }
       },
       "once@1.4.0": {
         "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
-        "dependencies": { "wrappy": "wrappy@1.0.2" }
+        "dependencies": {
+          "wrappy": "wrappy@1.0.2"
+        }
       },
       "path-is-absolute@1.0.1": {
         "integrity": "sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==",
@@ -146,11 +159,15 @@
       },
       "strip-ansi@6.0.1": {
         "integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
-        "dependencies": { "ansi-regex": "ansi-regex@5.0.1" }
+        "dependencies": {
+          "ansi-regex": "ansi-regex@5.0.1"
+        }
       },
       "supports-color@7.2.0": {
         "integrity": "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==",
-        "dependencies": { "has-flag": "has-flag@4.0.0" }
+        "dependencies": {
+          "has-flag": "has-flag@4.0.0"
+        }
       },
       "wrap-ansi@7.0.0": {
         "integrity": "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==",

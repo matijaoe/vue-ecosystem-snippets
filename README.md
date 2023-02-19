@@ -216,7 +216,7 @@ $0
 
 ```html
 <style scoped>
-  $0
+$0
 </style>
 
 ```
@@ -231,7 +231,7 @@ $0
 
 ```html
 <style lang="${1|css,...|}"${2|scoped,...|}>
-  $0
+$0
 </style>
 
 ```
@@ -246,7 +246,7 @@ $0
 
 ```html
 <style lang="postcss" scoped>
-  $0
+$0
 </style>
 
 ```
@@ -261,7 +261,7 @@ $0
 
 ```html
 <style lang="scss" scoped>
-  $0
+$0
 </style>
 
 ```
@@ -276,7 +276,7 @@ $0
 
 ```html
 <style lang="less" scoped>
-  $0
+$0
 </style>
 
 ```
@@ -291,7 +291,7 @@ $0
 
 ```html
 <style module$1>
-  $0
+$0
 </style>
 
 ```
@@ -306,7 +306,7 @@ $0
 
 ```html
 <style scoped src="$1">
-  $0
+$0
 </style>
 
 ```
@@ -1068,7 +1068,7 @@ const ${1:name} = ref($2)
 </tr>
 
 <tr>
-<td><code>vref:ts</code> / <code>vrts</code></td>
+<td><code>vref:ts</code> / <code>vrt</code></td>
 <td>Vue ref (typed)</td>
 <td>
 
@@ -1092,7 +1092,7 @@ const ${1:name} = computed(() => $2)
 </tr>
 
 <tr>
-<td><code>vcomputed:ts</code> / <code>vcts</code></td>
+<td><code>vcomputed:ts</code> / <code>vct</code></td>
 <td>Vue computed (typed)</td>
 <td>
 
@@ -1104,7 +1104,7 @@ const ${1:name} = computed<$2>(() => $3)
 </tr>
 
 <tr>
-<td><code>vcomputed-gs</code> / <code>vcgts</code></td>
+<td><code>vcomputed-gs</code> / <code>vcgs</code></td>
 <td>Vue computed (get/set)</td>
 <td>
 
@@ -1121,7 +1121,7 @@ const ${1:name} = computed({
 </tr>
 
 <tr>
-<td><code>vreactive</code> / <code>vrea</code></td>
+<td><code>vreactive</code> / <code>vra</code></td>
 <td>Vue reactive</td>
 <td>
 
@@ -1311,7 +1311,7 @@ ${1:const props = }defineProps<${2:Props}>()
 </tr>
 
 <tr>
-<td><code>vprops:withDefaults</code></td>
+<td><code>vprops:defaults</code></td>
 <td>Vue defineProps with defaults</td>
 <td>
 
@@ -1532,7 +1532,7 @@ const $1 = inject(${2:key}, ${3:defaultValue})
 <td>
 
 ```javascript
-provide<${1:string}}>(${2:name}, ${3:value})
+provide<${1:string}>(${2:name}, ${3:value})
 ```
 
 </td>
@@ -1623,130 +1623,6 @@ import { $1 } from 'vue'
 </tr>
 </table>
 
-### Reactivity Transform
-[Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) is currently an experimental feature. It is disabled by default and requires [explicit opt-in](https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in).
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>vref$</code> / <code>vrt</code></td>
-<td>Vue $ref</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vref$:ts</code></td>
-<td>Vue $ref (typed)</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref<$2>($3)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed$</code> / <code>vct</code></td>
-<td>Vue $computed</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed(() => $2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed$:ts</code></td>
-<td>Vue $computed (typed)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed<$2>(() => $3)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed-gs$</code></td>
-<td>Vue $computed (get/set)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed({
-  get: () => ${2},
-  set: (${3:value}: ${4:type}) => {
-    ${5}
-  },
-})
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vtoRef$</code></td>
-<td>Vue $toRef</td>
-<td>
-
-```javascript
-const ${1:name} = $toRef(${2:object}, '${3}')
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vshallowRef$</code></td>
-<td>Vue $shallowRef</td>
-<td>
-
-```javascript
-const ${1:name} = \$shallowRef($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>v$</code></td>
-<td>Vue $() destructuring</td>
-<td>
-
-```javascript
-$($1)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>v$</code></td>
-<td>Vue $$() escape hint</td>
-<td>
-
-```javascript
-$$($1)
-```
-
-</td>
-</tr>
-</table>
-
 ### Code snippets
 Useful vue snippets and helpers
 <table width="100%">
@@ -1831,6 +1707,82 @@ const ${4:value} = computed({
 ```javascript
 const slots = useSlots()
 const hasSlot = (name: string) => !!slots[name]
+```
+
+</td>
+</tr>
+</table>
+
+### Reactivity Transform
+[Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) is currently an experimental feature. It is disabled by default and requires [explicit opt-in](https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in).
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vref$</code></td>
+<td>Vue $ref</td>
+<td>
+
+```javascript
+const ${1:name} = \$ref($2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed$</code></td>
+<td>Vue $computed</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed(() => $2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed-gs$</code></td>
+<td>Vue $computed (get/set)</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed({
+  get: () => ${2},
+  set: (${3:value}: ${4:type}) => {
+    ${5}
+  },
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>v$</code></td>
+<td>Vue $() destructuring</td>
+<td>
+
+```javascript
+$($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>v$</code></td>
+<td>Vue $$() escape hint</td>
+<td>
+
+```javascript
+$($1)
 ```
 
 </td>
@@ -3034,7 +2986,7 @@ const [${1:value}, ${2:toggle}] = useToggle()
 <td>
 
 ```javascript
-const toggle$2 = useToggle($1)
+const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)
 ```
 
 </td>
