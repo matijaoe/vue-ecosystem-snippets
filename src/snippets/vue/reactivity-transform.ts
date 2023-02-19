@@ -12,17 +12,9 @@ export const reactivityTransform: XSnippetDefinition = {
       name: "Vue $ref",
       body: "const ${1:name} = \\$ref($2)",
     },
-    "vref$:ts": {
-      name: "Vue $ref (typed)",
-      body: "const ${1:name} = \\$ref<$2>($3)",
-    },
     vcomputed$: {
       name: "Vue $computed",
       body: "const ${1:name} = \\$computed(() => $2)",
-    },
-    "vcomputed$:ts": {
-      name: "Vue $computed (typed)",
-      body: "const ${1:name} = \\$computed<$2>(() => $3)",
     },
     "vcomputed-gs$": {
       name: "Vue $computed (get/set)",
@@ -35,21 +27,13 @@ export const reactivityTransform: XSnippetDefinition = {
         "})",
       ],
     },
-    vtoRef$: {
-      name: "Vue $toRef",
-      body: "const ${1:name} = $toRef(${2:object}, '${3}')",
-    },
-    vshallowRef$: {
-      name: "Vue $shallowRef",
-      body: "const ${1:name} = \\$shallowRef($2)",
-    },
     "v$": {
       name: "Vue $() destructuring",
       body: "$($1)",
     },
     "v$$": {
       name: "Vue $$$() escape hint",
-      body: "\$$$($1)",
+      body: "$$($1)",
     },
   },
 };
