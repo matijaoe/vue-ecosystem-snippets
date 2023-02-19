@@ -18,11 +18,11 @@ export const script: XSnippetDefinition = {
       name: "Create Vue router",
       body: [
         "const router = createRouter({",
-        "  history: createWebHashHistory(),",
-        "  routes: ${1:routes}",
-        "  scrollBehavior(to, from, savedPosition) {",
-        "    $2",
-        "  }",
+        "\thistory: createWebHashHistory(),",
+        "\troutes: ${1:routes}",
+        "\tscrollBehavior(to, from, savedPosition) {",
+        "\t\t$2",
+        "\t}",
         "})"
       ],
     },
