@@ -230,7 +230,7 @@ $0
 <td>
 
 ```html
-<style lang="${1|css,...|}"${2|scoped,...|}>
+<style lang="${1|css,postcss,...|}"${2|scoped,|}>
 $0
 </style>
 
@@ -464,7 +464,7 @@ $0
 <td>
 
 ```html
-<Transition type="${1|transition,...|}" $2>
+<Transition type="${1|transition,animation|}" $2>
   $0
 </Transition>
 ```
@@ -492,7 +492,7 @@ $0
 <td>
 
 ```html
-<TransitionGroup name="$1" as="${2|ul,...|}" $3>
+<TransitionGroup name="$1" as="${2|ul,div,...|}" $3>
   $0
 </TransitionGroup>
 ```
@@ -801,7 +801,7 @@ ref="$1"
 <td>
 
 ```html
-${1|name,...|}="$2"
+${1|name,:name|}="$2"
 ```
 
 </td>
@@ -813,7 +813,7 @@ ${1|name,...|}="$2"
 <td>
 
 ```html
-${1|is,...|}="$2"
+${1|is,:is|}="$2"
 ```
 
 </td>
@@ -897,7 +897,7 @@ ${1|is,...|}="$2"
 <td>
 
 ```html
-@${1|click,...|}="\$emit('${2:$1}', \$event)"
+@${1|click,input,...|}="\$emit('${2:$1}', \$event)"
 ```
 
 </td>
@@ -947,7 +947,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <td>
 
 ```html
-<${1|template,...|} v-for="${3:item} in ${2:items}" :key="$3$4">
+<${1|template,div,...|} v-for="${3:item} in ${2:items}" :key="$3$4">
   $0
 </$1>
 ```
@@ -961,7 +961,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <td>
 
 ```html
-<${1|template,...|} v-for="(${3:item}, ${4:i}) in ${2:items}" :key="${5:$4}">
+<${1|template,div,...|} v-for="(${3:item}, ${4:i}) in ${2:items}" :key="${5:$4}">
   $0
 </$1>
 ```
@@ -975,7 +975,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <td>
 
 ```html
-<${1|template,...|} v-if="$2">
+<${1|template,div,...|} v-if="$2">
   $0
 </$1>
 ```
@@ -1210,7 +1210,7 @@ const ${1:copy} = readonly(${2:object})
 <td>
 
 ```javascript
-const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
+const ${1:elem} = ref<${2|HTMLInputElement,HTMLInputElement,...|} | null>(null)
 ```
 
 </td>
@@ -1808,7 +1808,7 @@ const ${1:route} = useRoute()
 ```javascript
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: ${1:routes}
+  routes: ${1:routes},
   scrollBehavior(to, from, savedPosition) {
     $2
   }
@@ -1836,7 +1836,7 @@ const router = createRouter({
 <td>
 
 ```html
-${1|to,...|}="$2"
+${1|to,:to|}="$2"
 ```
 
 </td>
@@ -1910,7 +1910,7 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink ${1|to,...|}="$2">$3</RouterLink>
+<RouterLink ${1|to,:to|}="$2">$3</RouterLink>
 ```
 
 </td>
@@ -2385,7 +2385,7 @@ navigateTo('$1', { external: true })
 <td>
 
 ```javascript
-navigateTo('$1', { redirectCode: ${2|301,...|} })
+navigateTo('$1', { redirectCode: ${2|301,302,...|} })
 ```
 
 </td>
@@ -2597,7 +2597,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1" external target="${2|_blank,...|}" $3>$4</NuxtLink>
+<NuxtLink to="$1" external target="${2|_blank,_self|}" $3>$4</NuxtLink>
 ```
 
 </td>
@@ -2681,7 +2681,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLayout ${2|name,...|}="$3">$4</NuxtLayout>
+<NuxtLayout ${2|name,:name|}="$3">$4</NuxtLayout>
 ```
 
 </td>
@@ -2943,7 +2943,7 @@ const ${4:value} = useVModel(props, '$1', emit)
 <td>
 
 ```javascript
-const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
+const ${1:elem} = ref<${2|HTMLInputElement,HTMLDivElement,...|} | null>(null)
 const ${3:isHovered} = useElementHover($1)
 ```
 

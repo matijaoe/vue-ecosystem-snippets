@@ -25,8 +25,12 @@ type SnippetRow = {
 const truncateOptions = (str: string) => {
   const regex = /\|([^|]+)\|/g;
   return str.replace(regex, (_match, p1) => {
-    const [first] = p1.split(",").map((o: string) => o.trim());
-    return `|${first},...|`;
+    const [first, second, third] = p1.split(",").map((o: string) => o.trim());
+    if (!third) {
+      return `|${first},${second}|`;
+    } else {
+      return `|${first},${second},...|`;
+    }
   });
 };
 
