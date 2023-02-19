@@ -119,7 +119,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "Vue scoped style",
       body: [
         "<style scoped>",
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
@@ -128,7 +128,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "Vue style with language option",
       body: [
         '<style lang="${1|css,postcss,scss,less|}"${2| scoped, |}>',
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
@@ -137,7 +137,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "Vue scoped style | postcss",
       body: [
         '<style lang="postcss" scoped>',
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
@@ -146,7 +146,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "scoped style | scss",
       body: [
         '<style lang="scss" scoped>',
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
@@ -155,7 +155,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "scoped style | less",
       body: [
         '<style lang="less" scoped>',
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
@@ -164,7 +164,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "Vue style with CSS modules",
       body: [
         "<style module$1>",
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
@@ -173,7 +173,7 @@ export const vueSfc: XSnippetDefinition = {
       name: "Vue scoped style with src",
       body: [
         `<style scoped src="$1">`,
-        "\t$0",
+        "$0",
         "</style>",
         "",
       ],
