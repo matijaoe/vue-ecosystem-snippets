@@ -11,7 +11,6 @@ export const reactivityTransform: XSnippetDefinition = {
     vref$: {
       name: "Vue $ref",
       body: "const ${1:name} = \\$ref($2)",
-      alt: ["vrt"],
     },
     "vref$:ts": {
       name: "Vue $ref (typed)",
@@ -20,7 +19,6 @@ export const reactivityTransform: XSnippetDefinition = {
     vcomputed$: {
       name: "Vue $computed",
       body: "const ${1:name} = \\$computed(() => $2)",
-      alt: ["vct"],
     },
     "vcomputed$:ts": {
       name: "Vue $computed (typed)",
