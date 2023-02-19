@@ -9,22 +9,18 @@ import { reactivityTransform } from "./reactivity-transform.ts";
 
 export const vue: XSnippetVariant[] = [
   {
-    label: "Vue",
     fileName: "vue",
     snippetDefinitions: [vueSfc],
   },
   {
-    label: "Template",
     fileName: "vue-template",
     snippetDefinitions: [template],
   },
   {
-    label: "Style",
     fileName: "vue-style",
     snippetDefinitions: [style],
   },
   {
-    label: "Script",
     fileName: "vue-script",
     snippetDefinitions: [script, codeSnippets, reactivityTransform],
   },

@@ -2,7 +2,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 export const vueUseJs: XSnippetDefinition = {
   meta: {
-    title: "VueUse",
+    title: "VueUse (script)",
   },
   snippets: {
     "vwatchArray": {

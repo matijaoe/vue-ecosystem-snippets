@@ -2,8 +2,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 export const script: XSnippetDefinition = {
   meta: {
-    title: "Script",
-    description: "Script setup and composables",
+    title: "Vue Router (script)",
     lang: "javascript",
   },
   snippets: {

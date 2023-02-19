@@ -4,12 +4,10 @@ import { script } from "./script.ts";
 
 export const vueRouter: XSnippetVariant[] = [
   {
-    label: "Vue Router",
     fileName: "vue-router-script",
     snippetDefinitions: [script],
   },
   {
-    label: "Vue Router",
     fileName: "vue-router-template",
     snippetDefinitions: [template],
   },

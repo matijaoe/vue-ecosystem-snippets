@@ -2,7 +2,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 export const template: XSnippetDefinition = {
   meta: {
-    title: "Nuxt template",
+    title: "Nuxt (template)",
     lang: "html",
   },
   snippets: {

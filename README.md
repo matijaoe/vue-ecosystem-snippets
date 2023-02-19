@@ -1766,8 +1766,8 @@ $($1)
 </table>
 
 
-### Script
-Script setup and composables
+### Vue Router (script)
+
 <table width="100%">
 
 <tr>
@@ -1789,8 +1789,20 @@ const ${1:router} = useRouter()
 </tr>
 
 <tr>
-<td><code>vrouter:create</code></td>
+<td><code>vroute</code></td>
 <td>Vue route</td>
+<td>
+
+```javascript
+const ${1:route} = useRoute()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vrouter:create</code></td>
+<td>Create Vue router</td>
 <td>
 
 ```javascript
@@ -1808,7 +1820,7 @@ const router = createRouter({
 </table>
 
 
-### Vue Router template
+### Vue Router (template)
 
 <table width="100%">
 
@@ -2030,7 +2042,7 @@ const ${2:$1Store} = use${1/(.*)/${1:/capitalize}/}Store()
 </table>
 
 
-### Nuxt Script
+### Nuxt (script)
 
 <table width="100%">
 
@@ -2545,7 +2557,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 </table>
 
 
-### Nuxt template
+### Nuxt (template)
 
 <table width="100%">
 
@@ -2755,7 +2767,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 </table>
 
 
-### VueUse
+### VueUse (script)
 
 <table width="100%">
 

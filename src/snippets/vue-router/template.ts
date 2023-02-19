@@ -2,7 +2,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 export const template: XSnippetDefinition = {
   meta: {
-    title: "Vue Router template",
+    title: "Vue Router (template)",
     lang: "html",
   },
   snippets: {
