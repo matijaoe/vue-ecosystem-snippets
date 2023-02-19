@@ -216,14 +216,6 @@ export const script: XSnippetDefinition = {
       name: "Vue useAttrs",
       body: "const attrs = useAttrs()",
     },
-    vrouter: {
-      name: "Vue router",
-      body: "const ${1:router} = useRouter()",
-    },
-    vroute: {
-      name: "Vue route",
-      body: "const ${1:route} = useRoute()",
-    },
     vimport: {
       name: "Import from vue",
       body: "import { $1 } from 'vue'",

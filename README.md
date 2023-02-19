@@ -1587,30 +1587,6 @@ const attrs = useAttrs()
 </tr>
 
 <tr>
-<td><code>vrouter</code></td>
-<td>Vue router</td>
-<td>
-
-```javascript
-const ${1:router} = useRouter()
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vroute</code></td>
-<td>Vue route</td>
-<td>
-
-```javascript
-const ${1:route} = useRoute()
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vimport</code></td>
 <td>Import from vue</td>
 <td>
@@ -1790,6 +1766,48 @@ $($1)
 </table>
 
 
+### Script
+Script setup and composables
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vrouter</code></td>
+<td>Vue router</td>
+<td>
+
+```javascript
+const ${1:router} = useRouter()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vrouter:create</code></td>
+<td>Vue route</td>
+<td>
+
+```javascript
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: ${1:routes}
+  scrollBehavior(to, from, savedPosition) {
+    $2
+  }
+})
+```
+
+</td>
+</tr>
+</table>
+
+
 ### Vue Router template
 
 <table width="100%">
@@ -1880,7 +1898,7 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink to="$1">$2</RouterLink>
+<RouterLink ${1|to,...|}="$2">$3</RouterLink>
 ```
 
 </td>

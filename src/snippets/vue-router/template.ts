@@ -32,7 +32,7 @@ export const template: XSnippetDefinition = {
     },
     vlink: {
       name: "RouterLink",
-      body: '<RouterLink to="$1">$2</RouterLink>',
+      body: '<RouterLink ${1|to,:to|}="$2">$3</RouterLink>',
     },
     "vlink:param": {
       name: "RouterLink with param",
