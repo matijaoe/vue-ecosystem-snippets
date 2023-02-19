@@ -15,7 +15,7 @@ export const script: XSnippetDefinition = {
     "vref:ts": {
       name: "Vue ref (typed)",
       body: "const ${1:name} = ref<$2>($3)",
-      alt: ["vrts"],
+      alt: ["vrt"],
     },
     vcomputed: {
       name: "Vue computed",
@@ -25,7 +25,7 @@ export const script: XSnippetDefinition = {
     "vcomputed:ts": {
       name: "Vue computed (typed)",
       body: "const ${1:name} = computed<$2>(() => $3)",
-      alt: ["vcts"],
+      alt: ["vct"],
     },
     "vcomputed-gs": {
       name: "Vue computed (get/set)",
@@ -37,12 +37,12 @@ export const script: XSnippetDefinition = {
         "\t},",
         "})",
       ],
-      alt: ["vcgts"],
+      alt: ["vcgs"],
     },
     vreactive: {
       name: "Vue reactive",
       body: "const ${1:name} = reactive({$2})",
-      alt: ["vrea"],
+      alt: ["vra"],
     },
     "vreactive:ts": {
       name: "Vue reactive (typed)",
@@ -106,7 +106,7 @@ export const script: XSnippetDefinition = {
       name: "Vue defineProps",
       body: "${1:const props = }defineProps<${2:Props}>()",
     },
-    "vprops:withDefaults": {
+    "vprops:defaults": {
       name: "Vue defineProps with defaults",
       body: [
         "${1:const props = }withDefaults(defineProps<${2:Props}>(), {\n\t$0\n})",
@@ -198,7 +198,7 @@ export const script: XSnippetDefinition = {
     },
     "vprovide:ts": {
       name: "Vue provide (typed)",
-      body: "provide<${1:string}}>(${2:name}, ${3:value})",
+      body: "provide<${1:string}>(${2:name}, ${3:value})",
     },
     "vinject:ts": {
       name: "Vue inject (typed)",
@@ -215,14 +215,6 @@ export const script: XSnippetDefinition = {
     vattrs: {
       name: "Vue useAttrs",
       body: "const attrs = useAttrs()",
-    },
-    vrouter: {
-      name: "Vue router",
-      body: "const ${1:router} = useRouter()",
-    },
-    vroute: {
-      name: "Vue route",
-      body: "const ${1:route} = useRoute()",
     },
     vimport: {
       name: "Import from vue",

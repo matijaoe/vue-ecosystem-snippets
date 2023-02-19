@@ -2,7 +2,7 @@ import { XSnippetDefinition } from "../../models/app.ts";
 
 export const script: XSnippetDefinition = {
   meta: {
-    title: "Nuxt Script",
+    title: "Nuxt (script)",
   },
   snippets: {
     nfetch: {

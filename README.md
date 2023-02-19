@@ -1,6 +1,6 @@
 # Vue Ecosystem Snippets
 
-> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & Vue Router.
+> Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse, Vue Router & Vue Macros.
 
 ![Vue](https://img.shields.io/badge/vue-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
 ![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82)
@@ -10,10 +10,10 @@
 - Only the latest Vue syntax (including [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html))
 - Over **200** snippets 
 - TypeScript-first
-- Nuxt 3, Pinia, VueUse & Vue Router support
+- Nuxt 3, Pinia, VueUse, Vue Router & Vue Macros support
 - Strategically placed tabstops
 - Prefixes created with exact-match in mind 
-- (Mostly) GitHub Copilot compliant
+- GitHub Copilot compliant
 - Auto-generated documentation
 
 ## Setup
@@ -216,7 +216,7 @@ $0
 
 ```html
 <style scoped>
-  $0
+$0
 </style>
 
 ```
@@ -230,8 +230,8 @@ $0
 <td>
 
 ```html
-<style lang="${1|css,...|}"${2|scoped,...|}>
-  $0
+<style lang="${1|css,postcss,...|}"${2|scoped,|}>
+$0
 </style>
 
 ```
@@ -246,7 +246,7 @@ $0
 
 ```html
 <style lang="postcss" scoped>
-  $0
+$0
 </style>
 
 ```
@@ -261,7 +261,7 @@ $0
 
 ```html
 <style lang="scss" scoped>
-  $0
+$0
 </style>
 
 ```
@@ -276,7 +276,7 @@ $0
 
 ```html
 <style lang="less" scoped>
-  $0
+$0
 </style>
 
 ```
@@ -291,7 +291,7 @@ $0
 
 ```html
 <style module$1>
-  $0
+$0
 </style>
 
 ```
@@ -306,7 +306,7 @@ $0
 
 ```html
 <style scoped src="$1">
-  $0
+$0
 </style>
 
 ```
@@ -464,7 +464,7 @@ $0
 <td>
 
 ```html
-<Transition type="${1|transition,...|}" $2>
+<Transition type="${1|transition,animation|}" $2>
   $0
 </Transition>
 ```
@@ -492,7 +492,7 @@ $0
 <td>
 
 ```html
-<TransitionGroup name="$1" as="${2|ul,...|}" $3>
+<TransitionGroup name="$1" as="${2|ul,div,...|}" $3>
   $0
 </TransitionGroup>
 ```
@@ -801,7 +801,7 @@ ref="$1"
 <td>
 
 ```html
-${1|name,...|}="$2"
+${1|name,:name|}="$2"
 ```
 
 </td>
@@ -813,7 +813,7 @@ ${1|name,...|}="$2"
 <td>
 
 ```html
-${1|is,...|}="$2"
+${1|is,:is|}="$2"
 ```
 
 </td>
@@ -897,7 +897,7 @@ ${1|is,...|}="$2"
 <td>
 
 ```html
-@${1|click,...|}="\$emit('${2:$1}', \$event)"
+@${1|click,input,...|}="\$emit('${2:$1}', \$event)"
 ```
 
 </td>
@@ -947,7 +947,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <td>
 
 ```html
-<${1|template,...|} v-for="${3:item} in ${2:items}" :key="$3$4">
+<${1|template,div,...|} v-for="${3:item} in ${2:items}" :key="$3$4">
   $0
 </$1>
 ```
@@ -961,7 +961,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <td>
 
 ```html
-<${1|template,...|} v-for="(${3:item}, ${4:i}) in ${2:items}" :key="${5:$4}">
+<${1|template,div,...|} v-for="(${3:item}, ${4:i}) in ${2:items}" :key="${5:$4}">
   $0
 </$1>
 ```
@@ -975,7 +975,7 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <td>
 
 ```html
-<${1|template,...|} v-if="$2">
+<${1|template,div,...|} v-if="$2">
   $0
 </$1>
 ```
@@ -1068,7 +1068,7 @@ const ${1:name} = ref($2)
 </tr>
 
 <tr>
-<td><code>vref:ts</code> / <code>vrts</code></td>
+<td><code>vref:ts</code> / <code>vrt</code></td>
 <td>Vue ref (typed)</td>
 <td>
 
@@ -1092,7 +1092,7 @@ const ${1:name} = computed(() => $2)
 </tr>
 
 <tr>
-<td><code>vcomputed:ts</code> / <code>vcts</code></td>
+<td><code>vcomputed:ts</code> / <code>vct</code></td>
 <td>Vue computed (typed)</td>
 <td>
 
@@ -1104,7 +1104,7 @@ const ${1:name} = computed<$2>(() => $3)
 </tr>
 
 <tr>
-<td><code>vcomputed-gs</code> / <code>vcgts</code></td>
+<td><code>vcomputed-gs</code> / <code>vcgs</code></td>
 <td>Vue computed (get/set)</td>
 <td>
 
@@ -1121,7 +1121,7 @@ const ${1:name} = computed({
 </tr>
 
 <tr>
-<td><code>vreactive</code> / <code>vrea</code></td>
+<td><code>vreactive</code> / <code>vra</code></td>
 <td>Vue reactive</td>
 <td>
 
@@ -1210,7 +1210,7 @@ const ${1:copy} = readonly(${2:object})
 <td>
 
 ```javascript
-const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
+const ${1:elem} = ref<${2|HTMLInputElement,HTMLInputElement,...|} | null>(null)
 ```
 
 </td>
@@ -1311,7 +1311,7 @@ ${1:const props = }defineProps<${2:Props}>()
 </tr>
 
 <tr>
-<td><code>vprops:withDefaults</code></td>
+<td><code>vprops:defaults</code></td>
 <td>Vue defineProps with defaults</td>
 <td>
 
@@ -1532,7 +1532,7 @@ const $1 = inject(${2:key}, ${3:defaultValue})
 <td>
 
 ```javascript
-provide<${1:string}}>(${2:name}, ${3:value})
+provide<${1:string}>(${2:name}, ${3:value})
 ```
 
 </td>
@@ -1587,160 +1587,12 @@ const attrs = useAttrs()
 </tr>
 
 <tr>
-<td><code>vrouter</code></td>
-<td>Vue router</td>
-<td>
-
-```javascript
-const ${1:router} = useRouter()
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vroute</code></td>
-<td>Vue route</td>
-<td>
-
-```javascript
-const ${1:route} = useRoute()
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vimport</code></td>
 <td>Import from vue</td>
 <td>
 
 ```javascript
 import { $1 } from 'vue'
-```
-
-</td>
-</tr>
-</table>
-
-### Reactivity Transform
-[Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) is currently an experimental feature. It is disabled by default and requires [explicit opt-in](https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in).
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>vref$</code> / <code>vrt</code></td>
-<td>Vue $ref</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vref$:ts</code></td>
-<td>Vue $ref (typed)</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref<$2>($3)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed$</code> / <code>vct</code></td>
-<td>Vue $computed</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed(() => $2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed$:ts</code></td>
-<td>Vue $computed (typed)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed<$2>(() => $3)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed-gs$</code></td>
-<td>Vue $computed (get/set)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed({
-  get: () => ${2},
-  set: (${3:value}: ${4:type}) => {
-    ${5}
-  },
-})
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vtoRef$</code></td>
-<td>Vue $toRef</td>
-<td>
-
-```javascript
-const ${1:name} = $toRef(${2:object}, '${3}')
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vshallowRef$</code></td>
-<td>Vue $shallowRef</td>
-<td>
-
-```javascript
-const ${1:name} = \$shallowRef($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>v$</code></td>
-<td>Vue $() destructuring</td>
-<td>
-
-```javascript
-$($1)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>v$</code></td>
-<td>Vue $$() escape hint</td>
-<td>
-
-```javascript
-$$($1)
 ```
 
 </td>
@@ -1837,8 +1689,138 @@ const hasSlot = (name: string) => !!slots[name]
 </tr>
 </table>
 
+### Reactivity Transform
+[Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) is currently an experimental feature. It is disabled by default and requires [explicit opt-in](https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in).
+<table width="100%">
 
-### Vue Router template
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vref$</code></td>
+<td>Vue $ref</td>
+<td>
+
+```javascript
+const ${1:name} = \$ref($2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed$</code></td>
+<td>Vue $computed</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed(() => $2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomputed-gs$</code></td>
+<td>Vue $computed (get/set)</td>
+<td>
+
+```javascript
+const ${1:name} = \$computed({
+  get: () => ${2},
+  set: (${3:value}: ${4:type}) => {
+    ${5}
+  },
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>v$</code></td>
+<td>Vue $() destructuring</td>
+<td>
+
+```javascript
+$($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>v$</code></td>
+<td>Vue $$() escape hint</td>
+<td>
+
+```javascript
+$($1)
+```
+
+</td>
+</tr>
+</table>
+
+
+### Vue Router (script)
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vrouter</code></td>
+<td>Vue router</td>
+<td>
+
+```javascript
+const ${1:router} = useRouter()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vroute</code></td>
+<td>Vue route</td>
+<td>
+
+```javascript
+const ${1:route} = useRoute()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vrouter:create</code></td>
+<td>Create Vue router</td>
+<td>
+
+```javascript
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes: ${1:routes},
+  scrollBehavior(to, from, savedPosition) {
+    $2
+  }
+})
+```
+
+</td>
+</tr>
+</table>
+
+
+### Vue Router (template)
 
 <table width="100%">
 
@@ -1854,7 +1836,7 @@ const hasSlot = (name: string) => !!slots[name]
 <td>
 
 ```html
-${1|to,...|}="$2"
+${1|to,:to|}="$2"
 ```
 
 </td>
@@ -1928,7 +1910,7 @@ ${1|to,...|}="$2"
 <td>
 
 ```html
-<RouterLink to="$1">$2</RouterLink>
+<RouterLink ${1|to,:to|}="$2">$3</RouterLink>
 ```
 
 </td>
@@ -2060,7 +2042,7 @@ const ${2:$1Store} = use${1/(.*)/${1:/capitalize}/}Store()
 </table>
 
 
-### Nuxt Script
+### Nuxt (script)
 
 <table width="100%">
 
@@ -2403,7 +2385,7 @@ navigateTo('$1', { external: true })
 <td>
 
 ```javascript
-navigateTo('$1', { redirectCode: ${2|301,...|} })
+navigateTo('$1', { redirectCode: ${2|301,302,...|} })
 ```
 
 </td>
@@ -2575,7 +2557,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 </table>
 
 
-### Nuxt template
+### Nuxt (template)
 
 <table width="100%">
 
@@ -2591,7 +2573,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1">$3</NuxtLink>
+<NuxtLink ${1|to,:to|}="$2">$3</NuxtLink>
 ```
 
 </td>
@@ -2603,7 +2585,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1" target="_blank" $3>$4</NuxtLink>
+<NuxtLink ${1|to,:to|}="$2" target="_blank" $3>$4</NuxtLink>
 ```
 
 </td>
@@ -2615,7 +2597,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1" external target="${2|_blank,...|}" $3>$4</NuxtLink>
+<NuxtLink ${1|to,:to|}="$2" external target="${3|_blank,_self|}" $4>$5</NuxtLink>
 ```
 
 </td>
@@ -2699,7 +2681,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLayout ${2|name,...|}="$3">$4</NuxtLayout>
+<NuxtLayout ${2|name,:name|}="$3">$4</NuxtLayout>
 ```
 
 </td>
@@ -2785,7 +2767,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 </table>
 
 
-### VueUse
+### VueUse (script)
 
 <table width="100%">
 
@@ -2961,7 +2943,7 @@ const ${4:value} = useVModel(props, '$1', emit)
 <td>
 
 ```javascript
-const ${1:elem} = ref<${2|HTMLInputElement,...|} | null>(null)
+const ${1:elem} = ref<${2|HTMLInputElement,HTMLDivElement,...|} | null>(null)
 const ${3:isHovered} = useElementHover($1)
 ```
 
@@ -3034,7 +3016,105 @@ const [${1:value}, ${2:toggle}] = useToggle()
 <td>
 
 ```javascript
-const toggle$2 = useToggle($1)
+const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)
+```
+
+</td>
+</tr>
+</table>
+
+
+### Vue Macros
+
+<table width="100%">
+
+<tr>
+<td>Prefix</td>
+<td>Name</td>
+<td>Body</td>
+</tr>
+
+<tr>
+<td><code>vdefineModel</code> / <code>vmacro:model</code></td>
+<td>Define model</td>
+<td>
+
+```javascript
+const { modelValue$2 } = defineModel<{
+  modelValue: ${1:string}
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefinePropsRefs</code> / <code>vmacro:props</code></td>
+<td>Define props refs</td>
+<td>
+
+```javascript
+const { $2 } = definePropsRefs<{
+  $1
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineOptions</code> / <code>vmacro:options</code></td>
+<td>Define options</td>
+<td>
+
+```javascript
+defineOptions({
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineSlots</code> / <code>vmacro:slots</code></td>
+<td>Define slots</td>
+<td>
+
+```javascript
+defineSlots<{
+  $0
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineRender</code> / <code>vmacro:render</code></td>
+<td>Define render</td>
+<td>
+
+```javascript
+defineRender(
+  $0
+)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdefineRender:fn</code> / <code>vmacro:render:fn</code></td>
+<td>Define render function</td>
+<td>
+
+```javascript
+defineRender(() => {
+  return (
+    $0
+  )
+})
 ```
 
 </td>
