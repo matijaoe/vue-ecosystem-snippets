@@ -19,7 +19,7 @@ export const script: XSnippetDefinition = {
       body: [
         "const router = createRouter({",
         "\thistory: createWebHashHistory(),",
-        "\troutes: ${1:routes}",
+        "\troutes: ${1:routes},",
         "\tscrollBehavior(to, from, savedPosition) {",
         "\t\t$2",
         "\t}",
