@@ -2573,7 +2573,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1">$3</NuxtLink>
+<NuxtLink ${1|to,:to|}="$2">$3</NuxtLink>
 ```
 
 </td>
@@ -2585,7 +2585,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1" target="_blank" $3>$4</NuxtLink>
+<NuxtLink ${1|to,:to|}="$2" target="_blank" $3>$4</NuxtLink>
 ```
 
 </td>
@@ -2597,7 +2597,7 @@ setCookie(event, '${1:cookie}', ${2:value})
 <td>
 
 ```html
-<NuxtLink to="$1" external target="${2|_blank,_self|}" $3>$4</NuxtLink>
+<NuxtLink ${1|to,:to|}="$2" external target="${3|_blank,_self|}" $4>$5</NuxtLink>
 ```
 
 </td>

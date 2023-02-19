@@ -8,16 +8,16 @@ export const template: XSnippetDefinition = {
   snippets: {
     nlink: {
       name: "NuxtLink",
-      body: '<NuxtLink to="$1">$3</NuxtLink>',
+      body: '<NuxtLink ${1|to,:to|}="$2">$3</NuxtLink>',
     },
     "nlink:blank": {
       name: "NuxtLink with target _blank",
-      body: '<NuxtLink to="$1" target="_blank" $3>$4</NuxtLink>',
+      body: '<NuxtLink ${1|to,:to|}="$2" target="_blank" $3>$4</NuxtLink>',
     },
     "nlink:external": {
       name: "NuxtLink with target external",
       body:
-        '<NuxtLink to="$1" external target="${2|_blank,_self|}" $3>$4</NuxtLink>',
+        '<NuxtLink ${1|to,:to|}="$2" external target="${3|_blank,_self|}" $4>$5</NuxtLink>',
     },
     "nlink:param": {
       name: "NuxtLink with param",
