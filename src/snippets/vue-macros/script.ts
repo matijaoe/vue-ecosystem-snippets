@@ -6,50 +6,50 @@ export const script: XSnippetDefinition = {
     lang: "javascript",
   },
   snippets: {
-    vdefineModel: {
-      name: "Define model",
+    vdefineModels: {
+      name: "Define models",
       body: [
-        "const { modelValue$2 } = defineModel<{",
+        "const { modelValue$2 } = defineModels<{",
         "\tmodelValue: ${1:string}",
-        "}>()"
+        "}>()",
       ],
-      alt: ["vmacro:model"]
+      alt: ["vmacro:model"],
     },
     vdefinePropsRefs: {
       name: "Define props refs",
       body: [
         "const { $2 } = definePropsRefs<{",
         "\t$1",
-        "}>()"
+        "}>()",
       ],
-      alt: ["vmacro:props"]
+      alt: ["vmacro:props"],
     },
     vdefineOptions: {
       name: "Define options",
       body: [
         "defineOptions({",
         "\t$0",
-        "})"
+        "})",
       ],
-      alt: ["vmacro:options"]
+      alt: ["vmacro:options"],
     },
     vdefineSlots: {
       name: "Define slots",
       body: [
         "defineSlots<{",
         "\t$0",
-        "}>()"
+        "}>()",
       ],
-      alt: ["vmacro:slots"]
+      alt: ["vmacro:slots"],
     },
     vdefineRender: {
       name: "Define render",
       body: [
         "defineRender(",
         "\t$0",
-        ")"
+        ")",
       ],
-      alt: ["vmacro:render"]
+      alt: ["vmacro:render"],
     },
     "vdefineRender:fn": {
       name: "Define render function",
@@ -58,9 +58,9 @@ export const script: XSnippetDefinition = {
         "\treturn (",
         "\t\t$0",
         "\t)",
-        "})"
+        "})",
       ],
-      alt: ["vmacro:render:fn"]
+      alt: ["vmacro:render:fn"],
     },
-  }
-}
+  },
+};

@@ -30,8 +30,8 @@ export const codeSnippets: XSnippetDefinition = {
       body: "const { $2 } = use${1/(.*)/${1:/capitalize}/}($3)",
       alt: ["vud"],
     },
-    vmodel: {
-      name: "Implement v-model",
+    "vmodel:manual": {
+      name: "Implement v-model manually",
       body: [
         "const props = defineProps<{",
         "\t${1:modelValue}: ${2:string}",

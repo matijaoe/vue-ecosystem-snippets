@@ -94,6 +94,14 @@ export const script: XSnippetDefinition = {
       body:
         "watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*)/${1:/capitalize}/}]) => {\n\t$0\n})",
     },
+    "vwatch:immediate": {
+      name: "Vue watch immediate",
+      body: "watch(${1:source}, (${2:val}) => {\n\t$0\n}, { immediate: true })",
+    },
+    "vwatch:deep": {
+      name: "Vue watch deep",
+      body: "watch(${1:source}, (${2:val}) => {\n\t$0\n}, { deep: true })",
+    },
     "vwatch:log": {
       name: "Vue watch source | log",
       body: [
@@ -123,6 +131,18 @@ export const script: XSnippetDefinition = {
         "\t(e: '${2:click}', ${3:payload}: ${4:string}): void,$5",
         "}>()",
       ],
+    },
+    "vemits:new": {
+      name: "Vue defineEmits (new syntax)",
+      body: [
+        "${1:const emit = }defineEmits<{",
+        "\t${2:click}: [${3:payload}: ${4:string}],$5",
+        "}>()",
+      ],
+    },
+    vmodel: {
+      name: "Vue defineModel",
+      body: "const ${1:modelValue} = defineModel<${2:string}>($3)",
     },
     vemit: {
       name: "Vue emit event",
@@ -190,23 +210,28 @@ export const script: XSnippetDefinition = {
     },
     vprovide: {
       name: "Vue provide",
-      body: "provide(${1:name}, ${2:value})",
-    },
-    vinject: {
-      name: "Vue inject",
-      body: "const $1 = inject(${2:key}, ${3:defaultValue})",
+      body: "provide(${1:key}, ${2:value})",
     },
     "vprovide:ts": {
       name: "Vue provide (typed)",
-      body: "provide<${1:string}>(${2:name}, ${3:value})",
+      body: "provide<${1:string}>(${2:key}, ${3:value})",
+    },
+    vinject: {
+      name: "Vue inject",
+      body: "const ${1:value}  = inject(${2:key})",
+    },
+    "vinject:default": {
+      name: "Vue inject with default",
+      body: "const ${1:value}  = inject(${2:key}, ${3:defaultValue})",
     },
     "vinject:ts": {
       name: "Vue inject (typed)",
-      body: "const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
+      body:
+        "const ${1:value} = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
     },
     "vinjectkey": {
       name: "Vue injection key",
-      body: "const ${1:key} = Symbol() as InjectionKey<${2:string}>",
+      body: "const ${1:key} = Symbol('$2') as InjectionKey<${3:string}>",
     },
     vslots: {
       name: "Vue useSlots",

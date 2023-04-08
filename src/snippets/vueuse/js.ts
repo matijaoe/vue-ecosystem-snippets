@@ -56,15 +56,13 @@ export const vueUseJs: XSnippetDefinition = {
     "vuse:vmodel": {
       name: "Implement v-model using useVModel",
       body: [
-        "const props = defineProps<{",
-        "\t${1:modelValue}: ${2:string}",
-        "}>()",
-        "",
-        "const emit = defineEmits<{",
-        "\t(e: 'update:$1', ${3:value}?: $2): void",
-        "}>()",
-        "",
-        "const ${4:value} = useVModel(props, '$1', emit)",
+        "const ${2:value} = useVModel(props, '${1:modelValue}', emit)",
+      ],
+    },
+    "vuse:vmodels": {
+      name: "Implement v-model using useVModels",
+      body: [
+        "const { ${1:modelValue}$2 } = useVModels(props, emit)",
       ],
     },
     "vuse:hover": {
