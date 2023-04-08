@@ -8,7 +8,7 @@ export const script: XSnippetDefinition = {
     pstore: {
       name: "Setup Pinia store",
       body: [
-        "import { acceptHMRUpdate, defineStore } from 'pinia'",
+        "import { defineStore } from 'pinia'",
         "",
         "export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {",
         "\t$0",
@@ -18,15 +18,12 @@ export const script: XSnippetDefinition = {
         "\t}",
         "})",
         "",
-        "if (import.meta.hot)",
-        "\timport.meta.hot.accept(acceptHMRUpdate(use${1/(.*)/${1:/capitalize}/}, import.meta.hot))",
-        "",
       ],
     },
     "pstore:options": {
       name: "Setup Pinia store (Options)",
       body: [
-        "import { acceptHMRUpdate, defineStore } from 'pinia'",
+        "import { defineStore } from 'pinia'",
         "",
         "export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', {",
         "\tstate: () => ({",
@@ -39,9 +36,6 @@ export const script: XSnippetDefinition = {
         "\t\t",
         "\t},",
         "})",
-        "",
-        "if (import.meta.hot)",
-        "\timport.meta.hot.accept(acceptHMRUpdate(use$1, import.meta.hot))",
         "",
       ],
     },
