@@ -74,29 +74,6 @@ $0
 
 <tr>
 <td><code>vbase:full</code></td>
-<td>Vue SFC with style</td>
-<td>
-
-```html
-<script lang="ts" setup>
-$0
-</script>
-
-<template>
-  $1
-</template>
-
-<style scoped>
-  
-</style>
-
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vbase:full:postcss</code></td>
 <td>Vue SFC with style | postcss</td>
 <td>
 
@@ -109,7 +86,30 @@ $0
   $1
 </template>
 
-<style style="postcss" scoped>
+<style lang="postcss" scoped>
+  
+</style>
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbase:full:css</code></td>
+<td>Vue SFC with style | css</td>
+<td>
+
+```html
+<script lang="ts" setup>
+$0
+</script>
+
+<template>
+  $1
+</template>
+
+<style lang="css" scoped>
   
 </style>
 
@@ -132,7 +132,7 @@ $0
   $1
 </template>
 
-<style style="scss" scoped>
+<style lang="scss" scoped>
   
 </style>
 
@@ -211,11 +211,11 @@ $0
 
 <tr>
 <td><code>vstyle</code></td>
-<td>Vue scoped style</td>
+<td>Vue scoped style | postcss</td>
 <td>
 
 ```html
-<style scoped>
+<style lang="postcss" scoped>
 $0
 </style>
 
@@ -240,12 +240,12 @@ $0
 </tr>
 
 <tr>
-<td><code>vstyle:postcss</code></td>
-<td>Vue scoped style | postcss</td>
+<td><code>vstyle:css</code></td>
+<td>Vue scoped style | css</td>
 <td>
 
 ```html
-<style lang="postcss" scoped>
+<style lang="css" scoped>
 $0
 </style>
 
@@ -1982,7 +1982,7 @@ ${1|to,:to|}="$2"
 <td>
 
 ```javascript
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { defineStore } from 'pinia'
 
 export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
   $0
@@ -1991,9 +1991,6 @@ export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
    
   }
 })
-
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(use${1/(.*)/${1:/capitalize}/}, import.meta.hot))
 
 ```
 
@@ -2006,7 +2003,7 @@ if (import.meta.hot)
 <td>
 
 ```javascript
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { defineStore } from 'pinia'
 
 export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', {
   state: () => ({
@@ -2019,9 +2016,6 @@ export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', {
     
   },
 })
-
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(use$1, import.meta.hot))
 
 ```
 
