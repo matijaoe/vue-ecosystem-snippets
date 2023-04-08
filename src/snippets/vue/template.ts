@@ -133,6 +133,14 @@ export const template: XSnippetDefinition = {
       name: "v-bind",
       body: 'v-bind="$1"',
     },
+    "vbind:attrs": {
+      name: "v-bind attrs",
+      body: 'v-bind="\\$attrs"',
+    },
+    "vbind:props": {
+      name: "v-bind props",
+      body: 'v-bind="\\$props"',
+    },
     vmodel: {
       name: "v-model",
       body: 'v-model="$1"',

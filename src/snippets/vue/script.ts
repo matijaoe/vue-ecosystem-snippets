@@ -202,23 +202,28 @@ export const script: XSnippetDefinition = {
     },
     vprovide: {
       name: "Vue provide",
-      body: "provide(${1:name}, ${2:value})",
-    },
-    vinject: {
-      name: "Vue inject",
-      body: "const $1 = inject(${2:key}, ${3:defaultValue})",
+      body: "provide(${1:key}, ${2:value})",
     },
     "vprovide:ts": {
       name: "Vue provide (typed)",
-      body: "provide<${1:string}>(${2:name}, ${3:value})",
+      body: "provide<${1:string}>(${2:key}, ${3:value})",
+    },
+    vinject: {
+      name: "Vue inject",
+      body: "const ${1:value}  = inject(${2:key})",
+    },
+    "vinject:default": {
+      name: "Vue inject with default",
+      body: "const ${1:value}  = inject(${2:key}, ${3:defaultValue})",
     },
     "vinject:ts": {
       name: "Vue inject (typed)",
-      body: "const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
+      body:
+        "const ${1:value} = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
     },
     "vinjectkey": {
       name: "Vue injection key",
-      body: "const ${1:key} = Symbol() as InjectionKey<${2:string}>",
+      body: "const ${1:key} = Symbol('$2') as InjectionKey<${3:string}>",
     },
     vslots: {
       name: "Vue useSlots",

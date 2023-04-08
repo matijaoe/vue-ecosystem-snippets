@@ -664,6 +664,30 @@ v-bind="$1"
 </tr>
 
 <tr>
+<td><code>vbind:attrs</code></td>
+<td>v-bind attrs</td>
+<td>
+
+```html
+v-bind="\$attrs"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbind:props</code></td>
+<td>v-bind props</td>
+<td>
+
+```html
+v-bind="\$props"
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vmodel</code></td>
 <td>v-model</td>
 <td>
@@ -1548,19 +1572,7 @@ onDeactivated(() => {
 <td>
 
 ```javascript
-provide(${1:name}, ${2:value})
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vinject</code></td>
-<td>Vue inject</td>
-<td>
-
-```javascript
-const $1 = inject(${2:key}, ${3:defaultValue})
+provide(${1:key}, ${2:value})
 ```
 
 </td>
@@ -1572,7 +1584,31 @@ const $1 = inject(${2:key}, ${3:defaultValue})
 <td>
 
 ```javascript
-provide<${1:string}>(${2:name}, ${3:value})
+provide<${1:string}>(${2:key}, ${3:value})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vinject</code></td>
+<td>Vue inject</td>
+<td>
+
+```javascript
+const ${1:value}  = inject(${2:key})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vinject:default</code></td>
+<td>Vue inject with default</td>
+<td>
+
+```javascript
+const ${1:value}  = inject(${2:key}, ${3:defaultValue})
 ```
 
 </td>
@@ -1584,7 +1620,7 @@ provide<${1:string}>(${2:name}, ${3:value})
 <td>
 
 ```javascript
-const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})
+const ${1:value} = inject<${2:string}}>(${3:key}, ${4:defaultValue})
 ```
 
 </td>
@@ -1596,7 +1632,7 @@ const $1 = inject<${2:string}}>(${3:key}, ${4:defaultValue})
 <td>
 
 ```javascript
-const ${1:key} = Symbol() as InjectionKey<${2:string}>
+const ${1:key} = Symbol('$2') as InjectionKey<${3:string}>
 ```
 
 </td>
@@ -3073,12 +3109,12 @@ const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)
 </tr>
 
 <tr>
-<td><code>vdefineModel</code> / <code>vmacro:model</code></td>
-<td>Define model</td>
+<td><code>vdefineModels</code> / <code>vmacro:model</code></td>
+<td>Define models</td>
 <td>
 
 ```javascript
-const { modelValue$2 } = defineModel<{
+const { modelValue$2 } = defineModels<{
   modelValue: ${1:string}
 }>()
 ```
