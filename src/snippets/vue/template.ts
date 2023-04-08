@@ -187,7 +187,7 @@ export const template: XSnippetDefinition = {
     },
     vb: {
       name: "bind property",
-      body: ':${1:prop}="$2"',
+      body: ':${1:prop}="${2:$1}"',
     },
     vclass: {
       name: "Vue classes",
