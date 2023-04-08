@@ -132,6 +132,14 @@ export const script: XSnippetDefinition = {
         "}>()",
       ],
     },
+    "vemits:new": {
+      name: "Vue defineEmits (new syntax)",
+      body: [
+        "${1:const emit = }defineEmits<{",
+        "\t${2:click}: [${3:payload}: ${4:string}],$5",
+        "}>()",
+      ],
+    },
     vmodel: {
       name: "Vue defineModel",
       body: "const ${1:modelValue} = defineModel<${2:string}>($3)",

@@ -1403,6 +1403,20 @@ ${1:const emit = }defineEmits<{
 </tr>
 
 <tr>
+<td><code>vemits:new</code></td>
+<td>Vue defineEmits (new syntax)</td>
+<td>
+
+```javascript
+${1:const emit = }defineEmits<{
+  ${2:click}: [${3:payload}: ${4:string}],$5
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vmodel</code></td>
 <td>Vue defineModel</td>
 <td>
