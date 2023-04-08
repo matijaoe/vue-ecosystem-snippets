@@ -1285,6 +1285,34 @@ watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*
 </tr>
 
 <tr>
+<td><code>vwatch:immediate</code></td>
+<td>Vue watch immediate</td>
+<td>
+
+```javascript
+watch(${1:source}, (${2:val}) => {
+  $0
+}, { immediate: true })
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatch:deep</code></td>
+<td>Vue watch deep</td>
+<td>
+
+```javascript
+watch(${1:source}, (${2:val}) => {
+  $0
+}, { deep: true })
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vwatch:log</code></td>
 <td>Vue watch source | log</td>
 <td>
@@ -1345,6 +1373,18 @@ ${1:const emit = }defineEmits(['$2'])
 ${1:const emit = }defineEmits<{
   (e: '${2:click}', ${3:payload}: ${4:string}): void,$5
 }>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vmodel</code></td>
+<td>Vue defineModel</td>
+<td>
+
+```javascript
+const ${1:modelValue} = defineModel<${2:string}>($3)
 ```
 
 </td>
@@ -1653,8 +1693,8 @@ const { $2 } = use${1/(.*)/${1:/capitalize}/}($3)
 </tr>
 
 <tr>
-<td><code>vmodel</code></td>
-<td>Implement v-model</td>
+<td><code>vmodel:manual</code></td>
+<td>Implement v-model manually</td>
 <td>
 
 ```javascript
@@ -2917,15 +2957,19 @@ whenever(${1:source}, (${2:val}) => {
 <td>
 
 ```javascript
-const props = defineProps<{
-  ${1:modelValue}: ${2:string}
-}>()
+const ${2:value} = useVModel(props, '${1:modelValue}', emit)
+```
 
-const emit = defineEmits<{
-  (e: 'update:$1', ${3:value}?: $2): void
-}>()
+</td>
+</tr>
 
-const ${4:value} = useVModel(props, '$1', emit)
+<tr>
+<td><code>vuse:vmodels</code></td>
+<td>Implement v-model using useVModels</td>
+<td>
+
+```javascript
+const { ${1:modelValue}$2 } = useVModels(props, emit)
 ```
 
 </td>

@@ -94,6 +94,14 @@ export const script: XSnippetDefinition = {
       body:
         "watch([${1:source1}, ${2:source2}], ([new${1/(.*)/${1:/capitalize}/}, new${2/(.*)/${1:/capitalize}/}]) => {\n\t$0\n})",
     },
+    "vwatch:immediate": {
+      name: "Vue watch immediate",
+      body: "watch(${1:source}, (${2:val}) => {\n\t$0\n}, { immediate: true })",
+    },
+    "vwatch:deep": {
+      name: "Vue watch deep",
+      body: "watch(${1:source}, (${2:val}) => {\n\t$0\n}, { deep: true })",
+    },
     "vwatch:log": {
       name: "Vue watch source | log",
       body: [
@@ -123,6 +131,10 @@ export const script: XSnippetDefinition = {
         "\t(e: '${2:click}', ${3:payload}: ${4:string}): void,$5",
         "}>()",
       ],
+    },
+    vmodel: {
+      name: "Vue defineModel",
+      body: "const ${1:modelValue} = defineModel<${2:string}>($3)",
     },
     vemit: {
       name: "Vue emit event",

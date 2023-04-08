@@ -9,7 +9,7 @@ export const script: XSnippetDefinition = {
     vdefineModel: {
       name: "Define model",
       body: [
-        "const { modelValue$2 } = defineModel<{",
+        "const { modelValue$2 } = defineModels<{",
         "\tmodelValue: ${1:string}",
         "}>()"
       ],
