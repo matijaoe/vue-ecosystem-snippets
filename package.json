@@ -1,7 +1,7 @@
 {
   "name": "vue-nuxt-snippets",
   "displayName": "Vue Ecosystem Snippets",
-  "description": "Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse & Vue Router.",
+  "description": "Snippets for the modern Vue ecosystem - including Nuxt 3, Pinia, VueUse, Vue Router & Vue Macros.",
   "version": "0.7.0",
   "license": "MIT",
   "icon": "assets/icon.png",

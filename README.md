@@ -7,7 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 ## Features
-- Only the latest Vue syntax (including [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html))
+- Only the latest Vue syntax
 - Over **200** snippets 
 - TypeScript-first
 - Nuxt 3, Pinia, VueUse, Vue Router & Vue Macros support
