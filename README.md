@@ -155,7 +155,7 @@ $0
   $1
 </template>
 
-<style style="less" scoped>
+<style lang="less" scoped>
   
 </style>
 
