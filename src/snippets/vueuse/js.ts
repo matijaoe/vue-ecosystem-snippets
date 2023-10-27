@@ -5,6 +5,11 @@ export const vueUseJs: XSnippetDefinition = {
     title: "VueUse (script)",
   },
   snippets: {
+    "vRefAutoReset": {
+      name: "VueUse refAutoReset",
+      body:
+        "const ${1:name} = refAutoReset('$2', ${3:1000})",
+    },
     "vwatchArray": {
       name: "VueUse watchArray",
       body:
@@ -28,6 +33,11 @@ export const vueUseJs: XSnippetDefinition = {
     "vwatchOnce": {
       name: "VueUse watchOnce",
       body: "watchOnce(${1:source}, (${2:val}) => {\n\t$0\n})",
+    },
+    "vwatchImmediate": {
+      name: "VueUse watchImmediate",
+      body:
+        "vwatchImmediate(${1:source}, (${2:val}) => {\n\t$0\n})",
     },
     "vwatchPausable": {
       name: "VueUse watchPausable",
@@ -92,10 +102,17 @@ export const vueUseJs: XSnippetDefinition = {
     "vuse:toggle": {
       name: "VueUse useToggle",
       body: "const [${1:value}, ${2:toggle}] = useToggle()",
+      alt: ["vut"]
     },
     "vuse:toggle:fn": {
       name: "VueUse useToggle function",
       body: "const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)",
+      alt: ["vutt"]
+    },
+    "vuse:import": {
+      name: "Import from vueuse",
+      body: "import { $1 } from '@vueuse/core'",
+      alt: ["vuim"],
     },
   },
 };
