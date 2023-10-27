@@ -27,7 +27,7 @@ export const script: XSnippetDefinition = {
       body: "const ${1:name} = computed<$2>(() => $3)",
       alt: ["vct"],
     },
-    "vcomputed-gs": {
+    "vcomputed:gs": {
       name: "Vue computed (get/set)",
       body: [
         "const ${1:name} = computed({",
@@ -48,25 +48,25 @@ export const script: XSnippetDefinition = {
       name: "Vue reactive (typed)",
       body: "const ${1:name}: ${2:type} = reactive({$3})",
     },
-    vtoRef: {
-      name: "Vue toRef",
-      body: "const ${1:name} = toRef(${2:object}, '$3')",
-    },
-    vtoRefs: {
-      name: "Vue toRefs",
-      body: "const ${1:name} = toRefs(${2:object})",
-    },
     vshallowRef: {
       name: "Vue shallowRef",
       body: "const ${1:name} = shallowRef($2)",
     },
+    vtoRef: {
+      name: "Vue toRef",
+      body: "oRef(${1:object}, '$2')",
+    },
+    vtoRefs: {
+      name: "Vue toRefs",
+      body: "toRefs(${1:object})",
+    },
     vunref: {
       name: "Vue unref",
-      body: "const ${1:unwrapped} = unref($2)",
+      body: "unref($1)",
     },
     vreadonly: {
       name: "Vue readonly",
-      body: "const ${1:copy} = readonly(${2:object})",
+      body: "readonly(${1:object})",
     },
     "vref:elem": {
       name: "Vue element ref",
@@ -109,6 +109,7 @@ export const script: XSnippetDefinition = {
         "\tconsole.log('$1:', $2)",
         "})",
       ],
+      alt: ["vwl"],
     },
     vprops: {
       name: "Vue defineProps",
@@ -120,23 +121,27 @@ export const script: XSnippetDefinition = {
         "${1:const props = }withDefaults(defineProps<${2:Props}>(), {\n\t$0\n})",
       ],
     },
+    "vprops:js": {
+      name: "Vue defineProps without TS",
+      body: "${1:const props = }defineProps({\n\t$2\n})",
+    },
     vemits: {
       name: "Vue defineEmits",
-      body: "${1:const emit = }defineEmits(['$2'])",
-    },
-    "vemits:ts": {
-      name: "Vue defineEmits (typed)",
-      body: [
-        "${1:const emit = }defineEmits<{",
-        "\t(e: '${2:click}', ${3:payload}: ${4:string}): void,$5",
-        "}>()",
-      ],
-    },
-    "vemits:new": {
-      name: "Vue defineEmits (new syntax)",
       body: [
         "${1:const emit = }defineEmits<{",
         "\t${2:click}: [${3:payload}: ${4:string}],$5",
+        "}>()",
+      ],
+    },
+    "vemits:alt": {
+      name: "Vue defineEmits without TS",
+      body: "${1:const emit = }defineEmits(['$2'])",
+    },
+    "vemits:old": {
+      name: "Vue defineEmits (old syntax)",
+      body: [
+        "${1:const emit = }defineEmits<{",
+        "\t(e: '${2:click}', ${3:payload}: ${4:string}): void,$5",
         "}>()",
       ],
     },
@@ -146,7 +151,7 @@ export const script: XSnippetDefinition = {
     },
     vemit: {
       name: "Vue emit event",
-      body: "emit('$1', $2)",
+      body: "emit('$1'$2)",
     },
     vexpose: {
       name: "Vue defineExpose",
@@ -218,7 +223,7 @@ export const script: XSnippetDefinition = {
     },
     vinject: {
       name: "Vue inject",
-      body: "const ${1:value}  = inject(${2:key})",
+      body: "const ${1:value} = inject(${2:key})",
     },
     "vinject:default": {
       name: "Vue inject with default",
@@ -244,6 +249,7 @@ export const script: XSnippetDefinition = {
     vimport: {
       name: "Import from vue",
       body: "import { $1 } from 'vue'",
+      alt: ["vim"],
     },
   },
 };

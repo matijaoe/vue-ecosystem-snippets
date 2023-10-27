@@ -1128,7 +1128,7 @@ const ${1:name} = computed<$2>(() => $3)
 </tr>
 
 <tr>
-<td><code>vcomputed-gs</code> / <code>vcgs</code></td>
+<td><code>vcomputed:gs</code> / <code>vcgs</code></td>
 <td>Vue computed (get/set)</td>
 <td>
 
@@ -1169,30 +1169,6 @@ const ${1:name}: ${2:type} = reactive({$3})
 </tr>
 
 <tr>
-<td><code>vtoRef</code></td>
-<td>Vue toRef</td>
-<td>
-
-```javascript
-const ${1:name} = toRef(${2:object}, '$3')
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vtoRefs</code></td>
-<td>Vue toRefs</td>
-<td>
-
-```javascript
-const ${1:name} = toRefs(${2:object})
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vshallowRef</code></td>
 <td>Vue shallowRef</td>
 <td>
@@ -1205,12 +1181,36 @@ const ${1:name} = shallowRef($2)
 </tr>
 
 <tr>
+<td><code>vtoRef</code></td>
+<td>Vue toRef</td>
+<td>
+
+```javascript
+oRef(${1:object}, '$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vtoRefs</code></td>
+<td>Vue toRefs</td>
+<td>
+
+```javascript
+toRefs(${1:object})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vunref</code></td>
 <td>Vue unref</td>
 <td>
 
 ```javascript
-const ${1:unwrapped} = unref($2)
+unref($1)
 ```
 
 </td>
@@ -1222,7 +1222,7 @@ const ${1:unwrapped} = unref($2)
 <td>
 
 ```javascript
-const ${1:copy} = readonly(${2:object})
+readonly(${1:object})
 ```
 
 </td>
@@ -1337,7 +1337,7 @@ watch(${1:source}, (${2:val}) => {
 </tr>
 
 <tr>
-<td><code>vwatch:log</code></td>
+<td><code>vwatch:log</code> / <code>vwl</code></td>
 <td>Vue watch source | log</td>
 <td>
 
@@ -1377,8 +1377,36 @@ ${1:const props = }withDefaults(defineProps<${2:Props}>(), {
 </tr>
 
 <tr>
+<td><code>vprops:js</code></td>
+<td>Vue defineProps without TS</td>
+<td>
+
+```javascript
+${1:const props = }defineProps({
+  $2
+})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vemits</code></td>
 <td>Vue defineEmits</td>
+<td>
+
+```javascript
+${1:const emit = }defineEmits<{
+  ${2:click}: [${3:payload}: ${4:string}],$5
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vemits:alt</code></td>
+<td>Vue defineEmits without TS</td>
 <td>
 
 ```javascript
@@ -1389,27 +1417,13 @@ ${1:const emit = }defineEmits(['$2'])
 </tr>
 
 <tr>
-<td><code>vemits:ts</code></td>
-<td>Vue defineEmits (typed)</td>
+<td><code>vemits:old</code></td>
+<td>Vue defineEmits (old syntax)</td>
 <td>
 
 ```javascript
 ${1:const emit = }defineEmits<{
   (e: '${2:click}', ${3:payload}: ${4:string}): void,$5
-}>()
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vemits:new</code></td>
-<td>Vue defineEmits (new syntax)</td>
-<td>
-
-```javascript
-${1:const emit = }defineEmits<{
-  ${2:click}: [${3:payload}: ${4:string}],$5
 }>()
 ```
 
@@ -1434,7 +1448,7 @@ const ${1:modelValue} = defineModel<${2:string}>($3)
 <td>
 
 ```javascript
-emit('$1', $2)
+emit('$1'$2)
 ```
 
 </td>
@@ -1610,7 +1624,7 @@ provide<${1:string}>(${2:key}, ${3:value})
 <td>
 
 ```javascript
-const ${1:value}  = inject(${2:key})
+const ${1:value} = inject(${2:key})
 ```
 
 </td>
@@ -1677,7 +1691,7 @@ const attrs = useAttrs()
 </tr>
 
 <tr>
-<td><code>vimport</code></td>
+<td><code>vimport</code> / <code>vim</code></td>
 <td>Import from vue</td>
 <td>
 
@@ -2862,6 +2876,18 @@ setCookie(event, '${1:cookie}', ${2:value})
 </tr>
 
 <tr>
+<td><code>vRefAutoReset</code></td>
+<td>VueUse refAutoReset</td>
+<td>
+
+```javascript
+const ${1:name} = refAutoReset('$2', ${3:1000})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vwatchArray</code></td>
 <td>VueUse watchArray</td>
 <td>
@@ -2924,6 +2950,20 @@ const { stop:$3, ignoreUpdates:$4 } =  = watchIgnorable(${1:source}, (${2:val}) 
 
 ```javascript
 watchOnce(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchImmediate</code></td>
+<td>VueUse watchImmediate</td>
+<td>
+
+```javascript
+vwatchImmediate(${1:source}, (${2:val}) => {
   $0
 })
 ```
@@ -3087,7 +3127,7 @@ isDefined($1)
 </tr>
 
 <tr>
-<td><code>vuse:toggle</code></td>
+<td><code>vuse:toggle</code> / <code>vut</code></td>
 <td>VueUse useToggle</td>
 <td>
 
@@ -3099,12 +3139,24 @@ const [${1:value}, ${2:toggle}] = useToggle()
 </tr>
 
 <tr>
-<td><code>vuse:toggle:fn</code></td>
+<td><code>vuse:toggle:fn</code> / <code>vutt</code></td>
 <td>VueUse useToggle function</td>
 <td>
 
 ```javascript
 const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:import</code> / <code>vuim</code></td>
+<td>Import from vueuse</td>
+<td>
+
+```javascript
+import { $1 } from '@vueuse/core'
 ```
 
 </td>
