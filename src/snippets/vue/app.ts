@@ -1,11 +1,10 @@
 import { XSnippetVariant } from "../../models/app.ts";
 
+import { codeSnippets } from "./code-snippets.ts";
 import { script } from "./script.ts";
+import { style } from "./style.ts";
 import { template } from "./template.ts";
 import { vueSfc } from "./vue.ts";
-import { style } from "./style.ts";
-import { codeSnippets } from "./code-snippets.ts";
-import { reactivityTransform } from "./reactivity-transform.ts";
 
 export const vue: XSnippetVariant[] = [
   {
@@ -22,6 +21,6 @@ export const vue: XSnippetVariant[] = [
   },
   {
     fileName: "vue-script",
-    snippetDefinitions: [script, codeSnippets, reactivityTransform],
+    snippetDefinitions: [script, codeSnippets],
   },
 ];

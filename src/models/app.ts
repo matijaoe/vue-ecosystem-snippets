@@ -22,7 +22,7 @@ export type XSnippetDefinition = SnippetDefinition<XSnippetDict>;
 export type VscSnippetDefinition = SnippetDefinition<VscSnippetDict>;
 
 export type SnippetVariant<T> = {
-  label: string;
+  label?: string;
   description?: string;
   fileName: string;
   snippetDefinitions: T[];
