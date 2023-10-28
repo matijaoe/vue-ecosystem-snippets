@@ -339,7 +339,7 @@ $0
 </tr>
 
 <tr>
-<td><code>template</code></td>
+<td><code>template</code> / <code>vtemplate</code></td>
 <td>template</td>
 <td>
 
@@ -351,7 +351,7 @@ $0
 </tr>
 
 <tr>
-<td><code>component</code></td>
+<td><code>component</code> / <code>vcomponent</code></td>
 <td>component</td>
 <td>
 
@@ -580,24 +580,24 @@ v-if="$1"
 </tr>
 
 <tr>
-<td><code>velse</code> / <code>else</code></td>
-<td>v-else</td>
+<td><code>veif</code> / <code>elif</code></td>
+<td>v-else-if</td>
 <td>
 
 ```html
-v-else
+v-else-if="$1"
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>velif</code> / <code>elif</code></td>
-<td>v-else-if</td>
+<td><code>velse</code> / <code>else</code></td>
+<td>v-else</td>
 <td>
 
 ```html
-v-else-if="$1"
+v-else
 ```
 
 </td>
@@ -640,12 +640,132 @@ v-for="${1:n} in ${2:5}" :key="$1"
 </tr>
 
 <tr>
+<td><code>vemit</code> / <code>emit</code></td>
+<td>emit</td>
+<td>
+
+```html
+emit('$1'$2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vemit:pass</code></td>
+<td>Vue pass emit</td>
+<td>
+
+```html
+@${1|click,input,...|}="\$emit('${2:$1}', \$event)"
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>von</code></td>
 <td>v-on</td>
 <td>
 
 ```html
 v-on="${1:emits}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:event</code> / <code>voe</code></td>
+<td>event handler</td>
+<td>
+
+```html
+@$1="$2"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:click</code> / <code>voc</code></td>
+<td>click handler</td>
+<td>
+
+```html
+@click="${1:onClick}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:input</code> / <code>voi</code></td>
+<td>input handler</td>
+<td>
+
+```html
+@input="${1:onInput}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:update</code></td>
+<td>update handler</td>
+<td>
+
+```html
+@update="${1:onUpdate}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:change</code></td>
+<td>change handler</td>
+<td>
+
+```html
+@change="${1:onChange}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:blur</code></td>
+<td>blur handler</td>
+<td>
+
+```html
+@blur="${1:onBlur}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:focus</code></td>
+<td>focus handler</td>
+<td>
+
+```html
+@focus="${1:onFocus}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:submit</code></td>
+<td>submit handler</td>
+<td>
+
+```html
+@submit${1:.prevent}="${2:onSubmit}"
 ```
 
 </td>
@@ -682,6 +802,18 @@ v-bind="\$attrs"
 
 ```html
 v-bind="\$props"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbind:full</code></td>
+<td>v-bind props and attrs</td>
+<td>
+
+```html
+v-bind="[\$props, \$attrs]"
 ```
 
 </td>
@@ -845,7 +977,7 @@ ${1|is,:is|}="$2"
 
 <tr>
 <td><code>vb</code></td>
-<td>bind property</td>
+<td>bind attribute</td>
 <td>
 
 ```html
@@ -856,8 +988,32 @@ ${1|is,:is|}="$2"
 </tr>
 
 <tr>
+<td><code>va</code></td>
+<td>attribute</td>
+<td>
+
+```html
+${1:prop}="$2"
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vclass</code> / <code>vc</code></td>
 <td>Vue classes</td>
+<td>
+
+```html
+:class="$1"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vclass:list</code> / <code>vca</code></td>
+<td>Vue classes list</td>
 <td>
 
 ```html
@@ -904,8 +1060,8 @@ ${1|is,:is|}="$2"
 </tr>
 
 <tr>
-<td><code>vti</code></td>
-<td>Vue text interpolation</td>
+<td><code>vv</code></td>
+<td>Vue </td>
 <td>
 
 ```html
@@ -916,12 +1072,12 @@ ${1|is,:is|}="$2"
 </tr>
 
 <tr>
-<td><code>vemit</code></td>
-<td>Vue emit event</td>
+<td><code>vvt</code></td>
+<td>Vue i18n translation</td>
 <td>
 
 ```html
-@${1|click,input,...|}="\$emit('${2:$1}', \$event)"
+{{ t('$1') }}
 ```
 
 </td>
@@ -1002,6 +1158,34 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <${1|template,div,...|} v-if="$2">
   $0
 </$1>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vtif</code></td>
+<td>template with v-if</td>
+<td>
+
+```html
+<template v-if="$2">
+  $0
+</template>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdif</code></td>
+<td>div with v-if</td>
+<td>
+
+```html
+<div v-if="$2">
+  $0
+</div>
 ```
 
 </td>
@@ -1186,7 +1370,7 @@ const ${1:name} = shallowRef($2)
 <td>
 
 ```javascript
-oRef(${1:object}, '$2')
+toRef(${1:props}, '$2')
 ```
 
 </td>
@@ -1198,7 +1382,7 @@ oRef(${1:object}, '$2')
 <td>
 
 ```javascript
-toRefs(${1:object})
+toRefs(${1:props})
 ```
 
 </td>
@@ -1631,24 +1815,24 @@ const ${1:value} = inject(${2:key})
 </tr>
 
 <tr>
-<td><code>vinject:default</code></td>
-<td>Vue inject with default</td>
+<td><code>vinject:ts</code></td>
+<td>Vue inject (typed)</td>
 <td>
 
 ```javascript
-const ${1:value}  = inject(${2:key}, ${3:defaultValue})
+const ${1:value} = inject<${2:string}>(${3:key})
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>vinject:ts</code></td>
-<td>Vue inject (typed)</td>
+<td><code>vinject:default</code></td>
+<td>Vue inject with default</td>
 <td>
 
 ```javascript
-const ${1:value} = inject<${2:string}}>(${3:key}, ${4:defaultValue})
+const ${1:value}  = inject(${2:key}, ${3:defaultValue})
 ```
 
 </td>
@@ -1719,7 +1903,26 @@ Useful vue snippets and helpers
 <td>
 
 ```javascript
-export const use${1/(.*)/${1:/capitalize}/} = () => {
+export const use${1/(.*)/${1:/pascalcase}/} = () => {
+  $0
+  
+  return {
+    
+  }
+}
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomposable:file</code> / <code>vdcf</code></td>
+<td>Vue define composable in file</td>
+<td>
+
+```javascript
+export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/} = () => {
   $0
   
   return {
@@ -2012,7 +2215,7 @@ ${1|to,:to|}="$2"
 ```javascript
 import { defineStore } from 'pinia'
 
-export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
+export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}Store = defineStore('$TM_FILENAME_BASE', () => {
   $0
   
   return {
@@ -2033,16 +2236,12 @@ export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
 ```javascript
 import { defineStore } from 'pinia'
 
-export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', {
-  state: () => ({
-    
-  }),
-  getters: {
-    
-  },
-  actions: {
-    
-  },
+export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}Store = defineStore('$TM_FILENAME_BASE', {
+ state: () => ({
+   $0
+ }),
+ getters: {},
+ actions: {},
 })
 
 ```

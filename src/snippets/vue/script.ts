@@ -54,11 +54,11 @@ export const script: XSnippetDefinition = {
     },
     vtoRef: {
       name: "Vue toRef",
-      body: "oRef(${1:object}, '$2')",
+      body: "toRef(${1:props}, '$2')",
     },
     vtoRefs: {
       name: "Vue toRefs",
-      body: "toRefs(${1:object})",
+      body: "toRefs(${1:props})",
     },
     vunref: {
       name: "Vue unref",
@@ -225,14 +225,13 @@ export const script: XSnippetDefinition = {
       name: "Vue inject",
       body: "const ${1:value} = inject(${2:key})",
     },
+    "vinject:ts": {
+      name: "Vue inject (typed)",
+      body: "const ${1:value} = inject<${2:string}>(${3:key})",
+    },
     "vinject:default": {
       name: "Vue inject with default",
       body: "const ${1:value}  = inject(${2:key}, ${3:defaultValue})",
-    },
-    "vinject:ts": {
-      name: "Vue inject (typed)",
-      body:
-        "const ${1:value} = inject<${2:string}}>(${3:key}, ${4:defaultValue})",
     },
     "vinjectkey": {
       name: "Vue injection key",
