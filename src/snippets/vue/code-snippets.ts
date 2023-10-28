@@ -9,7 +9,7 @@ export const codeSnippets: XSnippetDefinition = {
     vcomposable: {
       name: "Vue define composable",
       body: [
-        "export const use${1/(.*)/${1:/capitalize}/} = () => {",
+        "export const use${1/(.*)/${1:/pascalcase}/} = () => {",
         "\t$0",
         "\t",
         "\treturn {",
@@ -19,6 +19,20 @@ export const codeSnippets: XSnippetDefinition = {
         "",
       ],
       alt: ["vdc"],
+    },
+    "vcomposable:file": {
+      name: "Vue define composable in file",
+      body: [
+        "export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/} = () => {",
+        "\t$0",
+        "\t",
+        "\treturn {",
+        "\t\t",
+        "\t}",
+        "}",
+        "",
+      ],
+      alt: ["vdcf"],
     },
     vuse: {
       name: "Use composable",
