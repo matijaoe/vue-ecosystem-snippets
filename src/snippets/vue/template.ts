@@ -13,10 +13,12 @@ export const template: XSnippetDefinition = {
     template: {
       name: "template",
       body: "<template>$0</template>",
+      alt: ["vtemplate"]
     },
     component: {
       name: "component",
       body: "<component>$0</component>",
+      alt: ["vcomponent"]
     },
     nslot: {
       name: "named slot",
@@ -103,15 +105,15 @@ export const template: XSnippetDefinition = {
       body: 'v-if="$1"',
       alt: ["if"],
     },
+    veif: {
+      name: "v-else-if",
+      body: 'v-else-if="$1"',
+      alt: ["elif"],
+    },
     velse: {
       name: "v-else",
       body: "v-else",
       alt: ["else"],
-    },
-    velif: {
-      name: "v-else-if",
-      body: 'v-else-if="$1"',
-      alt: ["elif"],
     },
     vfor: {
       name: "v-for",
@@ -125,9 +127,54 @@ export const template: XSnippetDefinition = {
       name: "v-for range",
       body: 'v-for="${1:n} in ${2:5}" :key="$1"',
     },
+    vemit: {
+      name: "emit",
+      body: "emit('$1'$2)",
+      alt: ["emit"]
+    },
+    "vemit:pass": {
+      name: "Vue pass emit",
+      body:
+        "@${1|click,input,change,focus,blur|}=\"\\$emit('${2:$1}', \\$event)\"",
+    },
     von: {
       name: "v-on",
       body: 'v-on="${1:emits}"',
+    },
+    "von:event": {
+      name: "event handler",
+      body: '@$1="$2"',
+      alt: ['voe']
+    },
+    "von:click": {
+      name: "click handler",
+      body: '@click="${1:onClick}"',
+      alt: ['voc']
+    },
+    "von:input": {
+      name: "input handler",
+      body: '@input="${1:onInput}"',
+      alt: ['voi']
+    },
+    "von:update": {
+      name: "update handler",
+      body: '@update="${1:onUpdate}"',
+    },
+    "von:change": {
+      name: "change handler",
+      body: '@change="${1:onChange}"',
+    },
+    "von:blur": {
+      name: "blur handler",
+      body: '@blur="${1:onBlur}"',
+    },
+    "von:focus": {
+      name: "focus handler",
+      body: '@focus="${1:onFocus}"',
+    },
+    "von:submit": {
+      name: "submit handler",
+      body: '@submit${1:.prevent}="${2:onSubmit}"',
     },
     vbind: {
       name: "v-bind",
@@ -140,6 +187,10 @@ export const template: XSnippetDefinition = {
     "vbind:props": {
       name: "v-bind props",
       body: 'v-bind="\\$props"',
+    },
+    "vbind:full": {
+      name: "v-bind props and attrs",
+      body: 'v-bind="[\\$props, \\$attrs]"',
     },
     vmodel: {
       name: "v-model",
@@ -194,13 +245,22 @@ export const template: XSnippetDefinition = {
       body: '${1|is,:is|}="$2"',
     },
     vb: {
-      name: "bind property",
+      name: "bind attribute",
       body: ':${1:prop}="${2:$1}"',
+    },
+    va: {
+      name: "attribute",
+      body: '${1:prop}="$2"',
     },
     vclass: {
       name: "Vue classes",
-      body: `:class="[$1]"`,
+      body: `:class="$1"`,
       alt: ["vc"],
+    },
+    "vclass:list": {
+      name: "Vue classes list",
+      body: `:class="[$1]"`,
+      alt: ["vca"],
     },
     "vclass:cond": {
       name: "Vue conditional classes",
@@ -215,14 +275,13 @@ export const template: XSnippetDefinition = {
       name: "Vue inline style list",
       body: `:style="[$1]"`,
     },
-    vti: {
-      name: "Vue text interpolation",
+    vv: {
+      name: "Vue ",
       body: "{{ $1 }}",
     },
-    vemit: {
-      name: "Vue emit event",
-      body:
-        "@${1|click,input,change,focus,blur|}=\"\\$emit('${2:$1}', \\$event)\"",
+    vvt: {
+      name: "Vue i18n translation",
+      body: "{{ t('$1') }}",
     },
     "vif:slot": {
       name: "v-if slot defined",
@@ -262,6 +321,22 @@ export const template: XSnippetDefinition = {
         '<${1|template,div,p,ul,section|} v-if="$2">',
         "\t$0",
         "</$1>",
+      ],
+    },
+    "vtif": {
+      name: "template with v-if",
+      body: [
+        '<template v-if="$2">',
+        "\t$0",
+        "</template>",
+      ],
+    },
+    "vdif": {
+      name: "div with v-if",
+      body: [
+        '<div v-if="$2">',
+        "\t$0",
+        "</div>",
       ],
     },
   },

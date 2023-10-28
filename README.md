@@ -339,7 +339,7 @@ $0
 </tr>
 
 <tr>
-<td><code>template</code></td>
+<td><code>template</code> / <code>vtemplate</code></td>
 <td>template</td>
 <td>
 
@@ -351,7 +351,7 @@ $0
 </tr>
 
 <tr>
-<td><code>component</code></td>
+<td><code>component</code> / <code>vcomponent</code></td>
 <td>component</td>
 <td>
 
@@ -580,24 +580,24 @@ v-if="$1"
 </tr>
 
 <tr>
-<td><code>velse</code> / <code>else</code></td>
-<td>v-else</td>
+<td><code>veif</code> / <code>elif</code></td>
+<td>v-else-if</td>
 <td>
 
 ```html
-v-else
+v-else-if="$1"
 ```
 
 </td>
 </tr>
 
 <tr>
-<td><code>velif</code> / <code>elif</code></td>
-<td>v-else-if</td>
+<td><code>velse</code> / <code>else</code></td>
+<td>v-else</td>
 <td>
 
 ```html
-v-else-if="$1"
+v-else
 ```
 
 </td>
@@ -640,12 +640,132 @@ v-for="${1:n} in ${2:5}" :key="$1"
 </tr>
 
 <tr>
+<td><code>vemit</code> / <code>emit</code></td>
+<td>emit</td>
+<td>
+
+```html
+emit('$1'$2)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vemit:pass</code></td>
+<td>Vue pass emit</td>
+<td>
+
+```html
+@${1|click,input,...|}="\$emit('${2:$1}', \$event)"
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>von</code></td>
 <td>v-on</td>
 <td>
 
 ```html
 v-on="${1:emits}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:event</code> / <code>voe</code></td>
+<td>event handler</td>
+<td>
+
+```html
+@$1="$2"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:click</code> / <code>voc</code></td>
+<td>click handler</td>
+<td>
+
+```html
+@click="${1:onClick}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:input</code> / <code>voi</code></td>
+<td>input handler</td>
+<td>
+
+```html
+@input="${1:onInput}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:update</code></td>
+<td>update handler</td>
+<td>
+
+```html
+@update="${1:onUpdate}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:change</code></td>
+<td>change handler</td>
+<td>
+
+```html
+@change="${1:onChange}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:blur</code></td>
+<td>blur handler</td>
+<td>
+
+```html
+@blur="${1:onBlur}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:focus</code></td>
+<td>focus handler</td>
+<td>
+
+```html
+@focus="${1:onFocus}"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>von:submit</code></td>
+<td>submit handler</td>
+<td>
+
+```html
+@submit${1:.prevent}="${2:onSubmit}"
 ```
 
 </td>
@@ -682,6 +802,18 @@ v-bind="\$attrs"
 
 ```html
 v-bind="\$props"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vbind:full</code></td>
+<td>v-bind props and attrs</td>
+<td>
+
+```html
+v-bind="[\$props, \$attrs]"
 ```
 
 </td>
@@ -845,7 +977,7 @@ ${1|is,:is|}="$2"
 
 <tr>
 <td><code>vb</code></td>
-<td>bind property</td>
+<td>bind attribute</td>
 <td>
 
 ```html
@@ -856,8 +988,32 @@ ${1|is,:is|}="$2"
 </tr>
 
 <tr>
+<td><code>va</code></td>
+<td>attribute</td>
+<td>
+
+```html
+${1:prop}="$2"
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vclass</code> / <code>vc</code></td>
 <td>Vue classes</td>
+<td>
+
+```html
+:class="$1"
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vclass:list</code> / <code>vca</code></td>
+<td>Vue classes list</td>
 <td>
 
 ```html
@@ -904,8 +1060,8 @@ ${1|is,:is|}="$2"
 </tr>
 
 <tr>
-<td><code>vti</code></td>
-<td>Vue text interpolation</td>
+<td><code>vv</code></td>
+<td>Vue </td>
 <td>
 
 ```html
@@ -916,12 +1072,12 @@ ${1|is,:is|}="$2"
 </tr>
 
 <tr>
-<td><code>vemit</code></td>
-<td>Vue emit event</td>
+<td><code>vvt</code></td>
+<td>Vue i18n translation</td>
 <td>
 
 ```html
-@${1|click,input,...|}="\$emit('${2:$1}', \$event)"
+{{ t('$1') }}
 ```
 
 </td>
@@ -1002,6 +1158,34 @@ v-if="\$slots.${1:label} || ${2:$1}"
 <${1|template,div,...|} v-if="$2">
   $0
 </$1>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vtif</code></td>
+<td>template with v-if</td>
+<td>
+
+```html
+<template v-if="$2">
+  $0
+</template>
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vdif</code></td>
+<td>div with v-if</td>
+<td>
+
+```html
+<div v-if="$2">
+  $0
+</div>
 ```
 
 </td>
@@ -1128,7 +1312,7 @@ const ${1:name} = computed<$2>(() => $3)
 </tr>
 
 <tr>
-<td><code>vcomputed-gs</code> / <code>vcgs</code></td>
+<td><code>vcomputed:gs</code> / <code>vcgs</code></td>
 <td>Vue computed (get/set)</td>
 <td>
 
@@ -1169,30 +1353,6 @@ const ${1:name}: ${2:type} = reactive({$3})
 </tr>
 
 <tr>
-<td><code>vtoRef</code></td>
-<td>Vue toRef</td>
-<td>
-
-```javascript
-const ${1:name} = toRef(${2:object}, '$3')
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vtoRefs</code></td>
-<td>Vue toRefs</td>
-<td>
-
-```javascript
-const ${1:name} = toRefs(${2:object})
-```
-
-</td>
-</tr>
-
-<tr>
 <td><code>vshallowRef</code></td>
 <td>Vue shallowRef</td>
 <td>
@@ -1205,12 +1365,36 @@ const ${1:name} = shallowRef($2)
 </tr>
 
 <tr>
+<td><code>vtoRef</code></td>
+<td>Vue toRef</td>
+<td>
+
+```javascript
+toRef(${1:props}, '$2')
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vtoRefs</code></td>
+<td>Vue toRefs</td>
+<td>
+
+```javascript
+toRefs(${1:props})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vunref</code></td>
 <td>Vue unref</td>
 <td>
 
 ```javascript
-const ${1:unwrapped} = unref($2)
+unref($1)
 ```
 
 </td>
@@ -1222,7 +1406,7 @@ const ${1:unwrapped} = unref($2)
 <td>
 
 ```javascript
-const ${1:copy} = readonly(${2:object})
+readonly(${1:object})
 ```
 
 </td>
@@ -1337,7 +1521,7 @@ watch(${1:source}, (${2:val}) => {
 </tr>
 
 <tr>
-<td><code>vwatch:log</code></td>
+<td><code>vwatch:log</code> / <code>vwl</code></td>
 <td>Vue watch source | log</td>
 <td>
 
@@ -1377,8 +1561,36 @@ ${1:const props = }withDefaults(defineProps<${2:Props}>(), {
 </tr>
 
 <tr>
+<td><code>vprops:js</code></td>
+<td>Vue defineProps without TS</td>
+<td>
+
+```javascript
+${1:const props = }defineProps({
+  $2
+})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vemits</code></td>
 <td>Vue defineEmits</td>
+<td>
+
+```javascript
+${1:const emit = }defineEmits<{
+  ${2:click}: [${3:payload}: ${4:string}],$5
+}>()
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vemits:alt</code></td>
+<td>Vue defineEmits without TS</td>
 <td>
 
 ```javascript
@@ -1389,27 +1601,13 @@ ${1:const emit = }defineEmits(['$2'])
 </tr>
 
 <tr>
-<td><code>vemits:ts</code></td>
-<td>Vue defineEmits (typed)</td>
+<td><code>vemits:old</code></td>
+<td>Vue defineEmits (old syntax)</td>
 <td>
 
 ```javascript
 ${1:const emit = }defineEmits<{
   (e: '${2:click}', ${3:payload}: ${4:string}): void,$5
-}>()
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vemits:new</code></td>
-<td>Vue defineEmits (new syntax)</td>
-<td>
-
-```javascript
-${1:const emit = }defineEmits<{
-  ${2:click}: [${3:payload}: ${4:string}],$5
 }>()
 ```
 
@@ -1434,7 +1632,7 @@ const ${1:modelValue} = defineModel<${2:string}>($3)
 <td>
 
 ```javascript
-emit('$1', $2)
+emit('$1'$2)
 ```
 
 </td>
@@ -1610,7 +1808,19 @@ provide<${1:string}>(${2:key}, ${3:value})
 <td>
 
 ```javascript
-const ${1:value}  = inject(${2:key})
+const ${1:value} = inject(${2:key})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vinject:ts</code></td>
+<td>Vue inject (typed)</td>
+<td>
+
+```javascript
+const ${1:value} = inject<${2:string}>(${3:key})
 ```
 
 </td>
@@ -1623,18 +1833,6 @@ const ${1:value}  = inject(${2:key})
 
 ```javascript
 const ${1:value}  = inject(${2:key}, ${3:defaultValue})
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vinject:ts</code></td>
-<td>Vue inject (typed)</td>
-<td>
-
-```javascript
-const ${1:value} = inject<${2:string}}>(${3:key}, ${4:defaultValue})
 ```
 
 </td>
@@ -1677,7 +1875,7 @@ const attrs = useAttrs()
 </tr>
 
 <tr>
-<td><code>vimport</code></td>
+<td><code>vimport</code> / <code>vim</code></td>
 <td>Import from vue</td>
 <td>
 
@@ -1705,7 +1903,26 @@ Useful vue snippets and helpers
 <td>
 
 ```javascript
-export const use${1/(.*)/${1:/capitalize}/} = () => {
+export const use${1/(.*)/${1:/pascalcase}/} = () => {
+  $0
+  
+  return {
+    
+  }
+}
+
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vcomposable:file</code> / <code>vdcf</code></td>
+<td>Vue define composable in file</td>
+<td>
+
+```javascript
+export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/} = () => {
   $0
   
   return {
@@ -1773,82 +1990,6 @@ const ${4:value} = computed({
 ```javascript
 const slots = useSlots()
 const hasSlot = (name: string) => !!slots[name]
-```
-
-</td>
-</tr>
-</table>
-
-### Reactivity Transform
-[Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) is currently an experimental feature. It is disabled by default and requires [explicit opt-in](https://vuejs.org/guide/extras/reactivity-transform.html#explicit-opt-in).
-<table width="100%">
-
-<tr>
-<td>Prefix</td>
-<td>Name</td>
-<td>Body</td>
-</tr>
-
-<tr>
-<td><code>vref$</code></td>
-<td>Vue $ref</td>
-<td>
-
-```javascript
-const ${1:name} = \$ref($2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed$</code></td>
-<td>Vue $computed</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed(() => $2)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>vcomputed-gs$</code></td>
-<td>Vue $computed (get/set)</td>
-<td>
-
-```javascript
-const ${1:name} = \$computed({
-  get: () => ${2},
-  set: (${3:value}: ${4:type}) => {
-    ${5}
-  },
-})
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>v$</code></td>
-<td>Vue $() destructuring</td>
-<td>
-
-```javascript
-$($1)
-```
-
-</td>
-</tr>
-
-<tr>
-<td><code>v$</code></td>
-<td>Vue $$() escape hint</td>
-<td>
-
-```javascript
-$($1)
 ```
 
 </td>
@@ -2074,7 +2215,7 @@ ${1|to,:to|}="$2"
 ```javascript
 import { defineStore } from 'pinia'
 
-export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
+export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}Store = defineStore('$TM_FILENAME_BASE', () => {
   $0
   
   return {
@@ -2095,16 +2236,12 @@ export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', () => {
 ```javascript
 import { defineStore } from 'pinia'
 
-export const use${1/(.*)/${1:/capitalize}/} = defineStore('${2:key}', {
-  state: () => ({
-    
-  }),
-  getters: {
-    
-  },
-  actions: {
-    
-  },
+export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}Store = defineStore('$TM_FILENAME_BASE', {
+ state: () => ({
+   $0
+ }),
+ getters: {},
+ actions: {},
 })
 
 ```
@@ -2862,6 +2999,18 @@ setCookie(event, '${1:cookie}', ${2:value})
 </tr>
 
 <tr>
+<td><code>vRefAutoReset</code></td>
+<td>VueUse refAutoReset</td>
+<td>
+
+```javascript
+const ${1:name} = refAutoReset('$2', ${3:1000})
+```
+
+</td>
+</tr>
+
+<tr>
 <td><code>vwatchArray</code></td>
 <td>VueUse watchArray</td>
 <td>
@@ -2924,6 +3073,20 @@ const { stop:$3, ignoreUpdates:$4 } =  = watchIgnorable(${1:source}, (${2:val}) 
 
 ```javascript
 watchOnce(${1:source}, (${2:val}) => {
+  $0
+})
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vwatchImmediate</code></td>
+<td>VueUse watchImmediate</td>
+<td>
+
+```javascript
+vwatchImmediate(${1:source}, (${2:val}) => {
   $0
 })
 ```
@@ -3087,7 +3250,7 @@ isDefined($1)
 </tr>
 
 <tr>
-<td><code>vuse:toggle</code></td>
+<td><code>vuse:toggle</code> / <code>vut</code></td>
 <td>VueUse useToggle</td>
 <td>
 
@@ -3099,12 +3262,24 @@ const [${1:value}, ${2:toggle}] = useToggle()
 </tr>
 
 <tr>
-<td><code>vuse:toggle:fn</code></td>
+<td><code>vuse:toggle:fn</code> / <code>vutt</code></td>
 <td>VueUse useToggle function</td>
 <td>
 
 ```javascript
 const toggle${2/(.*)/${1:/capitalize}/} = useToggle($1)
+```
+
+</td>
+</tr>
+
+<tr>
+<td><code>vuse:import</code> / <code>vuim</code></td>
+<td>Import from vueuse</td>
+<td>
+
+```javascript
+import { $1 } from '@vueuse/core'
 ```
 
 </td>
